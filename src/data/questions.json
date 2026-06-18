@@ -1806,5 +1806,3105 @@
     ],
     "answer": "a) 193.168.5.128 b) 62",
     "subQuestions": []
+  },
+  {
+    "id": "trening_1",
+    "year": "Treningowe (AI)",
+    "number": 1,
+    "text": "W siedmiowarstwowym modelu referencyjnym ISO/OSI, enkapsulowana jednostka danych w warstwie transportowej (dla protokołu TCP) to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Pakiet",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Ramka",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Segment",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Datagram",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_2",
+    "year": "Treningowe (AI)",
+    "number": 2,
+    "text": "Jaki skrót oznacza pole w nagłówku ramki Ethernet, które oznacza koniec preambuły i początek właściwej ramki (wartość binarna 10101011)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "FCS (Frame Check Sequence)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "SFD (Start of Frame Delimiter)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "MTU (Maximum Transmission Unit)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Preamble End Flag",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_3",
+    "year": "Treningowe (AI)",
+    "number": 3,
+    "text": "W standardzie Ethernet minimalna długość ramki (bez preambuły) wynosi 64 oktety. Jaka wielkość fizyczna bezpośrednio determinuje tę wartość?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Szczelina czasowa (Slot Time) wynosząca 512 bitów",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Maksymalny rozmiar adresu MAC",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Długość preambuły",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Wielkość pola CRC",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_4",
+    "year": "Treningowe (AI)",
+    "number": 4,
+    "text": "Co dzieje się z ramką Ethernet, której rozmiar jest mniejszy niż 64 oktety (tzw. runt frame / słaba ramka)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Jest automatycznie uzupełniana dopełnieniem (padding) do 64 oktetów",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Jest traktowana jako fragment kolizji i odrzucana przez odbiorcę",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Jest przesyłana priorytetowo",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Jest buforowana przez switch na czas nieokreślony",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_5",
+    "year": "Treningowe (AI)",
+    "number": 5,
+    "text": "Ile bajtów (oktetów) zajmuje adres sprzętowy karty sieciowej (MAC) w sieci Ethernet standardu 802.3?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "4 bajty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "6 bajtów",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "8 bajtów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "16 bajtów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_6",
+    "year": "Treningowe (AI)",
+    "number": 6,
+    "text": "Który adres IP reprezentuje domyślną trasę (default route) w tablicy rutingu ruterów IP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "127.0.0.1",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "255.255.255.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "0.0.0.0",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "10.0.0.1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_7",
+    "year": "Treningowe (AI)",
+    "number": 7,
+    "text": "Protokół ARP (Address Resolution Protocol) służy do odwzorowywania:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Adresów fizycznych (MAC) na logiczne adresy IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Adresów logicznych IP na fizyczne adresy sprzętowe (MAC)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Nazw domenowych na adresy IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Adresów portów aplikacji na adresy IP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_8",
+    "year": "Treningowe (AI)",
+    "number": 8,
+    "text": "Wskaż prawidłowy zakres logiczny dla klasy adresowej C w adresowaniu klasowym IPv4:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "128.0.0.0 - 191.255.255.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "1.0.0.0 - 126.255.255.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "192.0.0.0 - 223.255.255.255",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "224.0.0.0 - 239.255.255.255",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_9",
+    "year": "Treningowe (AI)",
+    "number": 9,
+    "text": "W adresowaniu klasowym, jaki prefiks sieciowy (domyślna maska) jest przypisany do sieci klasy B?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/8",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/16",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "/24",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "/32",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_10",
+    "year": "Treningowe (AI)",
+    "number": 10,
+    "text": "Który z poniższych adresów IP jest adresem prywatnym (zgodnie z RFC 1918) klasy A?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "172.16.5.4",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "192.168.1.1",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "10.45.2.190",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "11.0.0.1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_11",
+    "year": "Treningowe (AI)",
+    "number": 11,
+    "text": "Jaką metodą protokół ARP domyślnie wysyła zapytanie poszukujące adresu MAC konkretnego komputera?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Unicast (bezpośrednio)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Broadcast (rozgłoszeniowo w sieci lokalnej)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Multicast (grupowo)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Anycast",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_12",
+    "year": "Treningowe (AI)",
+    "number": 12,
+    "text": "Metoda obliczeniowa odwzorowywania adresów logicznych na fizyczne może być stosowana w sieciach, gdzie:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Adres fizyczny karty sieciowej jest konfigurowalny",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Zawsze używane są switche",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Systemy DNS nie działają",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Wykorzystywany jest wyłącznie protokół IPv6",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_13",
+    "year": "Treningowe (AI)",
+    "number": 13,
+    "text": "W standardzie CSMA/CD, po wykryciu kolizji węzeł generuje specjalny sygnał (tzw. jam signal) trwający 32 bity. Jaki jest główny cel tego sygnału?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ułatwienie ponownej synchronizacji zegara",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Upewnienie się, że wszystkie inne stacje wykryją zaistniałą kolizję",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Wyczyszczenie tablicy MAC w switchu",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przełączenie transceivera w tryb uśpienia",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_14",
+    "year": "Treningowe (AI)",
+    "number": 14,
+    "text": "Jeżeli komputer chce przesłać pakiet do innego komputera pracującego w tej samej sieci LAN, to w nagłówku ramki Ethernet adres docelowy MAC to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Adres fizyczny domyślnej bramy (rutera)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Adres fizyczny bezpośredniego odbiorcy",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Samych jedynek (FF:FF:FF:FF:FF:FF)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Adres MAC najbliższego switcha",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_15",
+    "year": "Treningowe (AI)",
+    "number": 15,
+    "text": "Która z poniższych cech charakteryzuje sieci z komutacją pakietów w przeciwieństwie do sieci z komutacją łączy?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Brak konieczności wcześniejszego rezerwowania zasobów przed transmisją",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Gwarantowana stała przepustowość łącza",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Znikome opóźnienia buforowania",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przesyłanie informacji wyłącznie w postaci sygnałów analogowych",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_16",
+    "year": "Treningowe (AI)",
+    "number": 16,
+    "text": "Koncentrator (Hub) i wzmacniak (Repeater) to urządzenia sieciowe pracujące w której warstwie modelu OSI?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Pierwszej (Fizycznej)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Drugiej (Łącza danych)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Trzeciej (Sieciowej)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Czwartej (Transportowej)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_17",
+    "year": "Treningowe (AI)",
+    "number": 17,
+    "text": "Przełącznik (Switch) w celu podjęcia decyzji o przekazaniu ramki analizuje tablicę skojarzeń (CAM). Jakie parametry są w niej kojarzone?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Adres IP i numer portu przełącznika",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Adres MAC i powiązany fizyczny port przełącznika",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Adres MAC i adres IP hosta",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Numer VLANu i protokół warstwy trzeciej",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_18",
+    "year": "Treningowe (AI)",
+    "number": 18,
+    "text": "Która metoda przekazywania ramek przez przełącznik (switch) polega na odebraniu całej ramki, sprawdzeniu sumy kontrolnej CRC i dopiero wtedy jej wysłaniu?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Cut-through",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Store-and-forward",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Fragment-free",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Adaptive switching",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_19",
+    "year": "Treningowe (AI)",
+    "number": 19,
+    "text": "Co oznacza termin 'domena kolizyjna' (collision domain)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Segment sieci, w którym dwie stacje mogą transmitować jednocześnie powodując konflikt sygnałów",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Obszar sieci ograniczony przez routery, do którego docierają ramki rozgłoszeniowe",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Zbiór maszyn należących do tego samego VLANu",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Wielkość tabeli rutingu na przełączniku wielowarstwowym",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_20",
+    "year": "Treningowe (AI)",
+    "number": 20,
+    "text": "W jaki sposób przełącznik (switch) wpływa na domeny kolizyjne w sieci Ethernet?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Łączy wszystkie porty w jedną wielką domenę kolizyjną",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Dzieli sieć tak, że każdy pojedynczy port staje się osobną domeną kolizyjną",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Eliminuje domeny kolizyjne poprzez zmianę adresów IP maszyn",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Zastępuje domeny kolizyjne domenami DNS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_21",
+    "year": "Treningowe (AI)",
+    "number": 21,
+    "text": "Mosty (Bridges) i przełączniki (Switches) to urządzenia pracujące w której warstwie modelu OSI?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Pierwszej",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Drugiej (Łącza danych)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Trzeciej",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Czwartej",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_22",
+    "year": "Treningowe (AI)",
+    "number": 22,
+    "text": "Protokół STP (Spanning Tree Protocol) jest niezbędny w sieciach przełączanych z topologią nadmiarową, ponieważ zapobiega:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Przeciążeniu procesorów na hostach klienckich",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Pętlom warstwy drugiej i wynikającym z nich burzom rozgłoszeniowym (broadcast storm)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Podsłuchiwaniu ruchu sieciowego",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Wykrywaniu kolizji na łączach bezprzewodowych",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_23",
+    "year": "Treningowe (AI)",
+    "number": 23,
+    "text": "W jaki sposób przełączniki przenoszą informacje o przynależności ramki do danego VLANu pomiędzy fizycznymi urządzeniami na łączach typu trunk?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Poprzez dodanie 4-bajtowego znacznika (tag) w nagłówku ramki zgodnie ze standardem 802.1Q",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Poprzez szyfrowanie całej ramki kluczem publicznym",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Poprzez zmianę docelowego adresu IP w nagłówku datagramu",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Nie przenoszą – VLANy działają wyłącznie na pojedynczym fizycznym switchu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_24",
+    "year": "Treningowe (AI)",
+    "number": 24,
+    "text": "Jeżeli administrator grupuje urządzenia w VLANy według fizycznych portów switcha, to jakie jest ograniczenie tego rozwiązania?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Przeniesienie kabla komputera do innego portu switcha zmienia przynależność do VLANu",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Urządzenie nie może komunikować się ze swoją domyślną bramą",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Ogranicza przepustowość portu do 10 Mbps",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Wymaga instalacji specjalnych sterowników VLAN na systemie operacyjnym hosta",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_25",
+    "year": "Treningowe (AI)",
+    "number": 25,
+    "text": "Który port na switchu w protokole STP jest odpowiedzialny za przesyłanie danych w kierunku mostu głównego (Root Bridge)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Port zablokowany (Blocking port)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Port główny (Root port)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Port desygnowany (Designated port)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Port zapasowy (Alternate port)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_26",
+    "year": "Treningowe (AI)",
+    "number": 26,
+    "text": "W standardzie tagowania VLAN 802.1Q maksymalna ilość identyfikatorów VLAN (VLAN ID) wynosi:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "256",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "1024",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "4096",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "65536",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_27",
+    "year": "Treningowe (AI)",
+    "number": 27,
+    "text": "Który ze stanów portu w klasycznym protokole STP pozwala na przesyłanie normalnego ruchu użytkownika, a także naukę adresów MAC?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Listening",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Learning",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Forwarding",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Blocking",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_28",
+    "year": "Treningowe (AI)",
+    "number": 28,
+    "text": "Metoda Cut-through przełączania ramek charakteryzuje się:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Najwyższym opóźnieniem w transmisji",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Najmniejszym opóźnieniem, ale brakiem sprawdzania błędów (możliwość propagacji uszkodzonych ramek)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Automatyczną fragmentacją pakietów IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przesyłaniem tylko pierwszej połowy ramki",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_29",
+    "year": "Treningowe (AI)",
+    "number": 29,
+    "text": "Co oznacza pojęcie 'domena rozgłoszeniowa' (broadcast domain)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Logiczny segment sieci, w którym ramka rozgłoszeniowa wysłana przez jedno urządzenie trafia do wszystkich pozostałych",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Fizyczny port switcha w trybie half-duplex",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Zakres adresów IP należących do serwerów DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Część sieci wydzielona przez zaporę sieciową (firewall)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_30",
+    "year": "Treningowe (AI)",
+    "number": 30,
+    "text": "Które z poniższych urządzeń skutecznie ogranicza (dzieli) domenę rozgłoszeniową?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Koncentrator (Hub)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Wzmacniak (Repeater)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Router",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Klasyczny most (Bridge)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_31",
+    "year": "Treningowe (AI)",
+    "number": 31,
+    "text": "Ile hostów można maksymalnie zaadresować w podsieci o masce 255.255.255.224?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "32 hosty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "30 hostów",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "14 hostów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "62 hosty",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_32",
+    "year": "Treningowe (AI)",
+    "number": 32,
+    "text": "Jaki jest adres bazowy (adres podsieci) dla hosta o adresie IP 192.168.1.135 z maską 255.255.255.192?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "192.168.1.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "192.168.1.128",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "192.168.1.64",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "192.168.1.192",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_33",
+    "year": "Treningowe (AI)",
+    "number": 33,
+    "text": "Jaki jest adres rozgłoszeniowy (broadcast) dla podsieci, w której pracuje host o IP 172.16.2.77 i masce 255.255.255.240?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "172.16.2.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "172.16.2.79",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "172.16.2.80",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "172.16.2.64",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_34",
+    "year": "Treningowe (AI)",
+    "number": 34,
+    "text": "W notacji CIDR maskę podsieci 255.255.254.0 zapisuje się jako:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/22",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/23",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "/24",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "/21",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_35",
+    "year": "Treningowe (AI)",
+    "number": 35,
+    "text": "Który z poniższych zapisów reprezentuje błędny adres IP w notacji IPv4?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "192.168.0.254",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "201.4.300.2",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "10.0.0.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "224.0.0.9",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_36",
+    "year": "Treningowe (AI)",
+    "number": 36,
+    "text": "Jeżeli ruter wykonuje operację koniunkcji (AND) na adresie IP pakietu docelowego i masce podsieci, to co jest bezpośrednim rezultatem tego działania?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Adres fizyczny MAC domyślnego interfejsu",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Adres sieci/podsieci docelowej",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Adres hosta nadawcy",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Czas życia datagramu (TTL)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_37",
+    "year": "Treningowe (AI)",
+    "number": 37,
+    "text": "Maska /30 jest bardzo często stosowana w sieciach WAN do łączenia punkt-punkt (point-to-point). Ile użytecznych adresów hostów udostępnia ta maska?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "4 hosty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "2 hosty",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "1 host",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "6 hostów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_38",
+    "year": "Treningowe (AI)",
+    "number": 38,
+    "text": "Który z poniższych adresów IP jest poprawnym adresem interfejsu hosta pracującego w sieci klasy A przy adresowaniu klasowym?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "12.0.0.0 (adres sieci)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "127.0.0.1 (adres pętli zwrotnej)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "12.1.2.255 (adres hosta w klasie A)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "12.255.255.255 (adres rozgłoszeniowy)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_39",
+    "year": "Treningowe (AI)",
+    "number": 39,
+    "text": "Technologia VLSM (Variable Length Subnet Masking) polega na:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Stosowaniu tej samej maski dla wszystkich podsieci w firmie",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Dzieleniu sieci na podsieci o różnych rozmiarach dopasowanych do liczby wymaganych hostów",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Dynamicznym przydzielaniu adresów przez DHCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Automatycznej zmianie klas adresowych",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_40",
+    "year": "Treningowe (AI)",
+    "number": 40,
+    "text": "Dlaczego przy obliczaniu liczby dostępnych adresów hostów w danej podsieci zawsze odejmuje się 2?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Z powodu rezerwacji adresów dla bramy domyślnej i serwera DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Ponieważ pierwszy adres identyfikuje podsieć, a ostatni to adres rozgłoszeniowy",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Gdyż serwer DHCP i ruter muszą mieć statyczne adresy",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "To błąd w standardzie, który nigdy nie został poprawiony",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_41",
+    "year": "Treningowe (AI)",
+    "number": 41,
+    "text": "Maska podsieci o notacji CIDR /28 odpowiada masce tradycyjnej o wartości:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "255.255.255.224",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "255.255.255.240",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "255.255.255.248",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "255.255.255.192",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_42",
+    "year": "Treningowe (AI)",
+    "number": 42,
+    "text": "Jaki jest główny cel stosowania agregacji tras (supernetting) w sieciach IP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Zmniejszenie rozmiaru tablic rutingu na ruterach poprzez łączenie wielu tras w jeden prefiks",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Zwiększenie bezpieczeństwa przesyłanych ramek",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Zablokowanie ruchu typu multicast",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Umożliwienie instalacji systemów firewall",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_43",
+    "year": "Treningowe (AI)",
+    "number": 43,
+    "text": "Dla sieci klasy C o adresie głównym 192.168.1.0 zastosowano maskę podsieci 255.255.255.224 (/27). Na ile podsieci została podzielona ta klasa C?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2 podsieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 podsieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "8 podsieci",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "16 podsieci",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_44",
+    "year": "Treningowe (AI)",
+    "number": 44,
+    "text": "Jaki jest poprawny zakres adresacji prywatnej dla klasy B wg RFC 1918?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "172.16.0.0 - 172.31.255.255",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "172.16.0.0 - 172.16.255.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "192.168.0.0 - 192.168.255.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "10.0.0.0 - 10.255.255.255",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_45",
+    "year": "Treningowe (AI)",
+    "number": 45,
+    "text": "Na interfejsie rutera o adresie IP docelowym 192.168.2.1 odebrano datagram z adresem docelowym 192.168.2.255 przy masce 255.255.255.0. Jak ruter zinterpretuje ten adres?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Jako błędny adres IP i go porzuci",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Jako adres rozgłoszeniowy skierowany do wszystkich hostów w tej podsieci",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Jako adres bramy domyślnej",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Jako żądanie ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_46",
+    "year": "Treningowe (AI)",
+    "number": 46,
+    "text": "Który z poniższych parametrów występuje w nagłówku segmentu TCP, ale nie ma go w nagłówku datagramu UDP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Port nadawcy (Source Port)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Port odbiorcy (Destination Port)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Numer potwierdzenia (Acknowledgment Number)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Suma kontrolna (Checksum)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_47",
+    "year": "Treningowe (AI)",
+    "number": 47,
+    "text": "Rozmiar portów nadawcy i odbiorcy w warstwie transportowej (zarówno TCP jak i UDP) wynosi:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "8 bitów",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "16 bitów",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "32 bity",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "48 bitów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_48",
+    "year": "Treningowe (AI)",
+    "number": 48,
+    "text": "Flaga PSH (Push) w nagłówku segmentu TCP informuje system odbiorcy o konieczności:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Natychmiastowego przekazania odebranych danych do aplikacji bez buforowania",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Przerwania aktywnego połączenia sieciowego",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Zmniejszenia rozmiaru okna o połowę",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Ignorowania sumy kontrolnej segmentu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_49",
+    "year": "Treningowe (AI)",
+    "number": 49,
+    "text": "Podczas nawiązywania połączenia TCP (tzw. trójetapowe uzgadnianie - three-way handshake) drugi segment wysyłany przez serwer do klienta ma ustawione flagi:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "SYN",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "SYN i ACK",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "ACK",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "PSH i SYN",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_50",
+    "year": "Treningowe (AI)",
+    "number": 50,
+    "text": "Mechanizm 'okna' (Window Size) w protokole TCP służy do:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Kontroli przepływu – informuje nadawcę o ilości wolnego bufora odbiorcy na dane bez konieczności potwierdzenia",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Szyfrowania transmitowanej zawartości",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Podziału fizycznego ekranu w terminalu",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Określenia wersji protokołu IP docelowego",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_51",
+    "year": "Treningowe (AI)",
+    "number": 51,
+    "text": "Wskaż podstawową wadę protokołu UDP w porównaniu do protokołu TCP:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Większy narzut nagłówka na dane",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Brak mechanizmów gwarantujących dostarczenie pakietu w odpowiedniej kolejności i bez strat",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Konieczność wcześniejszego nawiązywania połączenia",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Niski transfer i wysokie opóźnienia",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_52",
+    "year": "Treningowe (AI)",
+    "number": 52,
+    "text": "Który z poniższych protokołów warstwy aplikacji korzysta domyślnie z protokołu UDP ze względu na prędkość i brak narzutu połączeniowego?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "HTTP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "DNS (dla standardowych zapytań)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "SMTP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "SSH",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_53",
+    "year": "Treningowe (AI)",
+    "number": 53,
+    "text": "Co oznacza flaga RST (Reset) w nagłówku TCP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Żądanie natychmiastowego zerwania (odrzucenia) połączenia ze względu na błąd",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Żądanie ponownej retransmisji ostatniego pakietu",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Reset licznika czasu połączenia",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Zgodę na zmianę numeracji sekwencyjnej",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_54",
+    "year": "Treningowe (AI)",
+    "number": 54,
+    "text": "Do prawidłowego zdefiniowania połączenia sieciowego w systemie niezbędna jest para gniazd (sockets). Z czego składa się pojedyncze gniazdo (socket)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Z adresu IP i adresu MAC",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Z adresu IP i numeru portu",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Z adresu MAC i numeru portu",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Z maski podsieci i bramy domyślnej",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_55",
+    "year": "Treningowe (AI)",
+    "number": 55,
+    "text": "Podaj wielkość nagłówka segmentu TCP (bez pól dodatkowych/opcjonalnych):",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "8 oktetów",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "20 oktetów (czyli 5 słów 32-bitowych)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "32 oktety",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "40 oktetów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_56",
+    "year": "Treningowe (AI)",
+    "number": 56,
+    "text": "Co dzieje się z rozmiarem okna przeciążenia (congestion window) w protokole TCP, kiedy mechanizm wykryje zgubienie pakietu (timeout)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rozmiar okna rośnie o 100%",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rozmiar okna jest zmniejszany o połowę",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Rozmiar okna nie zmienia się",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Okno jest całkowicie zamykane i połączenie jest resetowane",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_57",
+    "year": "Treningowe (AI)",
+    "number": 57,
+    "text": "W nagłówku UDP znajduje się pole 'Długość'. Co dokładnie określa to pole?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Długość nagłówka UDP i przenoszonych danych łącznie",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Tylko długość przesyłanych danych warstwy aplikacji",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Długość nagłówka datagramu IP docelowego",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Czas oczekiwania na potwierdzenie",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_58",
+    "year": "Treningowe (AI)",
+    "number": 58,
+    "text": "Która flaga w nagłówku TCP informuje odbiorcę, że pole wskaźnika pilności danych (Urgent Pointer) jest istotne i należy przetworzyć dane priorytetowo?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ACK",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "URG",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "PSH",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "SYN",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_59",
+    "year": "Treningowe (AI)",
+    "number": 59,
+    "text": "Który z poniższych protokołów jest protokołem niezawodnym i połączeniowym w warstwie transportowej?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "TCP",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "UDP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_60",
+    "year": "Treningowe (AI)",
+    "number": 60,
+    "text": "Dla usługi serwera WWW działającego na standardowym porcie 80, jakie gniazdo docelowe (Destination Socket) identyfikuje to połączenie na serwerze (gdzie IP serwera to 200.10.10.5)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "{200.10.10.5:80}",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "{200.10.10.5:23}",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "{200.10.10.5:443}",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "{200.10.10.5:21}",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_61",
+    "year": "Treningowe (AI)",
+    "number": 61,
+    "text": "DNS (Domain Name System) to rozproszona baza danych o strukturze hierarchicznej. Najwyższym poziomem w tej hierarchii jest:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Domeny pierwszego poziomu (TLD, np. .pl, .com)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Serwery główne (Root Domain represented by a dot '.')",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Lokalne serwery DNS dostawców Internetu",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Domeny drugiego poziomu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_62",
+    "year": "Treningowe (AI)",
+    "number": 62,
+    "text": "Rekord typu A (Address) w usłudze DNS odpowiada za:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Odwzorowanie nazwy hosta na adres IPv4",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Odwzorowanie nazwy hosta na adres IPv6",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Wskazanie serwerów nazw domen",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Odwzorowanie adresu IP na nazwę (Reverse DNS)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_63",
+    "year": "Treningowe (AI)",
+    "number": 63,
+    "text": "Rekord typu CNAME (Canonical Name) jest używany w celach:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Określenia głównego serwera pocztowego domeny",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Zdefiniowania aliasu (nazwy alternatywnej) dla innej nazwy domenowej",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Odwzorowania adresu fizycznego karty sieciowej",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Ograniczenia czasu ważności pamięci podręcznej (TTL)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_64",
+    "year": "Treningowe (AI)",
+    "number": 64,
+    "text": "Który rekord DNS (Resource Record) wskazuje serwer autorytatywny obsługujący strefę oraz definiuje parametry domyślne dla strefy (jak czasy odświeżania, numer seryjny)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "SOA (Start of Authority)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "NS (Name Server)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "PTR (Pointer)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "TXT (Text)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_65",
+    "year": "Treningowe (AI)",
+    "number": 65,
+    "text": "Do odwrotnego mapowania (zamiany adresu IP na nazwę symboliczną hosta - rDNS) służy rekord:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "A",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "CNAME",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "PTR (Pointer)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "NS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_66",
+    "year": "Treningowe (AI)",
+    "number": 66,
+    "text": "Rekord MX (Mail Exchanger) w usłudze DNS przechowuje:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Adres fizyczny serwera pocztowego",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Nazwę domenową serwera odpowiedzialnego za obsługę poczty elektronicznej w domenie wraz z priorytetem",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Listę kont e-mail użytkowników",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Adres logiczny IP serwera WWW",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_67",
+    "year": "Treningowe (AI)",
+    "number": 67,
+    "text": "Który plik w systemach Linux zawiera konfigurację wskazującą adresy IP lokalnych serwerów DNS (maksymalnie 3), z których system ma korzystać?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/etc/hosts",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/etc/resolv.conf",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "/etc/sysconfig/network",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "/etc/dns.conf",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_68",
+    "year": "Treningowe (AI)",
+    "number": 68,
+    "text": "Jaki rekord DNS należy dodać do domeny, aby powiązać ją z adresem IPv6 (adresacja 128-bitowa) nowego serwera?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rekord A",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rekord AAAA",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Rekord NS",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Rekord SOA",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_69",
+    "year": "Treningowe (AI)",
+    "number": 69,
+    "text": "Co oznacza termin 'serwer autorytatywny' (Authoritative Name Server) w architekturze DNS?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Serwer posiadający oryginalne, bezpośrednie rekordy strefy i dający wiążącą odpowiedź na zapytanie o danej domenie",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Główny serwer IANA przydzielający domeny krajowe",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Serwer lokalny w sieci domowej klienta",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Serwer przechowujący wyłącznie pamięć podręczną (cache)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_70",
+    "year": "Treningowe (AI)",
+    "number": 70,
+    "text": "Zapytanie rekursywne (Recursive Query) do serwera DNS polega na tym, że:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Serwer DNS odpytany przez klienta bierze na siebie cały ciężar odszukania adresu i zwraca gotową odpowiedź (lub błąd)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Serwer odsyła klienta do innego serwera, wskazując mu kolejny krok",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Zapytanie krąży w nieskończonej pętli",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Dane są pobierane bezpośrednio z tablicy ARP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_71",
+    "year": "Treningowe (AI)",
+    "number": 71,
+    "text": "Rekord typu NS (Name Server) w bazie DNS służy do:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wskazania nazw serwerów DNS obsługujących (autorytatywnych dla) wybranej domeny",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Zamiany nazw komputerów na fizyczne adresy kart sieciowych",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Blokowania spamu pocztowego",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Uwierzytelniania certyfikatów SSL",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_72",
+    "year": "Treningowe (AI)",
+    "number": 72,
+    "text": "Czas TTL (Time To Live) w rekordzie zasobów DNS określa:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Maksymalny czas (w sekundach), przez jaki serwery pośredniczące mogą buforować dany rekord w pamięci podręcznej",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Czas potrzebny na wysłanie pakietu ping do serwera docelowego",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Maksymalną ilość ruterów na trasie",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Wersję protokołu routingu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_73",
+    "year": "Treningowe (AI)",
+    "number": 73,
+    "text": "Co reprezentuje strefa in-addr.arpa w infrastrukturze DNS?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Specjalną strefę hierarchii domen służącą do obsługi zapytań odwrotnych (z IP na nazwę)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Główny rejestr domen wojskowych USA",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Serwery zapasowe dla domeny .pl",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Tablicę skojarzeń ARP w sieciach lokalnych",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_74",
+    "year": "Treningowe (AI)",
+    "number": 74,
+    "text": "Który z poniższych rekordów DNS pozwala na dodawanie dowolnych informacji tekstowych (często wykorzystywanych do uwierzytelniania domen, SPF, kluczy DKIM)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rekord A",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rekord CNAME",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Rekord TXT (Text)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Rekord MX",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_75",
+    "year": "Treningowe (AI)",
+    "number": 75,
+    "text": "Ile serwerów głównych (Root Servers) logicznie tworzy fundament globalnego systemu nazw domenowych DNS?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "13 serwerów głównych (od A do M)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "7 serwerów głównych",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "3 serwery główne",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "256 serwerów głównych",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_76",
+    "year": "Treningowe (AI)",
+    "number": 76,
+    "text": "Jaka jest długość binarna adresu logicznego IPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "32 bity",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "64 bity",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "128 bitów (16 bajtów)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "256 bitów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_77",
+    "year": "Treningowe (AI)",
+    "number": 77,
+    "text": "Który z poniższych adresów IPv6 jest zapisany prawidłowo i w maksymalnie skróconej postaci (zgodnie z RFC 4291)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "fe80::1",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "fe80::0000::1 (nie można użyć :: dwukrotnie)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "fe80:0:0:0:0:0:0:0:1",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "fe80:::1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_78",
+    "year": "Treningowe (AI)",
+    "number": 78,
+    "text": "W protokole IPv6 adresy typu Link-Local (lokalne dla łącza) zawsze rozpoczynają się od prefiksu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ff00::/8",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "fe80::/10",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2001::/3",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "::1/128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_79",
+    "year": "Treningowe (AI)",
+    "number": 79,
+    "text": "Który z poniższych typów adresacji NIE występuje w protokole IPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Unicast (jednostkowy)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Multicast (grupowy)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Broadcast (rozgłoszeniowy)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Anycast (grona)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_80",
+    "year": "Treningowe (AI)",
+    "number": 80,
+    "text": "Jaki jest cel stosowania adresacji Link-Local w protokole IPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Umożliwienie automatycznej komunikacji urządzeń w tym samym segmencie fizycznym sieci bez udziału serwera DHCP",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Trasowanie pakietów w globalnej sieci Internet",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Konfiguracja serwerów DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Bezpieczne szyfrowanie połączeń bankowych",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_81",
+    "year": "Treningowe (AI)",
+    "number": 81,
+    "text": "W nagłówku datagramu IPv6 pole 'Liczba etapów' (Hop Limit) bezpośrednio zastępuje które pole z nagłówka IPv4?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Czas życia (TTL - Time To Live)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Długość całkowita (Total Length)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Suma kontrolna nagłówka",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Pole identyfikacji",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_82",
+    "year": "Treningowe (AI)",
+    "number": 82,
+    "text": "Protokół routingu RIP (Routing Information Protocol) w wersji 2 wykorzystuje jako metrykę:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Przepustowość łącza",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Liczbę etapów/skoków (Hop Count)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Opóźnienie transmisji",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Niezawodność łącza",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_83",
+    "year": "Treningowe (AI)",
+    "number": 83,
+    "text": "W protokole RIP wartość metryki oznaczająca 'nieskończoność' (brak możliwości dotarcia do sieci docelowej) wynosi:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "10",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "15",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "16",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "256",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_84",
+    "year": "Treningowe (AI)",
+    "number": 84,
+    "text": "Protokół routingu RIPv2 należy do której grupy protokołów?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wewnętrznych bram (IGP), typu wektor odległości (distance vector)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Wewnętrznych bram (IGP), typu stan łącza (link state)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Zewnętrznych bram (EGP), typu stan łącza",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Zewnętrznych bram (EGP), typu ścieżka-wektor",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_85",
+    "year": "Treningowe (AI)",
+    "number": 85,
+    "text": "Jak nazywa się mechanizm unikania pętli rutingu w protokole RIP, polegający na tym, że informacja o danej trasie nie jest wysyłana z powrotem na ten sam interfejs, z którego została odebrana?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Split Horizon (Podzielony horyzont)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Route Poisoning (Zatrute trasy)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Holddown timer",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "XOR Routing Control",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_86",
+    "year": "Treningowe (AI)",
+    "number": 86,
+    "text": "W jaki sposób protokół RIPv2 wysyła uaktualnienia swoich tablic rutingu do sąsiednich ruterów?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wysyła je jako rozgłoszenia (broadcast) na adres 255.255.255.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Wysyła je jako multicast na adres grupowy 224.0.0.9",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Przesyła je bezpośrednio przez połączenia TCP na port 179",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przesyła je przez protokół DNS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_87",
+    "year": "Treningowe (AI)",
+    "number": 87,
+    "text": "Jaka jest maksymalna średnica sieci (maksymalna dopuszczalna odległość rutowania) obsługiwana przez protokół RIP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "8 ruterów",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "15 ruterów",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "30 ruterów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Bez ograniczeń",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_88",
+    "year": "Treningowe (AI)",
+    "number": 88,
+    "text": "Co oznacza termin 'wektor odległości' w protokołach trasowania dynamicznego?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rutery znają wyłącznie kierunek (interfejs) oraz odległość (metrykę) do sieci docelowej, nie znając całej topologii sieci pośrednich",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Wymiarowanie odległości kabli fizycznych w sieci LAN",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Wysyłanie informacji o trasie tylko do ruterów w tej samej lokalizacji geograficznej",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Mierzenie opóźnienia pakietu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_89",
+    "year": "Treningowe (AI)",
+    "number": 89,
+    "text": "Jaki jest adres pętli zwrotnej (loopback) w protokole IPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "::1/128",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "127.0.0.1/8",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "fe80::1/10",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ff02::1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_90",
+    "year": "Treningowe (AI)",
+    "number": 90,
+    "text": "Jakie jest główne ulepszenie protokołu RIPv2 w stosunku do RIPv1?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Przesyłanie maski podsieci w uaktualnieniach (wsparcie dla CIDR/VLSM) oraz autoryzacja aktualizacji",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Zwiększenie maksymalnej metryki do 1024",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Zastąpienie algorytmu wektora odległości algorytmem stanu łącza",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przejście na protokół transportowy TCP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_91",
+    "year": "Treningowe (AI)",
+    "number": 91,
+    "text": "Protokół routingowy OSPF (Open Shortest Path First) należy do protokołów rutingu dynamicznego typu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wektor odległości (distance vector)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Stan łącza (link-state)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Wektor ścieżki (path-vector)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Statycznego hierarchicznego",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_92",
+    "year": "Treningowe (AI)",
+    "number": 92,
+    "text": "W protokole OSPF, jaki obszar (Area ID) jest uznawany za obszar szkieletowy (Backbone Area), do którego muszą być fizycznie bądź logicznie podłączone wszystkie inne obszary?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Obszar 0 (Area 0)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Obszar 1",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Obszar 255",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Obszar 99",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_93",
+    "year": "Treningowe (AI)",
+    "number": 93,
+    "text": "Jak nazywa się ruter w hierarchii OSPF, którego interfejsy należą do różnych obszarów (np. jeden interfejs w obszarze 0, drugi w obszarze 10)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Internal Router (Ruter wewnętrzny)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ABR (Area Border Router - Ruter brzegowy obszaru)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "ASBR (Autonomous System Boundary Router - Ruter brzegowy systemu autonomicznego)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Backbone Router (Ruter szkieletowy)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_94",
+    "year": "Treningowe (AI)",
+    "number": 94,
+    "text": "Jakie informacje są przesyłane pomiędzy ruterami OSPF w celu zbudowania kompletnej bazy danych o topologii sieci (LSDB)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "LSA (Link State Advertisements - Ogłoszenia o stanie łącza)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Pełne kopie tablic rutingu",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Wektory odległości",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Pakiety Ping",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_95",
+    "year": "Treningowe (AI)",
+    "number": 95,
+    "text": "Ruter działający w protokole OSPF oblicza najkrótszą ścieżkę do sieci docelowych za pomocą którego algorytmu?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Algorytmu Dijkstry (SPF - Shortest Path First)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Algorytmu Bellmana-Forda",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Funkcji haszującej MD5",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Algorytmu CSMA/CA",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_96",
+    "year": "Treningowe (AI)",
+    "number": 96,
+    "text": "Jaka jest domyślna metryka (koszt) obliczana dla połączenia w OSPF?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Liczba ruterów po drodze",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Kombinacja przepustowości łącza (odwrotnie proporcjonalna do przepustowości: Reference Bandwidth / Interface Bandwidth)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Czas opóźnienia podany w milisekundach",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Niezawodność fizyczna kabla",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_97",
+    "year": "Treningowe (AI)",
+    "number": 97,
+    "text": "Co oznacza skrót ASBR (Autonomous System Boundary Router) w protokole OSPF?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ruter, który wymienia informacje rutingowe z ruterami poza systemem autonomicznym (np. importuje trasy z RIP lub BGP)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Ruter należący wyłącznie do obszaru szkieletowego",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Serwer zapasowy dla tablic routingu",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Protokół zabezpieczający hasła w ruterach Cisco",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_98",
+    "year": "Treningowe (AI)",
+    "number": 98,
+    "text": "Jakie adresy multicast wykorzystuje protokół OSPF do wysyłania informacji o stanie łączy (LSA) do wszystkich ruterów OSPF oraz do ruterów desygnowanych (DR)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "224.0.0.5 (wszystkie) i 224.0.0.6 (DR)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "224.0.0.9 i 224.0.0.10",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "224.0.0.1 i 224.0.0.2",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "255.255.255.255",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_99",
+    "year": "Treningowe (AI)",
+    "number": 99,
+    "text": "W protokole OSPF ruter wyznaczony jako DR (Designated Router) w segmencie sieci lokalnej ma za zadanie:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ograniczyć ilość przesyłanych informacji o stanie łącza poprzez bycie centralnym punktem wymiany LSA w segmencie rozgłoszeniowym",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Działać jako domyślna brama dla hostów klienckich",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Przydzielać adresy IP za pomocą DHCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Szyfrować ruch IPsec",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_100",
+    "year": "Treningowe (AI)",
+    "number": 100,
+    "text": "Zewnętrznym protokołem trasowania (EGP - Exterior Gateway Protocol) wykorzystywanym do wymiany tras pomiędzy różnymi systemami autonomicznymi w sieci Internet jest:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "RIPv2",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "OSPF",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "BGP (Border Gateway Protocol)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "EIGRP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
   }
 ]

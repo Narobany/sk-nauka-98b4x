@@ -85,6 +85,57 @@ function App() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [slideSearchQuery, setSlideSearchQuery] = useState('');
 
+  const [slideQuizQuestion, setSlideQuizQuestion] = useState(null);
+  const [slideQuizSelected, setSlideQuizSelected] = useState('');
+  const [slideQuizSubmitted, setSlideQuizSubmitted] = useState(false);
+
+  const handleCopyText = (text, e) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(text);
+    const originalText = e.target.innerText;
+    e.target.innerText = 'Skopiowano!';
+    setTimeout(() => {
+      e.target.innerText = originalText;
+    }, 2000);
+  };
+
+  const getRelatedQuestionForSlide = (lectureId, slideIndex, slideText) => {
+    let pool = questionsData.filter(q => q.type === 'choice');
+    const keywords = {
+      w1: ['osi', 'iso', 'ethernet', 'ipv4', 'arp', 'arpanet', 'preambuła', 'ramka', 'mac'],
+      w2: ['switch', 'hub', 'vlan', 'stp', 'spanning tree', 'bridge', 'kolizyjna', 'rozgłoszeniowa', 'bpdu'],
+      w3: ['maska', 'podsieć', 'cidr', 'vlsm', 'icmp', 'ping', 'tracert', 'traceroute'],
+      w4: ['tcp', 'udp', 'tftp', 'port', 'gniazdo', 'socket', 'syn', 'ack', 'fin', 'rst', 'window', 'handshake'],
+      w5: ['dns', 'rekord', 'cname', 'mx', 'ptr', 'aaaa', 'resolv.conf', 'bind', 'soa'],
+      w6: ['ipv6', 'routing', 'rip', 'wektor odległości', 'split horizon', 'link-local'],
+      w7: ['ospf', 'bgp', 'dijkstra', 'lsa', 'abr', 'asbr', 'dr', 'stan łącza']
+    }[lectureId] || [];
+
+    let matchingQuestions = pool.filter(q => {
+      const qText = q.text.toLowerCase();
+      return keywords.some(kw => qText.includes(kw));
+    });
+
+    if (matchingQuestions.length === 0) {
+      matchingQuestions = pool;
+    }
+
+    const seed = (lectureId.charCodeAt(1) || 0) + slideIndex;
+    const index = seed % matchingQuestions.length;
+    return matchingQuestions[index];
+  };
+
+  useEffect(() => {
+    if (selectedLecture && selectedLecture.slides && selectedLecture.slides[currentSlideIndex]) {
+      const q = getRelatedQuestionForSlide(selectedLecture.id, currentSlideIndex, selectedLecture.slides[currentSlideIndex]);
+      setSlideQuizQuestion(q);
+    } else {
+      setSlideQuizQuestion(null);
+    }
+    setSlideQuizSelected('');
+    setSlideQuizSubmitted(false);
+  }, [selectedLecture.id, currentSlideIndex]);
+
   const nextSlide = () => {
     if (currentSlideIndex < selectedLecture.slides.length - 1) {
       setCurrentSlideIndex(prev => prev + 1);
@@ -110,6 +161,275 @@ function App() {
     return parts.map((part, i) => 
       regex.test(part) ? <mark key={i} className="highlight">{part}</mark> : part
     );
+  };
+
+  const renderHighlightedTextForNode = (node, highlight) => {
+    if (!highlight.trim()) return node;
+    if (typeof node === 'string') {
+      return renderHighlightedText(node, highlight);
+    }
+    if (Array.isArray(node)) {
+      return node.map((child, i) => (
+        <span key={i}>{renderHighlightedTextForNode(child, highlight)}</span>
+      ));
+    }
+    if (node && node.props && node.props.children) {
+      return {
+        ...node,
+        props: {
+          ...node.props,
+          children: renderHighlightedTextForNode(node.props.children, highlight)
+        }
+      };
+    }
+    return node;
+  };
+
+  const formatSlideLine = (line) => {
+    let content = line.trim();
+    if (!content) return null;
+
+    const isBullet = content.startsWith('·') || content.startsWith('•') || content.startsWith('▪') || content.startsWith('-') || content.startsWith('*') || content.startsWith('o ');
+    if (isBullet) {
+      content = content.replace(/^([·•▪\-*]|o\s)\s*/, '');
+    }
+
+    const parts = [];
+    let lastIdx = 0;
+    const regex = /(\*\*.*?\*\*|`.*?`|\b(?:arp|ifconfig|ping|nslookup|traceroute|tracert|route|iptables|netstat|tcpdump|resolv\.conf|dhcpd\.conf|dhcpd|ifconfig)\b)/gi;
+    let match;
+    while ((match = regex.exec(content)) !== null) {
+      const idx = match.index;
+      if (idx > lastIdx) {
+        parts.push(content.substring(lastIdx, idx));
+      }
+      
+      const matchedText = match[0];
+      if (matchedText.startsWith('**') && matchedText.endsWith('**')) {
+        parts.push(<strong key={idx} style={{ color: 'var(--accent-cyan)', fontWeight: '600' }}>{matchedText.slice(2, -2)}</strong>);
+      } else if (matchedText.startsWith('`') && matchedText.endsWith('`')) {
+        parts.push(<code key={idx} style={{ background: 'rgba(255,255,255,0.08)', padding: '2px 6px', borderRadius: '4px', fontFamily: 'var(--font-mono)', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>{matchedText.slice(1, -1)}</code>);
+      } else {
+        parts.push(<code key={idx} style={{ background: 'rgba(255,255,255,0.08)', padding: '2px 6px', borderRadius: '4px', fontFamily: 'var(--font-mono)', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>{matchedText}</code>);
+      }
+      lastIdx = regex.lastIndex;
+    }
+    if (lastIdx < content.length) {
+      parts.push(content.substring(lastIdx));
+    }
+
+    const finalContent = parts.length > 0 ? parts : content;
+
+    return {
+      isBullet,
+      content: finalContent
+    };
+  };
+
+  const parseSlideContent = (slideText) => {
+    const lines = slideText.split('\n');
+    const blocks = [];
+    let currentBlock = null;
+
+    const isBulletLine = (line) => {
+      const trimmed = line.trim();
+      return trimmed.startsWith('·') || trimmed.startsWith('•') || trimmed.startsWith('▪') || trimmed.startsWith('-') || trimmed.startsWith('*') || trimmed.startsWith('o ');
+    };
+
+    const isTerminalLine = (line) => {
+      const trimmed = line.trim();
+      if (trimmed.startsWith('$ ') || trimmed.startsWith('# ') || trimmed.startsWith('arp ') || trimmed.startsWith('$arp') || trimmed.startsWith('C:\\')) return true;
+      if (trimmed.includes('HWtype') && trimmed.includes('HWaddress')) return true;
+      if (trimmed.includes('Address') && trimmed.includes('HWaddress')) return true;
+      if (trimmed.includes('ESTABLISHED') || trimmed.includes('TIME_WAIT') || trimmed.includes('LISTEN') || trimmed.includes('CLOSE_WAIT') || trimmed.includes('FIN_WAIT_1')) return true;
+      if (trimmed.includes('at 08:00:20') || trimmed.includes('at 00:00:30')) return true;
+      if (trimmed.includes('Read request (RRQ)') || trimmed.includes('Write request (WRQ)')) return true;
+      if (trimmed.includes('echo 7/tcp') || trimmed.includes('ftp 21/tcp') || trimmed.includes('smtp 25/tcp')) return true;
+      if (trimmed.includes('icmp 1 ICMP') || trimmed.includes('tcp 6 TCP') || trimmed.includes('udp 17 UDP')) return true;
+      return false;
+    };
+
+    const isDefinitionLine = (line) => {
+      const trimmed = line.trim();
+      if (trimmed.startsWith('Definicja') || trimmed.startsWith('Definicje')) return true;
+      if (trimmed.includes(' jest to ') || trimmed.includes(' są to ') || (trimmed.includes(' – ') && trimmed.length > 25 && !isTerminalLine(line) && !isBulletLine(line))) return true;
+      if (trimmed.startsWith('Zasada działania:') || trimmed.startsWith('Zasada pracy') || trimmed.startsWith('Własności ') || trimmed.startsWith('Cechy charakterystyczne')) return true;
+      return false;
+    };
+
+    lines.forEach((line, idx) => {
+      const cleanLine = line.trim();
+      if (!cleanLine) {
+        if (currentBlock) {
+          blocks.push(currentBlock);
+          currentBlock = null;
+        }
+        return;
+      }
+
+      if (idx === 0 && !isBulletLine(cleanLine) && cleanLine.length < 80) {
+        if (currentBlock) blocks.push(currentBlock);
+        blocks.push({ type: 'header', content: cleanLine });
+        currentBlock = null;
+        return;
+      }
+
+      if (isTerminalLine(cleanLine)) {
+        if (currentBlock && currentBlock.type !== 'terminal') {
+          blocks.push(currentBlock);
+          currentBlock = null;
+        }
+        if (!currentBlock) {
+          currentBlock = { type: 'terminal', lines: [] };
+        }
+        currentBlock.lines.push(cleanLine);
+      } else if (isBulletLine(cleanLine)) {
+        if (currentBlock && currentBlock.type !== 'list') {
+          blocks.push(currentBlock);
+          currentBlock = null;
+        }
+        if (!currentBlock) {
+          currentBlock = { type: 'list', items: [] };
+        }
+        currentBlock.items.push(cleanLine.replace(/^([·•▪\-*]|o\s)\s*/, ''));
+      } else if (isDefinitionLine(cleanLine)) {
+        if (currentBlock) {
+          blocks.push(currentBlock);
+          currentBlock = null;
+        }
+        blocks.push({ type: 'definition', content: cleanLine });
+      } else {
+        if (currentBlock && currentBlock.type !== 'paragraph') {
+          blocks.push(currentBlock);
+          currentBlock = null;
+        }
+        if (!currentBlock) {
+          currentBlock = { type: 'paragraph', lines: [] };
+        }
+        currentBlock.lines.push(cleanLine);
+      }
+    });
+
+    if (currentBlock) {
+      blocks.push(currentBlock);
+    }
+
+    return blocks;
+  };
+
+  const renderSlide = (slideText, searchHighlight) => {
+    const blocks = parseSlideContent(slideText);
+    const elements = [];
+
+    const renderBlock = (block, bIdx) => {
+      if (block.type === 'header') {
+        return (
+          <h4 key={bIdx} className="title-gradient" style={{ fontSize: '1.4rem', fontWeight: '600', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '8px', textAlign: 'left' }}>
+            {block.content}
+          </h4>
+        );
+      }
+
+      if (block.type === 'terminal') {
+        const codeText = block.lines.join('\n');
+        return (
+          <div className="terminal-window" key={bIdx}>
+            <div className="terminal-header">
+              <div className="terminal-dots">
+                <span className="terminal-dot red"></span>
+                <span className="terminal-dot yellow"></span>
+                <span className="terminal-dot green"></span>
+              </div>
+              <span className="terminal-title">Konsola</span>
+              <button className="terminal-copy-btn" onClick={(e) => handleCopyText(codeText, e)}>
+                Kopiuj
+              </button>
+            </div>
+            <div className="terminal-body">
+              {renderHighlightedTextForNode(codeText, searchHighlight)}
+            </div>
+          </div>
+        );
+      }
+
+      if (block.type === 'definition') {
+        let title = "Pojęcie / Zasada";
+        let body = block.content;
+        const splitKeywords = [' jest to ', ' są to ', ' - ', ' – '];
+        for (let kw of splitKeywords) {
+          if (block.content.includes(kw)) {
+            const parts = block.content.split(kw);
+            title = parts[0].replace(/\*\*/g, '').trim();
+            body = parts.slice(1).join(kw).trim();
+            break;
+          }
+        }
+
+        let icon = "💡";
+        const lowerTitle = title.toLowerCase();
+        if (lowerTitle.includes('zasada') || lowerTitle.includes('algorytm')) icon = "⚙️";
+        if (lowerTitle.includes('cech')) icon = "📝";
+        if (lowerTitle.includes('uwag') || lowerTitle.includes('problem')) icon = "⚠️";
+        if (lowerTitle.includes('sieć') || lowerTitle.includes('lan') || lowerTitle.includes('wan') || lowerTitle.includes('ethernet')) icon = "🌐";
+        if (lowerTitle.includes('protokół') || lowerTitle.includes('standard')) icon = "📜";
+
+        return (
+          <div className="definition-card" key={bIdx}>
+            <div className="definition-icon">{icon}</div>
+            <div className="definition-content">
+              <h5>{title}</h5>
+              <p>{renderHighlightedTextForNode(body, searchHighlight)}</p>
+            </div>
+          </div>
+        );
+      }
+
+      if (block.type === 'list') {
+        return (
+          <ul key={bIdx} style={{ margin: '14px 0 14px 16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {block.items.map((item, lIdx) => {
+              const parsed = formatSlideLine(item);
+              return (
+                <li key={lIdx} style={{ color: '#d1d5db', fontSize: '1.05rem', lineHeight: '1.6', listStyleType: 'none', paddingLeft: '24px', position: 'relative', textAlign: 'left' }}>
+                  <span style={{ position: 'absolute', left: 0, top: '2px', color: 'var(--accent-cyan)', fontWeight: 'bold' }}>⮚</span>
+                  {renderHighlightedTextForNode(parsed.content, searchHighlight)}
+                </li>
+              );
+            })}
+          </ul>
+        );
+      }
+
+      if (block.type === 'paragraph') {
+        return (
+          <div key={bIdx} style={{ margin: '12px 0' }}>
+            {block.lines.map((line, pIdx) => {
+              const parsed = formatSlideLine(line);
+              return (
+                <p key={pIdx} style={{ margin: '8px 0', color: '#d1d5db', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'left' }}>
+                  {renderHighlightedTextForNode(parsed.content, searchHighlight)}
+                </p>
+              );
+            })}
+          </div>
+        );
+      }
+
+      return null;
+    };
+
+    blocks.forEach((block, bIdx) => {
+      elements.push(renderBlock(block, bIdx));
+      if (bIdx < blocks.length - 1 && block.type !== 'header') {
+        elements.push(
+          <div className="slide-card-divider" key={`div-${bIdx}`}>
+            <div className="slide-divider-dot"></div>
+          </div>
+        );
+      }
+    });
+
+    return <div className="slide-html-content" style={{ textAlign: 'left' }}>{elements}</div>;
   };
 
   // ==========================================
@@ -570,20 +890,90 @@ function App() {
               {/* Slide Viewer */}
               <div className="slide-viewer">
                 <div>
-                  <h3 style={{ marginBottom: '14px', fontSize: '1.25rem', color: '#fff' }}>
-                    {selectedLecture.title}
-                  </h3>
+                  <div className="slide-header">
+                    <h3 style={{ fontSize: '1.25rem', color: '#fff', margin: 0 }}>
+                      {selectedLecture.title.split(':')[0]}
+                    </h3>
+                    <div className="slide-dropdown-container">
+                      <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Skocz do:</span>
+                      <select
+                        className="slide-dropdown"
+                        value={currentSlideIndex}
+                        onChange={(e) => setCurrentSlideIndex(parseInt(e.target.value, 10))}
+                      >
+                        {selectedLecture.slides.map((slide, idx) => {
+                          const firstLine = slide.split('\n')[0].trim().replace(/^([·•▪\-*]|o\s)\s*/, '');
+                          const label = firstLine.length > 40 ? firstLine.substring(0, 40) + '...' : firstLine;
+                          return (
+                            <option key={idx} value={idx}>
+                              {idx + 1}. {label || `Slajd ${idx + 1}`}
+                            </option>
+                          );
+                        })}
+                      </select>
+                    </div>
+                  </div>
+
                   <div className="slide-content-box">
-                    <p className="slide-text">
-                      {renderHighlightedText(
-                        selectedLecture.slides[currentSlideIndex],
-                        slideSearchQuery
-                      )}
-                    </p>
+                    {renderSlide(
+                      selectedLecture.slides[currentSlideIndex],
+                      slideSearchQuery
+                    )}
+
+                    {/* Active Recall Slide Mini Quiz */}
+                    {slideQuizQuestion && (
+                      <div className="mini-quiz-box">
+                        <div className="mini-quiz-title">
+                          <span>🧠</span> Szybki test ze slajdu (Sprawdź się!)
+                        </div>
+                        <div className="mini-quiz-text">
+                          {slideQuizQuestion.text}
+                        </div>
+                        <div className="mini-quiz-options">
+                          {slideQuizQuestion.options.map((opt) => {
+                            let optClass = '';
+                            if (slideQuizSelected === opt.letter) {
+                              optClass = 'selected';
+                            }
+                            if (slideQuizSubmitted) {
+                              if (opt.isCorrect) optClass = 'correct';
+                              else if (slideQuizSelected === opt.letter) optClass = 'incorrect';
+                            }
+                            return (
+                              <div
+                                key={opt.letter}
+                                className={`mini-quiz-option ${optClass}`}
+                                onClick={() => {
+                                  if (!slideQuizSubmitted) {
+                                    setSlideQuizSelected(opt.letter);
+                                    setSlideQuizSubmitted(true);
+                                  }
+                                }}
+                              >
+                                <strong>{opt.letter.toUpperCase()})</strong> {opt.text}
+                              </div>
+                            );
+                          })}
+                        </div>
+                        {slideQuizSubmitted && (
+                          <div className="mini-quiz-explanation">
+                            {slideQuizSelected === slideQuizQuestion.answer ? (
+                              <div className="mini-quiz-feedback success">✓ Gratulacje! Poprawna odpowiedź.</div>
+                            ) : (
+                              <div className="mini-quiz-feedback error">✕ Niestety, to błąd.</div>
+                            )}
+                            <div>
+                              Poprawna odpowiedź to: <strong>{slideQuizQuestion.answer.toUpperCase()}</strong>. 
+                              Dobrze zapamiętaj to pojęcie z teorii do jutrzejszego egzaminu!
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                <div className="slide-controls">
+                <div className="slide-controls" style={{ marginTop: '24px' }}>
                   <button
                     className="btn-icon"
                     onClick={prevSlide}
