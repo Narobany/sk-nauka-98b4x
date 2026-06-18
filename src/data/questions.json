@@ -1,0 +1,1810 @@
+[
+  {
+    "id": "2024/2025_1",
+    "year": "2024/2025",
+    "number": 1,
+    "text": "W siedmiowarstwowym modelu sieci (ISO/OSI) pierwszą warstwą jest warstwa fizyczna. Warstwą trzecią jest warstwa:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "sesji",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "aplikacji",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "sieci",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "transportowa",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_2",
+    "year": "2024/2025",
+    "number": 2,
+    "text": "Komputer, który zna adres sieciowy odbiorcy datagramu i poszukuje jego adresu sprzętowego wysyła:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "zapytanie RARP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "prośbę DHCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "zapytanie DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "żadna z powyższych odpowiedzi nie jest poprawna",
+        "isCorrect": true
+      }
+    ],
+    "answer": "d",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_3",
+    "year": "2024/2025",
+    "number": 3,
+    "text": "Pole „adres odbiorcy\" w ramce ethernetowej 802.3 ma rozmiar:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "6 oktetów",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "8 oktetów",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "32 oktety",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "48 oktetów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_4",
+    "year": "2024/2025",
+    "number": 4,
+    "text": "Sklasyfikuj adresy IP, uzupełniając tabelę znakami X w odpowiednich kolumnach (adresowanie klasowe): *Rozwiązanie tabeli:*",
+    "type": "matching",
+    "options": [],
+    "answer": "",
+    "subQuestions": [
+      {
+        "label": "12.1.2.256",
+        "answer": "BŁĘDNY LUB INNY"
+      },
+      {
+        "label": "173.16.21.255",
+        "answer": "HOSTA"
+      },
+      {
+        "label": "200.4.301.0",
+        "answer": "BŁĘDNY LUB INNY"
+      },
+      {
+        "label": "193.168.256.0",
+        "answer": "BŁĘDNY LUB INNY"
+      },
+      {
+        "label": "224.0.0.2",
+        "answer": "GRUPOWY (D)"
+      }
+    ]
+  },
+  {
+    "id": "2024/2025_5",
+    "year": "2024/2025",
+    "number": 5,
+    "text": "Adres 11.0.0.0 jest:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "prywatnym adresem sieci, klasy A",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "publicznym adresem sieci, klasy A",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "prywatnym adresem interfejsu, klasy A",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "publicznym adresem interfejsu, klasy A",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_6",
+    "year": "2024/2025",
+    "number": 6,
+    "text": "Maska 255.255.255.248 jest maską, którą zapisuje się w tzw. notacji skróconej (ukośnikowej) jako:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "../28",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "../29",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "../30",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "../31",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_7",
+    "year": "2024/2025",
+    "number": 7,
+    "text": "Adres IPv6 odpowiadający zbiorowi komputerów, zlokalizowanych w dowolnych miejscach, z których tylko jeden ma otrzymać wysyłany na ten adres datagram, nazywa się:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "adresem jednostkowym (unicast)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "adresem grona (anycast)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "adresem grupowym (multicast)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "adresem rozgłoszeniowym (broadcast)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_8",
+    "year": "2024/2025",
+    "number": 8,
+    "text": "Zaznacz, które pola występują (tak), a które nie występują (nie) w nagłówku segmentu TCP:",
+    "type": "yes_no",
+    "options": [],
+    "answer": "",
+    "subQuestions": [
+      {
+        "letter": "a",
+        "text": "okno",
+        "answer": "tak"
+      },
+      {
+        "letter": "b",
+        "text": "port nadawcy",
+        "answer": "tak"
+      },
+      {
+        "letter": "c",
+        "text": "numer protokołu",
+        "answer": "nie"
+      },
+      {
+        "letter": "d",
+        "text": "numer sekwencyjny",
+        "answer": "tak"
+      }
+    ]
+  },
+  {
+    "id": "2024/2025_9",
+    "year": "2024/2025",
+    "number": 9,
+    "text": "MTU wynosi 820 oktetów. Długość nagłówka datagramu IP wynosi 5 słów. Całkowita długość datagramu wynosi 3000 oktetów. W wyniku fragmentacji datagram zostanie podzielony na:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2 fragmenty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "3 fragmenty",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "4 fragmenty",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "5 fragmentów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_10",
+    "year": "2024/2025",
+    "number": 10,
+    "text": "Przesyłanie danych po liniach niskiego napięcia (230V) umożliwia protokół:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ISDN",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "OC-1",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "PLC",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "SONET",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_11",
+    "year": "2024/2025",
+    "number": 11,
+    "text": "Ruter - w celu wyznaczenia adresu sieci docelowej przesyłanego datagramu - wykonuje na rozwinięciu binarnym adresu IP i maski operację:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "alternatywy",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "koniunkcji",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "negacji",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "alternatywy rozłącznej",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_12",
+    "year": "2024/2025",
+    "number": 12,
+    "text": "Interfejsowi eth2 rutera R2 przypisano adres 200.1.1.1 a interfejsowi eth1 adres 192.168.2.1; aby sieć złożona z odpowiednich interfejsów rutera R2 i komputera PC2 działała właściwie, interfejs sieciowy PC2 powinien mieć adres: *(Na podstawie schematu ze zdjęcia, komputer PC2 podłączony jest do segmentu sieci z eth2 routera R2)*",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "200.1.2.2",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "200.1.1.2",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "192.168.2.2",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "192.168.1.2",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_13",
+    "year": "2024/2025",
+    "number": 13,
+    "text": "Na podanym poniżej schemacie połączenia można wyróżnić: *(Na schemacie widzimy połączenia: PC1/PC2 do R1 \\[1 sieć\\], połączenie szeregowe R1-R2 \\[2 sieć\\], oraz komputery z prawej strony do R2 \\[3 sieć\\])*",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "trzy sieci",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "cztery sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "pięć sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "sześć sieci",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_14",
+    "year": "2024/2025",
+    "number": 14,
+    "text": "Bramą dla komputera PC1 w sieci na powyższym rysunku jest interfejs:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "E0 rutera R1",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "S1 rutera R2",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "E0 rutera R2",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "E1 rutera R2",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_15",
+    "year": "2024/2025",
+    "number": 15,
+    "text": "W zasadzie bezpieczeństwa AAA druga litera A oznacza:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "rozliczalność (Accounting)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "autoryzację (Authorization)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "autentykację (Authentication)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "dostępność",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_16",
+    "year": "2024/2025",
+    "number": 16,
+    "text": "Zaznacz, które pola występują (tak), a które nie występują (nie) w nagłówku datagramu IP:",
+    "type": "yes_no",
+    "options": [],
+    "answer": "",
+    "subQuestions": [
+      {
+        "letter": "a",
+        "text": "numer protokołu",
+        "answer": "tak"
+      },
+      {
+        "letter": "b",
+        "text": "numer potwierdzenia",
+        "answer": "nie"
+      },
+      {
+        "letter": "c",
+        "text": "długość nagłówka datagramu",
+        "answer": "tak"
+      },
+      {
+        "letter": "d",
+        "text": "maska",
+        "answer": "nie"
+      }
+    ]
+  },
+  {
+    "id": "2024/2025_17",
+    "year": "2024/2025",
+    "number": 17,
+    "text": "Określ następujące typy rekordów RR w usłudze DNS (nazwy polskie lub angielskie): - a) A -\\> Mapowanie nazwy hosta na adres IPv4 - b) PTR -\\> Mapowanie adresu IP na nazwę hosta (rekord wskaźnika - Reverse DNS) - c) CNAME -\\> Nazwa kanoniczna (alias dla innej nazwy domenowej) - d) NS -\\> Serwer nazw (wskazuje serwer autorytatywny dla danej domeny) -",
+    "type": "choice",
+    "options": [],
+    "answer": "",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_18",
+    "year": "2024/2025",
+    "number": 18,
+    "text": "Protokół UDP jest protokołem:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "sieciowym, zawodnym",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "transportowym, niezawodnym",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "transportowym, połączeniowym",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "transportowym, bezpołączeniowym",
+        "isCorrect": true
+      }
+    ],
+    "answer": "d",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_19",
+    "year": "2024/2025",
+    "number": 19,
+    "text": "Pojedynczy cyfrowy kanał głosowy wymaga przepustowości:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "32 kbps",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "64 kbps",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "144 kbps",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "1024 kbps",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_20",
+    "year": "2024/2025",
+    "number": 20,
+    "text": "Protokół TFTP korzysta w warstwie trzeciej (model czterowarstwowy TCP/IP) z protokołu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "TCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "IP",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "UDP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "DHCP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_21",
+    "year": "2024/2025",
+    "number": 21,
+    "text": "Najszybsze przekazywanie ramek przez przełącznik (switch) zapewnia metoda (zasada):",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "store-and-forward",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "cut-through",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "fragment-free",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "mieszana",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_22",
+    "year": "2024/2025",
+    "number": 22,
+    "text": "Która cecha nie charakteryzuje tworzenia sieci wirtualnych VLAN (grupowania) według portów:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "rozwiązanie możliwe do stosowania na wielu połączonych switch\\'ach",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "rozwiązanie często stosowane",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "niewielkie zaangażowanie administratora",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "na jednym porcie w jednym czasie tylko jeden VLAN",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_23",
+    "year": "2024/2025",
+    "number": 23,
+    "text": "Śledzenie trasy datagramów w sieciach TCP/IP zapewnia polecenie:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ping",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "nslookup",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "traceroute (tracert)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "hello",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_24",
+    "year": "2024/2025",
+    "number": 24,
+    "text": "W standardzie 802.11 przy nawiązywaniu połączenia pomiędzy dwiema maszynami wymieniane są ramki:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "RTS i ACK",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ACK i CTS",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "CTS i NAV",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "RTS i CTS",
+        "isCorrect": true
+      }
+    ],
+    "answer": "d",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_25",
+    "year": "2024/2025",
+    "number": 25,
+    "text": "W protokole RIPv2 ruter, obliczając wartość metryki dla trasy datagramów, stosuje jako argument:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "przepustowość",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "opóźnienia",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "liczbę skoków (etapów)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "stopę błędów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_26",
+    "year": "2024/2025",
+    "number": 26,
+    "text": "Protokół OSPF jest protokołem hierarchicznym. Najwyższym poziomem w tej hierarchii jest:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "system autonomiczny",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "państwo",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "obszar zerowy",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "sieć lokalna",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_27",
+    "year": "2024/2025",
+    "number": 27,
+    "text": "Podaj nazwy (znaczenie) skrótów flag (control bits) w nagłówku segmentu TCP (nazwy polskie lub angielskie): - a) ACK -\\> Acknowledgment (Potwierdzenie) - b) PSH -\\> Push (Wymuszenie wypchnięcia bufora) - c) SYN -\\> Synchronize (Synchronizacja numerów sekwencyjnych) - d) URG -\\> Urgent (Dane pilne) -",
+    "type": "choice",
+    "options": [],
+    "answer": "",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_28",
+    "year": "2024/2025",
+    "number": 28,
+    "text": "W protokole TCP przy nawiązywaniu połączenia pomiędzy klientem i serwerem wymieniane są:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "jeden komunikat",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "dwa komunikaty",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "trzy komunikaty",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "cztery komunikaty",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_29",
+    "year": "2024/2025",
+    "number": 29,
+    "text": "Format komunikatu protokołu DHCP jest zgodny z formatem komunikatu protokołu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ARP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "TCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "BOOTP",
+        "isCorrect": true
+      }
+    ],
+    "answer": "d",
+    "subQuestions": []
+  },
+  {
+    "id": "2024/2025_30",
+    "year": "2024/2025",
+    "number": 30,
+    "text": "W protokole DHCP po przydzieleniu dzierżawionego adresu IP ustawiane są trzy zegary. Mierzą one mijający czas wynajmu, mierzony (w procentach) do okresu wynajmu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "I zegar - 50%, II zegar - 75%, III - 100%",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "I zegar - 50%, II zegar - 87,5%, III zegar - 100%",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "I zegar - 75%, II zegar - 75%, III zegar - 100%",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "I zegar - 75%, II zegar - 87,5%, III zegar - 90%",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_1",
+    "year": "2023/2024",
+    "number": 1,
+    "text": "W czterowarstwowym modelu TCP/IP pierwszą warstwą jest warstwa dostępu do sieci, warstwą czwartą jest warstwa:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "sesji",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "aplikacji",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "transportowa",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_2",
+    "year": "2023/2024",
+    "number": 2,
+    "text": "Skrót CSMA/CA oznacza metodę wielodostępu do kanału komunikacyjnego:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "z wykrywaniem kolizji",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "z całkowitą eliminacją kolizji",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "z unikaniem kolizji",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "z równomiernym podziałem czasu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_3",
+    "year": "2023/2024",
+    "number": 3,
+    "text": "Maksymalny rozmiar ramki ethernetowej (802.3, bez preambuły) wynosi:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "1472 oktety",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "1500 oktetów",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "1518 oktetów",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "żadna z powyższych odpowiedzi nie jest prawidłowa",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_4",
+    "year": "2023/2024",
+    "number": 4,
+    "text": "Sklasyfikuj adresy IP, uzupełniając tabelę znakami X w odpowiednich kolumnach (adresowanie klasowe): ADRES HOSTA SIECI ROZGŁOSZENIA GRUPOWY (D) BŁĘDNY LUB INNY",
+    "type": "matching",
+    "options": [],
+    "answer": "",
+    "subQuestions": [
+      {
+        "label": "12.2.1.3",
+        "answer": "HOSTA"
+      },
+      {
+        "label": "173.16.256.25",
+        "answer": "BŁĘDNY LUB INNY"
+      },
+      {
+        "label": "192.4.8.255",
+        "answer": "ROZGŁOSZENIA"
+      },
+      {
+        "label": "192.168.2.256",
+        "answer": "BŁĘDNY LUB INNY"
+      },
+      {
+        "label": "224.0.0.2",
+        "answer": "GRUPOWY (D)"
+      }
+    ]
+  },
+  {
+    "id": "2023/2024_5",
+    "year": "2023/2024",
+    "number": 5,
+    "text": "Adres 172.168.31.6 jest:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "prywatnym adresem sieci, klasy C",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "prywatnym adresem interfejsu, klasy C",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "prywatnym adresem interfejsu, klasy B",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "publicznym adresem interfejsu, klasy B",
+        "isCorrect": true
+      }
+    ],
+    "answer": "d",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_6",
+    "year": "2023/2024",
+    "number": 6,
+    "text": "Maska 255.255.255.248 jest maską, którą zapisuje się w tzw. notacji skróconej (ukośnikowej) jako:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/27",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/28",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "/29",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "/30",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_7",
+    "year": "2023/2024",
+    "number": 7,
+    "text": "W adresach IPv6 bloki zer można zastąpić znakami:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "0:0",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "::",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "FFFF",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "80::",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_8",
+    "year": "2023/2024",
+    "number": 8,
+    "text": "Zaznacz, które pola występują (tak), a które nie występują (nie) w nagłówku datagramu IP: -",
+    "type": "yes_no",
+    "options": [],
+    "answer": "",
+    "subQuestions": [
+      {
+        "letter": "a",
+        "text": "długość nagłówka (IHL)",
+        "answer": "tak"
+      },
+      {
+        "letter": "b",
+        "text": "adres IP odbiorcy",
+        "answer": "tak"
+      },
+      {
+        "letter": "c",
+        "text": "numer protokołu",
+        "answer": "tak"
+      },
+      {
+        "letter": "d",
+        "text": "numer potwierdzenia",
+        "answer": "nie"
+      }
+    ]
+  },
+  {
+    "id": "2023/2024_9",
+    "year": "2023/2024",
+    "number": 9,
+    "text": "MTU wynosi 1020 oktetów. Długość nagłówka datagramu IP wynosi 5 słów. Całkowita długość datagramu wynosi 2940 oktetów. W wyniku fragmentacji datagram zostanie podzielony na:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2 fragmenty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "3 fragmenty",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "4 fragmenty",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "5 fragmentów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_10",
+    "year": "2023/2024",
+    "number": 10,
+    "text": "Komunikaty: „prośba o echo\" i „odpowiedź z echem\" (polecenie ping) są komunikatami protokołu: *(Uwaga: Nagłówek nad pytaniem 11 brzmi: „Na podanym poniżej schemacie połączenia można wyróżnić (R\\... - routery):\")*",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ICMP",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "STP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "TCP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_11",
+    "year": "2023/2024",
+    "number": 11,
+    "text": " *(Pytanie powiązane ze schematem z routerami R1, R2, R3 oraz komputerami PC1, PC2)*",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "dwie sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "trzy sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "cztery sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "pięć sieci",
+        "isCorrect": false
+      }
+    ],
+    "answer": "",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_12",
+    "year": "2023/2024",
+    "number": 12,
+    "text": "Bramą dla komputera PC2 w sieci na powyższym rysunku jest interfejs:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "e1 routera R1",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "x1 routera R2",
+        "isCorrect": false
+      },
+      {
+        "letter": "n",
+        "text": "e1 routera R3",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "x2 routera R3",
+        "isCorrect": false
+      }
+    ],
+    "answer": "n",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_13",
+    "year": "2023/2024",
+    "number": 13,
+    "text": "Interfejsowi eth2 routera R2 przypisano adres 10.1.1.1 a eth1 adres 192.168.2.1; aby sieć działala z odpowiedniego interfejsu routera R2 i odpowiedniego interfejsu R1 działała właściwie, interfejs sieciowy eth1 powinien mieć adres: *(Obok pytania znajduje się schemat z komputerami, chmurami/węzłami eth2, eth1 oraz adresem \\[100mb/s\\])*",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "10.1.1.2",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "11.1.1.2",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "192.168.2.2",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "192.168.1.2",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_14",
+    "year": "2023/2024",
+    "number": 14,
+    "text": "W zasadzie bezpieczeństwa CIA litera I oznacza:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "integralność",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "identyfikowalność",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "ciągłość",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "poufność",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_15",
+    "year": "2023/2024",
+    "number": 15,
+    "text": "Protokół STP zapobiega:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "przeciążeniu sieci komunikatami RIP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "przekazywaniu zbędnych próśb o echo (ping)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "burzy rozgłoszen",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "żadna z powyższych odpowiedzi nie jest poprawna",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_16",
+    "year": "2023/2024",
+    "number": 16,
+    "text": "Adresy typu link-local sieci IPv6 rozpoczynają się od sekwencji:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "FFFF::/10",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "FE80::/10",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "FE01::/16",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "FF00::/64",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_17",
+    "year": "2023/2024",
+    "number": 17,
+    "text": "Komputer, który poszukuje adresu sprzętowego maszyny o znanym adresie IP, korzysta z protokołu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ARP",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "RARP",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "BOOTP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "DHCP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_18",
+    "year": "2023/2024",
+    "number": 18,
+    "text": "Router otrzymał w m.in informacji: docelowy_adres_IP = 19.168.4.5, maska 255.0.0.0. Ruter obliczy, że siecią, do której należy kierować ten datagram jest sieć:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "19.0.0.0",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "19.168.0.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "19.168.4.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "19.168.4.5",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_19",
+    "year": "2023/2024",
+    "number": 19,
+    "text": "Wartość „nieskończoności\" w metryce protokołu RIPv2 wynosi:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "8",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "16",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "1024",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "1472",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_20",
+    "year": "2023/2024",
+    "number": 20,
+    "text": "Protokół OSPF jest protokołem routingu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "wewnętrznego, typu \\\"wektor odległości\\\"",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "zewnętrznego, typu \\\"wektor odległości\\\"",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "wewnętrznego, typu \\\"stan łącza\\\"",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "zewnętrznego, typu \\\"stan łącza\\\"",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_21",
+    "year": "2023/2024",
+    "number": 21,
+    "text": "Zaznacz, które pola występują (tak), a które nie występują (nie) w nagłówku segmentu TCP:",
+    "type": "yes_no",
+    "options": [],
+    "answer": "",
+    "subQuestions": [
+      {
+        "letter": "a",
+        "text": "okno",
+        "answer": "tak"
+      },
+      {
+        "letter": "b",
+        "text": "numer potwierdzenia",
+        "answer": "tak"
+      },
+      {
+        "letter": "c",
+        "text": "numer portu nadawcy",
+        "answer": "tak"
+      },
+      {
+        "letter": "d",
+        "text": "flaga „nie fragmentuj\"",
+        "answer": "nie"
+      }
+    ]
+  },
+  {
+    "id": "2023/2024_22",
+    "year": "2023/2024",
+    "number": 22,
+    "text": "Podaj nazwy (znaczenie) skrótów flag (control bits) w nagłówku segmentu TCP (nazwy polskie lub angielskie):",
+    "type": "matching",
+    "options": [],
+    "answer": "",
+    "subQuestions": [
+      {
+        "letter": "a",
+        "label": "SYN",
+        "answer": "Synchronize (Synchronizacja numerów sekwencyjnych - nawiązanie połączenia)"
+      },
+      {
+        "letter": "b",
+        "label": "ACK",
+        "answer": "Acknowledgment (Potwierdzenie odebrania danych / numeru sekwencyjnego)"
+      },
+      {
+        "letter": "c",
+        "label": "URG",
+        "answer": "Urgent (Pole wskaźnika pilności jest istotne --- pilne dane)"
+      },
+      {
+        "letter": "d",
+        "label": "PSH",
+        "answer": "Push (Wymuszenie natychmiastowego przekazania danych do aplikacji bez buforowania)"
+      }
+    ]
+  },
+  {
+    "id": "2023/2024_23",
+    "year": "2023/2024",
+    "number": 23,
+    "text": "Przy nawiązywaniu połączenia klient-serwer w protokole TCP, po przesłaniu prośby o nawiązanie połączenia przez klienta, drugi segment wysyłany przez serwer, ma ustawione:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "flagę ACK",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "flagę SYN",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "flagi SYN i ACK",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "flagi SYN i FIN",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_24",
+    "year": "2023/2024",
+    "number": 24,
+    "text": "Protokół TCP jest protokołem:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "sieciowym, zawodnym",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "sieciowym, niezawodnym",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "transportowym, połączeniowym",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "transportowym, bezpołączeniowym",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_25",
+    "year": "2023/2024",
+    "number": 25,
+    "text": "Czas dzierżawy adresu w DHCP wynosi T. Klient występuje o przedłużenie czasu dzierżawy po upływie czasu (tzw. czasu odnowienia), który wynosi:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "0,25T",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "0,5T",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "0,875T",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "0,95T",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_26",
+    "year": "2023/2024",
+    "number": 26,
+    "text": "Logiczny segment sieci, w którym jakikolwiek komputer lub inne urządzenie połączone do sieci może bezpośrednio transmitować dane do jakiegokolwiek innego urządzenia w tej domenie, nazywa się:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "domeną kolizyjną",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "domeną DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "domeną rozgłoszeniową",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "domeną serwerową",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_27",
+    "year": "2023/2024",
+    "number": 27,
+    "text": "Protokół UDP:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "sieciowym, zawodnym",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "sieciowym, niezawodnym",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "transportowym, zawodnym",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "transportowym, niezawodnym",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_28",
+    "year": "2023/2024",
+    "number": 28,
+    "text": "Określ następujące typy rekordów RR w usłudze DNS (nazwy polskie lub angielskie):",
+    "type": "matching",
+    "options": [],
+    "answer": "",
+    "subQuestions": [
+      {
+        "letter": "a",
+        "label": "A",
+        "answer": "Adres IPv4 hosta (mapowanie nazwy domenowej na adres IPv4)"
+      },
+      {
+        "letter": "b",
+        "label": "NS",
+        "answer": "Serwer nazw (wskazuje serwery autorytatywne dla danej domeny)"
+      },
+      {
+        "letter": "c",
+        "label": "MX",
+        "answer": "Serwer poczty (wskazuje serwery odpowiedzialne za obsługę poczty e-mail w domenie)"
+      },
+      {
+        "letter": "d",
+        "label": "AAAA",
+        "answer": "Adres IPv6 hosta (mapowanie nazwy domenowej na adres IPv6)"
+      }
+    ]
+  },
+  {
+    "id": "2023/2024_29",
+    "year": "2023/2024",
+    "number": 29,
+    "text": "W sieciach bezprzewodowych standardów z rodziny 802.11:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ramka RTS jest „krótsza\" niż ramka CTS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ramka RTS jest „dłuższa\" niż ramka CTS",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "ramki RTS i CTS są tej samej długości",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "żadna z powyższych odpowiedzi nie jest właściwa, bo ich długość zmienia się losowo",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "subQuestions": []
+  },
+  {
+    "id": "2023/2024_30",
+    "year": "2023/2024",
+    "number": 30,
+    "text": "Dana jest maska podsieci 255.255.255.192 i adres IP 193.168.5.144 interfejsu hosta PC1 *miejsce na ewentualne obliczenia:*",
+    "type": "open",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Jaki jest adres bazowy podsieci, w której pracuje PC1?",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Ile co najwyżej interfejsów w tej podsieci może być zaadresowanych?",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a) 193.168.5.128 b) 62",
+    "subQuestions": []
+  }
+]
