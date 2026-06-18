@@ -125,6 +125,54 @@ function App() {
     return matchingQuestions[index];
   };
 
+  const getExplanationForQuestion = (q, selected) => {
+    if (q.explanation) return q.explanation;
+    const correctOpt = q.options.find(o => o.letter === q.answer);
+    const text = q.text.toLowerCase();
+    
+    if (text.includes('osi') || text.includes('iso')) {
+      return `Model ISO/OSI składa się z 7 warstw (Fizyczna, Łącza danych, Sieciowa, Transportowa, Sesji, Prezentacji, Aplikacji). Enkapsulacja przypisuje konkretne jednostki danych (PDU) do warstw: ramki w warstwie 2, pakiety/datagramy w warstwie 3, segmenty TCP lub datagramy UDP w warstwie 4.`;
+    }
+    if (text.includes('arp')) {
+      return `Protokół ARP (Address Resolution Protocol) służy do mapowania logicznych adresów IP (warstwa 3) na fizyczne adresy sprzętowe MAC (warstwa 2) w sieci lokalnej przy użyciu rozgłoszeń (broadcast). Odwrotne mapowanie (z MAC na IP) realizuje RARP lub DHCP.`;
+    }
+    if (text.includes('ethernet') || text.includes('ramk')) {
+      return `Ramka Ethernet standardu IEEE 802.3 musi mieć rozmiar od 64 do 1518 bajtów (oktetów). Każda ramka mniejsza niż 64 bajty jest traktowana jako runt frame (słaba ramka powstała np. z kolizji w CSMA/CD) i odrzucana przez odbiorcę. Preambuła (7+1 bajtów ze znacznikiem SFD) służy do synchronizacji zegara odbiorcy.`;
+    }
+    if (text.includes('vlan') || text.includes('802.1q')) {
+      return `Sieci wirtualne VLAN (IEEE 802.1Q) pozwalają na logiczny podział jednej fizycznej sieci LAN na wiele odizolowanych domen rozgłoszeniowych. Tagowanie (dodanie 4-bajtowego pola z VLAN ID o wielkości 12 bitów - stąd max 4096 VLAN-ów) odbywa się na łączach typu trunk.`;
+    }
+    if (text.includes('stp') || text.includes('spanning tree') || text.includes('bpdu')) {
+      return `Protokół STP (Spanning Tree Protocol, IEEE 802.1D) eliminuje pętle w topologiach nadmiarowych mostów/przełączników poprzez blokowanie wybranych portów (Blocking state). Wymiana ramek BPDU decyduje o wyborze Root Bridge (mostu głównego o najniższym ID/priorytecie) oraz wyznaczeniu portów głównych (Root Ports) i desygnowanych (Designated Ports).`;
+    }
+    if (text.includes('mask') || text.includes('podsieć') || text.includes('cidr') || text.includes('vlsm')) {
+      return `Maska podsieci (lub prefiks CIDR) wyznacza granicę między częścią sieciową a częścią hosta w adresie IP. Przy podziale podsieci zawsze odejmujemy 2 adresy: adres sieci (same zera w części hosta) oraz adres rozgłoszeniowy (same jedynki w części hosta). VLSM pozwala na stosowanie różnych masek w zależności od potrzeb danej podsieci.`;
+    }
+    if (text.includes('tcp') || text.includes('syn') || text.includes('ack') || text.includes('rst') || text.includes('fin')) {
+      return `Protokół TCP jest połączeniowy i niezawodny (warstwa transportowa). Korzysta z trójetapowego nawiązywania połączenia (SYN -> SYN-ACK -> ACK). Flaga RST natychmiastowo zrywa połączenie w przypadku błędów, PSH wymusza przesłanie danych bez buforowania, a FIN rozpoczyna łagodne zamykanie połączenia. Kontrola przepływu bazuje na dynamicznym oknie (Window Size).`;
+    }
+    if (text.includes('udp') || text.includes('tftp')) {
+      return `Protokół UDP jest bezpołączeniowy i zawodny, ale szybszy od TCP z racji mniejszego nagłówka (8 bajtów). TFTP działa na porcie 69 UDP i przesyła pliki w blokach 512-bajtowych, czekając na potwierdzenie każdego bloku (stop-and-wait).`;
+    }
+    if (text.includes('dns') || text.includes('rekord') || text.includes('mx') || text.includes('cname') || text.includes('ptr')) {
+      return `System DNS tłumaczy nazwy domenowe na adresy IP. Rekord A mapuje domenę na IPv4, AAAA na IPv6, CNAME tworzy alias (nazwę kanoniczną), MX wskazuje serwer pocztowy (z priorytetem), PTR realizuje mapowanie wsteczne (IP na nazwę w strefie in-addr.arpa), a SOA zawiera parametry autorytatywne strefy.`;
+    }
+    if (text.includes('ipv6') || text.includes('link-local') || text.includes('fe80')) {
+      return `Adres IPv6 ma długość 128 bitów (16 bajtów) i zapisywany jest szesnastkowo. W IPv6 nie ma adresów typu broadcast (zastąpione przez multicast). Adresy Link-Local (zaczynające się od fe80::/10) pozwalają na komunikację w obrębie tego samego fizycznego łącza bez routera czy serwera DHCP.`;
+    }
+    if (text.includes('rip') || text.includes('wektor odległości') || text.includes('split horizon')) {
+      return `Protokół RIPv2 (port 521 UDP) to protokół IGP typu wektor odległości. Jako metrykę stosuje liczbę skoków (Hop Count) z limitem 15 (16 oznacza sieć nieosiągalną). Mechanizmy takie jak Split Horizon (podzielony horyzont) zapobiegają pętlom routingu poprzez nieodsyłanie tras tą samą drogą, którą zostały odebrane.`;
+    }
+    if (text.includes('ospf') || text.includes('stan łącza') || text.includes('lsa') || text.includes('dijkstra')) {
+      return `OSPF to protokół IGP typu stan łącza (link-state) bazujący na algorytmie Dijkstry (SPF) do wyznaczania najkrótszych ścieżek. Wszyscy uczestnicy wymieniają komunikaty LSA, budując identyczną bazę topologii (LSDB). OSPF dzieli sieć na obszary, gdzie Area 0 to szkielet (Backbone Area), do którego podłączone są inne obszary za pomocą routerów ABR.`;
+    }
+
+    if (correctOpt) {
+      return `Poprawna odpowiedź to "${correctOpt.text}". Została ona wyznaczona zgodnie z teorią sieci komputerowych.`;
+    }
+    return `Poprawna odpowiedź to ${q.answer.toUpperCase()}.`;
+  };
+
   useEffect(() => {
     if (selectedLecture && selectedLecture.slides && selectedLecture.slides[currentSlideIndex]) {
       const q = getRelatedQuestionForSlide(selectedLecture.id, currentSlideIndex, selectedLecture.slides[currentSlideIndex]);
@@ -337,7 +385,7 @@ function App() {
               const parsed = formatSlideLine(item);
               return (
                 <li key={lIdx} style={{ color: '#d1d5db', fontSize: '1.05rem', lineHeight: '1.6', listStyleType: 'none', paddingLeft: '24px', position: 'relative', textAlign: 'left' }}>
-                  <span style={{ position: 'absolute', left: 0, top: '2px', color: 'var(--accent-cyan)', fontWeight: 'bold' }}>⮚</span>
+                  <span style={{ position: 'absolute', left: 0, top: '2px', color: 'var(--accent-cyan)' }}>▸</span>
                   {renderHighlightedTextForNode(parsed.content, searchHighlight)}
                 </li>
               );
@@ -899,11 +947,12 @@ function App() {
                             {slideQuizSelected === slideQuizQuestion.answer ? (
                               <div className="mini-quiz-feedback success">✓ Gratulacje! Poprawna odpowiedź.</div>
                             ) : (
-                              <div className="mini-quiz-feedback error">✕ Niestety, to błąd.</div>
+                              <div className="mini-quiz-feedback error">
+                                ✕ Niestety, to błąd. Twoja odpowiedź to ({slideQuizSelected.toUpperCase()}), a poprawna to ({slideQuizQuestion.answer.toUpperCase()}).
+                              </div>
                             )}
-                            <div>
-                              Poprawna odpowiedź to: <strong>{slideQuizQuestion.answer.toUpperCase()}</strong>. 
-                              Dobrze zapamiętaj to pojęcie z teorii do jutrzejszego egzaminu!
+                            <div style={{ marginTop: '8px', color: '#d1d5db', lineHeight: '1.5' }}>
+                              <strong>Wyjaśnienie:</strong> {getExplanationForQuestion(slideQuizQuestion, slideQuizSelected)}
                             </div>
                           </div>
                         )}
