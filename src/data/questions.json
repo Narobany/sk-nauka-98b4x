@@ -4906,5 +4906,5125 @@
     ],
     "answer": "c",
     "subQuestions": []
+  },
+  {
+    "id": "trening_101",
+    "year": "Treningowe (AI)",
+    "number": 101,
+    "text": "Który status portu w standardzie Spanning Tree (STP) oznacza, że port nie przesyła ramek danych i nie uczy się adresów MAC, ale odbiera ramki BPDU?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Forwarding",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Blocking / Discarding",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Learning",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Listening",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W stanie Blocking (lub Discarding w RSTP) port jest zablokowany dla normalnego ruchu i nie uczy się adresów MAC, by uniknąć pętli, ale stale nasłuchuje pakietów BPDU w celu monitorowania topologii.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_102",
+    "year": "Treningowe (AI)",
+    "number": 102,
+    "text": "Podczas enkapsulacji danych w stosie TCP/IP, nagłówek segmentu TCP jest bezpośrednio dodawany do danych pochodzących z:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Warstwy sieciowej (IP)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Warstwy aplikacji",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Warstwy dostępu do sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Warstwy prezentacji",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "TCP działa w warstwie transportowej. Pobiera strumień danych bezpośrednio z warstwy aplikacji, enkapsuluje je w segmenty TCP i przekazuje w dół do warstwy internetowej/sieciowej (IP).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_103",
+    "year": "Treningowe (AI)",
+    "number": 103,
+    "text": "Jaki rekord DNS jest absolutnie niezbędny do zdefiniowania parametrów czasowych strefy (np. czas odświeżania - Refresh, czas wygaśnięcia - Expire)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rekord NS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rekord SOA (Start of Authority)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Rekord A",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Rekord TXT",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Rekord SOA (Start of Authority) określa podstawowe właściwości strefy DNS, w tym główny serwer nazw, adres e-mail administratora, numer seryjny strefy oraz czasy odświeżania (Refresh), ponawiania (Retry) i wygaśnięcia (Expire).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_104",
+    "year": "Treningowe (AI)",
+    "number": 104,
+    "text": "Adres IPv6 'fe80::215:5dff:fe00:1122' należy do klasy adresowej:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Global Unicast",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Link-Local Unicast",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Unique Local",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Multicast",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adresy IPv6 zaczynające się od prefiksu fe80::/10 to adresy Link-Local (lokalne dla łącza), służące do bezkonfiguracyjnej komunikacji w obrębie jednego segmentu fizycznego.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_105",
+    "year": "Treningowe (AI)",
+    "number": 105,
+    "text": "W protokole routingu dynamicznego RIPv2, jak zapobiega się wysyłaniu błędnych aktualizacji tras z powrotem na interfejs, z którego zostały odebrane?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Split Horizon (podzielony horyzont)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Holddown Timers",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Route Poisoning",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Metryka nieskończoności",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Split Horizon (podzielony horyzont) to mechanizm przeciwdziałania pętlom routingu, który zabrania routerowi rozgłaszania trasy z powrotem przez ten sam interfejs, z którego otrzymał o niej informację.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_106",
+    "year": "Treningowe (AI)",
+    "number": 106,
+    "text": "Jaki algorytm matematyczny jest sercem protokołu OSPF i służy do wyznaczania najkrótszej trasy w bazie LSDB?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Algorytm Bellmana-Forda",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Algorytm Dijkstry (SPF - Shortest Path First)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Algorytm Kruskala",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Algorytm Forda-Fulkersona",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Protokół OSPF (Open Shortest Path First) wykorzystuje algorytm Dijkstry (nazywany również SPF) do obliczania drzewa najkrótszych ścieżek od routera do wszystkich znanych sieci docelowych w bazie danych stanu łącza.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_107",
+    "year": "Treningowe (AI)",
+    "number": 107,
+    "text": "Minimalna długość ramki Ethernet wynosi 64 bajty. Jaki element struktury ramki NIE jest wliczany do tego limitu?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Preambuła i znacznik SFD",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Adresy MAC nadawcy i odbiorcy",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Pole Typ/Długość",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Suma kontrolna CRC/FCS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Minimalny rozmiar ramki Ethernet (64 bajty) mierzy się od docelowego adresu MAC do sumy kontrolnej CRC (włącznie). Preambuła (7 bajtów) i Start of Frame Delimiter (1 bajt) leżą w warstwie fizycznej przed właściwą ramką i nie są wliczane do tych 64 bajtów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_108",
+    "year": "Treningowe (AI)",
+    "number": 108,
+    "text": "Jeżeli switch otrzyma ramkę Unicast, a docelowy adres MAC nie występuje w jego tablicy CAM, to switch:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Odrzuca ramkę jako błędną",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Wysyła ramkę na wszystkie porty oprócz portu źródłowego (tzw. flooding)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Odsyła ramkę do nadawcy z komunikatem o błędzie",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przesyła ramkę wyłącznie do Root Bridge",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W przypadku nieznanego adresu docelowego typu Unicast (unknown unicast), przełącznik rozsyła ramkę na wszystkie aktywne porty (flooding) w danej domenie rozgłoszeniowej z wyjątkiem portu, na którym ramka została odebrana.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_109",
+    "year": "Treningowe (AI)",
+    "number": 109,
+    "text": "Maska podsieci o notacji CIDR /22 odpowiada tradycyjnemu zapisowi dziesiętnemu jako:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "255.255.252.0",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "255.255.254.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "255.255.248.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "255.255.240.0",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Prefiks /22 oznacza 22 bity ustawione na 1, co binarnie daje 11111111.11111111.11111100.00000000, czyli dziesiętnie 255.255.252.0.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_110",
+    "year": "Treningowe (AI)",
+    "number": 110,
+    "text": "Podczas zamykania połączenia TCP za pomocą flag FIN, ile łącznie kroków (wymian segmentów) jest standardowo wymaganych do pełnego zamknięcia sesji w obu kierunkach?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "3 kroki (Three-Way)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 kroki (Four-Way Handshake)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2 kroki",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "5 kroków",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Zamykanie połączenia TCP jest dwukierunkowe i wymaga 4 kroków: 1. Strona A wysyła FIN. 2. Strona B potwierdza ACK. 3. Strona B wysyła własny FIN. 4. Strona A potwierdza ACK.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_111",
+    "year": "Treningowe (AI)",
+    "number": 111,
+    "text": "Który plik w systemach Linux służy do statycznego mapowania nazw hostów na adresy IP (lokalny odpowiednik systemu DNS)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/etc/resolv.conf",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/etc/hosts",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "/etc/services",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "/etc/networks",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Plik '/etc/hosts' służy do lokalnego, statycznego odwzorowywania nazw domenowych na adresy IP i jest sprawdzany przez system zazwyczaj przed zapytaniem serwerów DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_112",
+    "year": "Treningowe (AI)",
+    "number": 112,
+    "text": "Który z poniższych adresów reprezentuje prawidłowy adres IPv6 pętli zwrotnej (loopback)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "fe80::1",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "::1",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "::",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ff02::1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adres '::1' w notacji IPv6 to adres pętli zwrotnej (loopback), odpowiednik adresu '127.0.0.1' w IPv4.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_113",
+    "year": "Treningowe (AI)",
+    "number": 113,
+    "text": "Routery działające w protokole OSPF wymieniają informacje o zmianach topologii sieci za pomocą pakietów:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "BPDU",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "LSA (Link State Advertisements)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "RIP Updates",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP Redirect",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "OSPF dystrybuuje informacje o topologii sieci poprzez pakiety LSA (Link State Advertisements) przenoszone w komunikatach LSU (Link State Update).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_114",
+    "year": "Treningowe (AI)",
+    "number": 114,
+    "text": "W standardzie IEEE 802.1Q tag dodawany do ramki Ethernet w celu identyfikacji VLAN-u ma rozmiar:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2 bajty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 bajty",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "6 bajtów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "12 bitów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Standard 802.1Q wstawia do ramki Ethernet 4-bajtowy tag (znacznik). Wewnątrz tego tagu znajduje się 12-bitowe pole VLAN ID (VID), pozwalające na adresowanie do 4096 unikalnych VLAN-ów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_115",
+    "year": "Treningowe (AI)",
+    "number": 115,
+    "text": "Który protokół warstwy aplikacji służy do automatycznego przydzielania adresów IP, maski i bramy domyślnej hostom w sieci?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "DHCP (Dynamic Host Configuration Protocol)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "ARP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Protokół DHCP automatycznie przydziela hostom parametry sieciowe, takie jak adres IP, maska podsieci, brama domyślna oraz adresy serwerów DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_116",
+    "year": "Treningowe (AI)",
+    "number": 116,
+    "text": "Jaka jest domyślna wartość odległości administracyjnej (Administrative Distance) dla protokołu routingu RIP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "110",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "120",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "90",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Odległość administracyjna (AD) dla RIP wynosi 120 (dla OSPF wynosi 110, dla tras bezpośrednich 0, a statycznych 1). AD określa wiarygodność protokołu.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_117",
+    "year": "Treningowe (AI)",
+    "number": 117,
+    "text": "W protokole TCP, flaga PSH (Push) jest używana w celu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Żądania natychmiastowego odesłania potwierdzenia ACK",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Nakazania stosowi TCP natychmiastowego wypchnięcia bufora i przekazania danych do aplikacji docelowej",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Zresetowania sesji ze względu na błąd",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Inicjalizacji połączenia",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Flaga PSH (Push) nakazuje stosowi TCP u odbiorcy natychmiastowe przekazanie odebranych danych do aplikacji warstwy wyższej bez oczekiwania na zapełnienie bufora.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_118",
+    "year": "Treningowe (AI)",
+    "number": 118,
+    "text": "W standardzie CSMA/CD, minimalny czas potrzebny na wykrycie kolizji w najdalszym punkcie segmentu sieci nazywamy:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": " czasem propagacji",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "okresem szczeliny (Slot Time)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "czasem wyciszenia (Interframe Gap)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "czasem powrotu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Slot Time (czas szczeliny czasowej) to czas potrzebny na przesłanie 512 bitów w sieci Ethernet. Stanowi on minimalny czas nadawania ramki gwarantujący wykrycie kolizji w najdalszym punkcie sieci.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_119",
+    "year": "Treningowe (AI)",
+    "number": 119,
+    "text": "Który z poniższych adresów IP jest adresem rozgłoszeniowym dla podsieci 192.168.1.64/26?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "192.168.1.127",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "192.168.1.63",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "192.168.1.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "192.168.1.128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dla sieci 192.168.1.64/26, maska to 255.255.255.192. Podsieć zawiera 64 adresy (od .64 do .127). Adres .64 to adres sieci, a .127 to adres rozgłoszeniowy (broadcast).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_120",
+    "year": "Treningowe (AI)",
+    "number": 120,
+    "text": "Jaki typ wiadomości ICMP wysyła narzędzie ping w celu sprawdzenia osiągalności zdalnego hosta?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Echo Reply (Typ 0)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Echo Request (Typ 8)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Destination Unreachable (Typ 3)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Time Exceeded (Typ 11)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Narzędzie ping wysyła komunikat ICMP Echo Request (Typ 8). Odbiorca, jeśli jest osiągalny, odpowiada komunikatem Echo Reply (Typ 0).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_121",
+    "year": "Treningowe (AI)",
+    "number": 121,
+    "text": "Protokół BOOTP (RFC 951) działa w oparciu o protokół transportowy:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "TCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "UDP (porty 67 i 68)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "BOOTP (podobnie jak DHCP) działa w oparciu o bezpołączeniowy protokół UDP na porcie 67 (serwer) i 68 (klient).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_122",
+    "year": "Treningowe (AI)",
+    "number": 122,
+    "text": "Co oznacza termin 'metryka nieskończoności' w protokole routingu RIPv1/RIPv2 i jaka jest jej wartość?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Trasa ma 16 skoków i jest uważana za nieosiągalną",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Trasa ma 255 skoków i jest w trybie czuwania",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Czas życia trasy wygasł",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Trasa jest zapętlona",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "W RIP wartość 16 oznacza nieskończoność i służy do oznaczania sieci jako nieosiągalnej (Route Poisoning).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_123",
+    "year": "Treningowe (AI)",
+    "number": 123,
+    "text": "W protokole OSPF, router który łączy obszar OSPF z innym systemem autonomicznym (np. siecią działającą w RIP lub BGP) to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ABR (Area Border Router)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ASBR (Autonomous System Boundary Router)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Backbone Router",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Designated Router (DR)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Router ASBR (Autonomous System Boundary Router) łączy system autonomiczny OSPF z zewnętrznym źródłem informacji (np. innym protokołem routingu RIP/BGP lub trasami statycznymi).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_124",
+    "year": "Treningowe (AI)",
+    "number": 124,
+    "text": "Jaki prefiks sieciowy (maska) jest zarezerwowany dla adresacji Link-Local w sieciach IPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ff00::/8",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "fe80::/10",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2001::/3",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "::1/128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adresy Link-Local w IPv6 są wyznaczone prefiksem fe80::/10 (pierwsze 10 bitów adresu ma postać binarną 1111111010).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_125",
+    "year": "Treningowe (AI)",
+    "number": 125,
+    "text": "Dla sieci 10.0.0.0/24 chcemy utworzyć 4 podsieci o równej wielkości. Jaka będzie nowa maska podsieci i ile hostów obsłuży każda podsieć?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Maska /26, 62 hosty na podsieć",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Maska /26, 64 hosty na podsieć",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Maska /27, 30 hostów na podsieć",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Maska /28, 14 hostów na podsieć",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Podział sieci /24 na 4 równe części wymaga pożyczenia 2 bitów (2^2 = 4). Nowa maska to /26. Każda podsieć ma 64 adresy, z czego odejmujemy 2 (adres sieci i broadcast), co daje 62 użyteczne adresy dla hostów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_126",
+    "year": "Treningowe (AI)",
+    "number": 126,
+    "text": "Który status portu w standardzie Spanning Tree (STP) oznacza, że port nie przesyła ramek danych i nie uczy się adresów MAC, ale odbiera ramki BPDU?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Forwarding",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Blocking / Discarding",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Learning",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Listening",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W stanie Blocking (lub Discarding w RSTP) port jest zablokowany dla normalnego ruchu i nie uczy się adresów MAC, by uniknąć pętli, ale stale nasłuchuje pakietów BPDU w celu monitorowania topologii.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_127",
+    "year": "Treningowe (AI)",
+    "number": 127,
+    "text": "Podczas enkapsulacji danych w stosie TCP/IP, nagłówek segmentu TCP jest bezpośrednio dodawany do danych pochodzących z:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Warstwy sieciowej (IP)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Warstwy aplikacji",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Warstwy dostępu do sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Warstwy prezentacji",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "TCP działa w warstwie transportowej. Pobiera strumień danych bezpośrednio z warstwy aplikacji, enkapsuluje je w segmenty TCP i przekazuje w dół do warstwy internetowej/sieciowej (IP).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_128",
+    "year": "Treningowe (AI)",
+    "number": 128,
+    "text": "Jaki rekord DNS jest absolutnie niezbędny do zdefiniowania parametrów czasowych strefy (np. czas odświeżania - Refresh, czas wygaśnięcia - Expire)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rekord NS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rekord SOA (Start of Authority)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Rekord A",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Rekord TXT",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Rekord SOA (Start of Authority) określa podstawowe właściwości strefy DNS, w tym główny serwer nazw, adres e-mail administratora, numer seryjny strefy oraz czasy odświeżania (Refresh), ponawiania (Retry) i wygaśnięcia (Expire).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_129",
+    "year": "Treningowe (AI)",
+    "number": 129,
+    "text": "Adres IPv6 'fe80::215:5dff:fe00:1122' należy do klasy adresowej:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Global Unicast",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Link-Local Unicast",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Unique Local",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Multicast",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adresy IPv6 zaczynające się od prefiksu fe80::/10 to adresy Link-Local (lokalne dla łącza), służące do bezkonfiguracyjnej komunikacji w obrębie jednego segmentu fizycznego.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_130",
+    "year": "Treningowe (AI)",
+    "number": 130,
+    "text": "W protokole routingu dynamicznego RIPv2, jak zapobiega się wysyłaniu błędnych aktualizacji tras z powrotem na interfejs, z którego zostały odebrane?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Split Horizon (podzielony horyzont)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Holddown Timers",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Route Poisoning",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Metryka nieskończoności",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Split Horizon (podzielony horyzont) to mechanizm przeciwdziałania pętlom routingu, który zabrania routerowi rozgłaszania trasy z powrotem przez ten sam interfejs, z którego otrzymał o niej informację.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_131",
+    "year": "Treningowe (AI)",
+    "number": 131,
+    "text": "Jaki algorytm matematyczny jest sercem protokołu OSPF i służy do wyznaczania najkrótszej trasy w bazie LSDB?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Algorytm Bellmana-Forda",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Algorytm Dijkstry (SPF - Shortest Path First)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Algorytm Kruskala",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Algorytm Forda-Fulkersona",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Protokół OSPF (Open Shortest Path First) wykorzystuje algorytm Dijkstry (nazywany również SPF) do obliczania drzewa najkrótszych ścieżek od routera do wszystkich znanych sieci docelowych w bazie danych stanu łącza.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_132",
+    "year": "Treningowe (AI)",
+    "number": 132,
+    "text": "Minimalna długość ramki Ethernet wynosi 64 bajty. Jaki element struktury ramki NIE jest wliczany do tego limitu?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Preambuła i znacznik SFD",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Adresy MAC nadawcy i odbiorcy",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Pole Typ/Długość",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Suma kontrolna CRC/FCS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Minimalny rozmiar ramki Ethernet (64 bajty) mierzy się od docelowego adresu MAC do sumy kontrolnej CRC (włącznie). Preambuła (7 bajtów) i Start of Frame Delimiter (1 bajt) leżą w warstwie fizycznej przed właściwą ramką i nie są wliczane do tych 64 bajtów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_133",
+    "year": "Treningowe (AI)",
+    "number": 133,
+    "text": "Jeżeli switch otrzyma ramkę Unicast, a docelowy adres MAC nie występuje w jego tablicy CAM, to switch:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Odrzuca ramkę jako błędną",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Wysyła ramkę na wszystkie porty oprócz portu źródłowego (tzw. flooding)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Odsyła ramkę do nadawcy z komunikatem o błędzie",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przesyła ramkę wyłącznie do Root Bridge",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W przypadku nieznanego adresu docelowego typu Unicast (unknown unicast), przełącznik rozsyła ramkę na wszystkie aktywne porty (flooding) w danej domenie rozgłoszeniowej z wyjątkiem portu, na którym ramka została odebrana.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_134",
+    "year": "Treningowe (AI)",
+    "number": 134,
+    "text": "Maska podsieci o notacji CIDR /22 odpowiada tradycyjnemu zapisowi dziesiętnemu jako:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "255.255.252.0",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "255.255.254.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "255.255.248.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "255.255.240.0",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Prefiks /22 oznacza 22 bity ustawione na 1, co binarnie daje 11111111.11111111.11111100.00000000, czyli dziesiętnie 255.255.252.0.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_135",
+    "year": "Treningowe (AI)",
+    "number": 135,
+    "text": "Podczas zamykania połączenia TCP za pomocą flag FIN, ile łącznie kroków (wymian segmentów) jest standardowo wymaganych do pełnego zamknięcia sesji w obu kierunkach?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "3 kroki (Three-Way)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 kroki (Four-Way Handshake)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2 kroki",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "5 kroków",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Zamykanie połączenia TCP jest dwukierunkowe i wymaga 4 kroków: 1. Strona A wysyła FIN. 2. Strona B potwierdza ACK. 3. Strona B wysyła własny FIN. 4. Strona A potwierdza ACK.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_136",
+    "year": "Treningowe (AI)",
+    "number": 136,
+    "text": "Który plik w systemach Linux służy do statycznego mapowania nazw hostów na adresy IP (lokalny odpowiednik systemu DNS)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/etc/resolv.conf",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/etc/hosts",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "/etc/services",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "/etc/networks",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Plik '/etc/hosts' służy do lokalnego, statycznego odwzorowywania nazw domenowych na adresy IP i jest sprawdzany przez system zazwyczaj przed zapytaniem serwerów DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_137",
+    "year": "Treningowe (AI)",
+    "number": 137,
+    "text": "Który z poniższych adresów reprezentuje prawidłowy adres IPv6 pętli zwrotnej (loopback)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "fe80::1",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "::1",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "::",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ff02::1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adres '::1' w notacji IPv6 to adres pętli zwrotnej (loopback), odpowiednik adresu '127.0.0.1' w IPv4.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_138",
+    "year": "Treningowe (AI)",
+    "number": 138,
+    "text": "Routery działające w protokole OSPF wymieniają informacje o zmianach topologii sieci za pomocą pakietów:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "BPDU",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "LSA (Link State Advertisements)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "RIP Updates",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP Redirect",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "OSPF dystrybuuje informacje o topologii sieci poprzez pakiety LSA (Link State Advertisements) przenoszone w komunikatach LSU (Link State Update).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_139",
+    "year": "Treningowe (AI)",
+    "number": 139,
+    "text": "W standardzie IEEE 802.1Q tag dodawany do ramki Ethernet w celu identyfikacji VLAN-u ma rozmiar:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2 bajty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 bajty",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "6 bajtów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "12 bitów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Standard 802.1Q wstawia do ramki Ethernet 4-bajtowy tag (znacznik). Wewnątrz tego tagu znajduje się 12-bitowe pole VLAN ID (VID), pozwalające na adresowanie do 4096 unikalnych VLAN-ów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_140",
+    "year": "Treningowe (AI)",
+    "number": 140,
+    "text": "Który protokół warstwy aplikacji służy do automatycznego przydzielania adresów IP, maski i bramy domyślnej hostom w sieci?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "DHCP (Dynamic Host Configuration Protocol)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "ARP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Protokół DHCP automatycznie przydziela hostom parametry sieciowe, takie jak adres IP, maska podsieci, brama domyślna oraz adresy serwerów DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_141",
+    "year": "Treningowe (AI)",
+    "number": 141,
+    "text": "Jaka jest domyślna wartość odległości administracyjnej (Administrative Distance) dla protokołu routingu RIP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "110",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "120",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "90",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Odległość administracyjna (AD) dla RIP wynosi 120 (dla OSPF wynosi 110, dla tras bezpośrednich 0, a statycznych 1). AD określa wiarygodność protokołu.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_142",
+    "year": "Treningowe (AI)",
+    "number": 142,
+    "text": "W protokole TCP, flaga PSH (Push) jest używana w celu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Żądania natychmiastowego odesłania potwierdzenia ACK",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Nakazania stosowi TCP natychmiastowego wypchnięcia bufora i przekazania danych do aplikacji docelowej",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Zresetowania sesji ze względu na błąd",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Inicjalizacji połączenia",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Flaga PSH (Push) nakazuje stosowi TCP u odbiorcy natychmiastowe przekazanie odebranych danych do aplikacji warstwy wyższej bez oczekiwania na zapełnienie bufora.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_143",
+    "year": "Treningowe (AI)",
+    "number": 143,
+    "text": "W standardzie CSMA/CD, minimalny czas potrzebny na wykrycie kolizji w najdalszym punkcie segmentu sieci nazywamy:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": " czasem propagacji",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "okresem szczeliny (Slot Time)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "czasem wyciszenia (Interframe Gap)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "czasem powrotu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Slot Time (czas szczeliny czasowej) to czas potrzebny na przesłanie 512 bitów w sieci Ethernet. Stanowi on minimalny czas nadawania ramki gwarantujący wykrycie kolizji w najdalszym punkcie sieci.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_144",
+    "year": "Treningowe (AI)",
+    "number": 144,
+    "text": "Który z poniższych adresów IP jest adresem rozgłoszeniowym dla podsieci 192.168.1.64/26?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "192.168.1.127",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "192.168.1.63",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "192.168.1.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "192.168.1.128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dla sieci 192.168.1.64/26, maska to 255.255.255.192. Podsieć zawiera 64 adresy (od .64 do .127). Adres .64 to adres sieci, a .127 to adres rozgłoszeniowy (broadcast).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_145",
+    "year": "Treningowe (AI)",
+    "number": 145,
+    "text": "Jaki typ wiadomości ICMP wysyła narzędzie ping w celu sprawdzenia osiągalności zdalnego hosta?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Echo Reply (Typ 0)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Echo Request (Typ 8)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Destination Unreachable (Typ 3)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Time Exceeded (Typ 11)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Narzędzie ping wysyła komunikat ICMP Echo Request (Typ 8). Odbiorca, jeśli jest osiągalny, odpowiada komunikatem Echo Reply (Typ 0).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_146",
+    "year": "Treningowe (AI)",
+    "number": 146,
+    "text": "Protokół BOOTP (RFC 951) działa w oparciu o protokół transportowy:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "TCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "UDP (porty 67 i 68)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "BOOTP (podobnie jak DHCP) działa w oparciu o bezpołączeniowy protokół UDP na porcie 67 (serwer) i 68 (klient).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_147",
+    "year": "Treningowe (AI)",
+    "number": 147,
+    "text": "Co oznacza termin 'metryka nieskończoności' w protokole routingu RIPv1/RIPv2 i jaka jest jej wartość?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Trasa ma 16 skoków i jest uważana za nieosiągalną",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Trasa ma 255 skoków i jest w trybie czuwania",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Czas życia trasy wygasł",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Trasa jest zapętlona",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "W RIP wartość 16 oznacza nieskończoność i służy do oznaczania sieci jako nieosiągalnej (Route Poisoning).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_148",
+    "year": "Treningowe (AI)",
+    "number": 148,
+    "text": "W protokole OSPF, router który łączy obszar OSPF z innym systemem autonomicznym (np. siecią działającą w RIP lub BGP) to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ABR (Area Border Router)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ASBR (Autonomous System Boundary Router)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Backbone Router",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Designated Router (DR)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Router ASBR (Autonomous System Boundary Router) łączy system autonomiczny OSPF z zewnętrznym źródłem informacji (np. innym protokołem routingu RIP/BGP lub trasami statycznymi).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_149",
+    "year": "Treningowe (AI)",
+    "number": 149,
+    "text": "Jaki prefiks sieciowy (maska) jest zarezerwowany dla adresacji Link-Local w sieciach IPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ff00::/8",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "fe80::/10",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2001::/3",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "::1/128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adresy Link-Local w IPv6 są wyznaczone prefiksem fe80::/10 (pierwsze 10 bitów adresu ma postać binarną 1111111010).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_150",
+    "year": "Treningowe (AI)",
+    "number": 150,
+    "text": "Dla sieci 10.0.0.0/24 chcemy utworzyć 4 podsieci o równej wielkości. Jaka będzie nowa maska podsieci i ile hostów obsłuży każda podsieć?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Maska /26, 62 hosty na podsieć",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Maska /26, 64 hosty na podsieć",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Maska /27, 30 hostów na podsieć",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Maska /28, 14 hostów na podsieć",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Podział sieci /24 na 4 równe części wymaga pożyczenia 2 bitów (2^2 = 4). Nowa maska to /26. Każda podsieć ma 64 adresy, z czego odejmujemy 2 (adres sieci i broadcast), co daje 62 użyteczne adresy dla hostów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_151",
+    "year": "Treningowe (AI)",
+    "number": 151,
+    "text": "Który status portu w standardzie Spanning Tree (STP) oznacza, że port nie przesyła ramek danych i nie uczy się adresów MAC, ale odbiera ramki BPDU?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Forwarding",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Blocking / Discarding",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Learning",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Listening",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W stanie Blocking (lub Discarding w RSTP) port jest zablokowany dla normalnego ruchu i nie uczy się adresów MAC, by uniknąć pętli, ale stale nasłuchuje pakietów BPDU w celu monitorowania topologii.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_152",
+    "year": "Treningowe (AI)",
+    "number": 152,
+    "text": "Podczas enkapsulacji danych w stosie TCP/IP, nagłówek segmentu TCP jest bezpośrednio dodawany do danych pochodzących z:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Warstwy sieciowej (IP)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Warstwy aplikacji",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Warstwy dostępu do sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Warstwy prezentacji",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "TCP działa w warstwie transportowej. Pobiera strumień danych bezpośrednio z warstwy aplikacji, enkapsuluje je w segmenty TCP i przekazuje w dół do warstwy internetowej/sieciowej (IP).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_153",
+    "year": "Treningowe (AI)",
+    "number": 153,
+    "text": "Jaki rekord DNS jest absolutnie niezbędny do zdefiniowania parametrów czasowych strefy (np. czas odświeżania - Refresh, czas wygaśnięcia - Expire)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rekord NS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rekord SOA (Start of Authority)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Rekord A",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Rekord TXT",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Rekord SOA (Start of Authority) określa podstawowe właściwości strefy DNS, w tym główny serwer nazw, adres e-mail administratora, numer seryjny strefy oraz czasy odświeżania (Refresh), ponawiania (Retry) i wygaśnięcia (Expire).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_154",
+    "year": "Treningowe (AI)",
+    "number": 154,
+    "text": "Adres IPv6 'fe80::215:5dff:fe00:1122' należy do klasy adresowej:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Global Unicast",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Link-Local Unicast",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Unique Local",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Multicast",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adresy IPv6 zaczynające się od prefiksu fe80::/10 to adresy Link-Local (lokalne dla łącza), służące do bezkonfiguracyjnej komunikacji w obrębie jednego segmentu fizycznego.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_155",
+    "year": "Treningowe (AI)",
+    "number": 155,
+    "text": "W protokole routingu dynamicznego RIPv2, jak zapobiega się wysyłaniu błędnych aktualizacji tras z powrotem na interfejs, z którego zostały odebrane?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Split Horizon (podzielony horyzont)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Holddown Timers",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Route Poisoning",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Metryka nieskończoności",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Split Horizon (podzielony horyzont) to mechanizm przeciwdziałania pętlom routingu, który zabrania routerowi rozgłaszania trasy z powrotem przez ten sam interfejs, z którego otrzymał o niej informację.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_156",
+    "year": "Treningowe (AI)",
+    "number": 156,
+    "text": "Jaki algorytm matematyczny jest sercem protokołu OSPF i służy do wyznaczania najkrótszej trasy w bazie LSDB?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Algorytm Bellmana-Forda",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Algorytm Dijkstry (SPF - Shortest Path First)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Algorytm Kruskala",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Algorytm Forda-Fulkersona",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Protokół OSPF (Open Shortest Path First) wykorzystuje algorytm Dijkstry (nazywany również SPF) do obliczania drzewa najkrótszych ścieżek od routera do wszystkich znanych sieci docelowych w bazie danych stanu łącza.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_157",
+    "year": "Treningowe (AI)",
+    "number": 157,
+    "text": "Minimalna długość ramki Ethernet wynosi 64 bajty. Jaki element struktury ramki NIE jest wliczany do tego limitu?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Preambuła i znacznik SFD",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Adresy MAC nadawcy i odbiorcy",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Pole Typ/Długość",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Suma kontrolna CRC/FCS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Minimalny rozmiar ramki Ethernet (64 bajty) mierzy się od docelowego adresu MAC do sumy kontrolnej CRC (włącznie). Preambuła (7 bajtów) i Start of Frame Delimiter (1 bajt) leżą w warstwie fizycznej przed właściwą ramką i nie są wliczane do tych 64 bajtów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_158",
+    "year": "Treningowe (AI)",
+    "number": 158,
+    "text": "Jeżeli switch otrzyma ramkę Unicast, a docelowy adres MAC nie występuje w jego tablicy CAM, to switch:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Odrzuca ramkę jako błędną",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Wysyła ramkę na wszystkie porty oprócz portu źródłowego (tzw. flooding)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Odsyła ramkę do nadawcy z komunikatem o błędzie",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przesyła ramkę wyłącznie do Root Bridge",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W przypadku nieznanego adresu docelowego typu Unicast (unknown unicast), przełącznik rozsyła ramkę na wszystkie aktywne porty (flooding) w danej domenie rozgłoszeniowej z wyjątkiem portu, na którym ramka została odebrana.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_159",
+    "year": "Treningowe (AI)",
+    "number": 159,
+    "text": "Maska podsieci o notacji CIDR /22 odpowiada tradycyjnemu zapisowi dziesiętnemu jako:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "255.255.252.0",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "255.255.254.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "255.255.248.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "255.255.240.0",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Prefiks /22 oznacza 22 bity ustawione na 1, co binarnie daje 11111111.11111111.11111100.00000000, czyli dziesiętnie 255.255.252.0.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_160",
+    "year": "Treningowe (AI)",
+    "number": 160,
+    "text": "Podczas zamykania połączenia TCP za pomocą flag FIN, ile łącznie kroków (wymian segmentów) jest standardowo wymaganych do pełnego zamknięcia sesji w obu kierunkach?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "3 kroki (Three-Way)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 kroki (Four-Way Handshake)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2 kroki",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "5 kroków",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Zamykanie połączenia TCP jest dwukierunkowe i wymaga 4 kroków: 1. Strona A wysyła FIN. 2. Strona B potwierdza ACK. 3. Strona B wysyła własny FIN. 4. Strona A potwierdza ACK.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_161",
+    "year": "Treningowe (AI)",
+    "number": 161,
+    "text": "Który plik w systemach Linux służy do statycznego mapowania nazw hostów na adresy IP (lokalny odpowiednik systemu DNS)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/etc/resolv.conf",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/etc/hosts",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "/etc/services",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "/etc/networks",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Plik '/etc/hosts' służy do lokalnego, statycznego odwzorowywania nazw domenowych na adresy IP i jest sprawdzany przez system zazwyczaj przed zapytaniem serwerów DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_162",
+    "year": "Treningowe (AI)",
+    "number": 162,
+    "text": "Który z poniższych adresów reprezentuje prawidłowy adres IPv6 pętli zwrotnej (loopback)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "fe80::1",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "::1",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "::",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ff02::1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adres '::1' w notacji IPv6 to adres pętli zwrotnej (loopback), odpowiednik adresu '127.0.0.1' w IPv4.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_163",
+    "year": "Treningowe (AI)",
+    "number": 163,
+    "text": "Routery działające w protokole OSPF wymieniają informacje o zmianach topologii sieci za pomocą pakietów:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "BPDU",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "LSA (Link State Advertisements)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "RIP Updates",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP Redirect",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "OSPF dystrybuuje informacje o topologii sieci poprzez pakiety LSA (Link State Advertisements) przenoszone w komunikatach LSU (Link State Update).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_164",
+    "year": "Treningowe (AI)",
+    "number": 164,
+    "text": "W standardzie IEEE 802.1Q tag dodawany do ramki Ethernet w celu identyfikacji VLAN-u ma rozmiar:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2 bajty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 bajty",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "6 bajtów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "12 bitów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Standard 802.1Q wstawia do ramki Ethernet 4-bajtowy tag (znacznik). Wewnątrz tego tagu znajduje się 12-bitowe pole VLAN ID (VID), pozwalające na adresowanie do 4096 unikalnych VLAN-ów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_165",
+    "year": "Treningowe (AI)",
+    "number": 165,
+    "text": "Który protokół warstwy aplikacji służy do automatycznego przydzielania adresów IP, maski i bramy domyślnej hostom w sieci?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "DHCP (Dynamic Host Configuration Protocol)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "ARP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Protokół DHCP automatycznie przydziela hostom parametry sieciowe, takie jak adres IP, maska podsieci, brama domyślna oraz adresy serwerów DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_166",
+    "year": "Treningowe (AI)",
+    "number": 166,
+    "text": "Jaka jest domyślna wartość odległości administracyjnej (Administrative Distance) dla protokołu routingu RIP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "110",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "120",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "90",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Odległość administracyjna (AD) dla RIP wynosi 120 (dla OSPF wynosi 110, dla tras bezpośrednich 0, a statycznych 1). AD określa wiarygodność protokołu.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_167",
+    "year": "Treningowe (AI)",
+    "number": 167,
+    "text": "W protokole TCP, flaga PSH (Push) jest używana w celu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Żądania natychmiastowego odesłania potwierdzenia ACK",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Nakazania stosowi TCP natychmiastowego wypchnięcia bufora i przekazania danych do aplikacji docelowej",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Zresetowania sesji ze względu na błąd",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Inicjalizacji połączenia",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Flaga PSH (Push) nakazuje stosowi TCP u odbiorcy natychmiastowe przekazanie odebranych danych do aplikacji warstwy wyższej bez oczekiwania na zapełnienie bufora.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_168",
+    "year": "Treningowe (AI)",
+    "number": 168,
+    "text": "W standardzie CSMA/CD, minimalny czas potrzebny na wykrycie kolizji w najdalszym punkcie segmentu sieci nazywamy:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": " czasem propagacji",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "okresem szczeliny (Slot Time)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "czasem wyciszenia (Interframe Gap)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "czasem powrotu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Slot Time (czas szczeliny czasowej) to czas potrzebny na przesłanie 512 bitów w sieci Ethernet. Stanowi on minimalny czas nadawania ramki gwarantujący wykrycie kolizji w najdalszym punkcie sieci.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_169",
+    "year": "Treningowe (AI)",
+    "number": 169,
+    "text": "Który z poniższych adresów IP jest adresem rozgłoszeniowym dla podsieci 192.168.1.64/26?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "192.168.1.127",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "192.168.1.63",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "192.168.1.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "192.168.1.128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dla sieci 192.168.1.64/26, maska to 255.255.255.192. Podsieć zawiera 64 adresy (od .64 do .127). Adres .64 to adres sieci, a .127 to adres rozgłoszeniowy (broadcast).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_170",
+    "year": "Treningowe (AI)",
+    "number": 170,
+    "text": "Jaki typ wiadomości ICMP wysyła narzędzie ping w celu sprawdzenia osiągalności zdalnego hosta?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Echo Reply (Typ 0)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Echo Request (Typ 8)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Destination Unreachable (Typ 3)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Time Exceeded (Typ 11)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Narzędzie ping wysyła komunikat ICMP Echo Request (Typ 8). Odbiorca, jeśli jest osiągalny, odpowiada komunikatem Echo Reply (Typ 0).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_171",
+    "year": "Treningowe (AI)",
+    "number": 171,
+    "text": "Protokół BOOTP (RFC 951) działa w oparciu o protokół transportowy:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "TCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "UDP (porty 67 i 68)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "BOOTP (podobnie jak DHCP) działa w oparciu o bezpołączeniowy protokół UDP na porcie 67 (serwer) i 68 (klient).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_172",
+    "year": "Treningowe (AI)",
+    "number": 172,
+    "text": "Co oznacza termin 'metryka nieskończoności' w protokole routingu RIPv1/RIPv2 i jaka jest jej wartość?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Trasa ma 16 skoków i jest uważana za nieosiągalną",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Trasa ma 255 skoków i jest w trybie czuwania",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Czas życia trasy wygasł",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Trasa jest zapętlona",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "W RIP wartość 16 oznacza nieskończoność i służy do oznaczania sieci jako nieosiągalnej (Route Poisoning).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_173",
+    "year": "Treningowe (AI)",
+    "number": 173,
+    "text": "W protokole OSPF, router który łączy obszar OSPF z innym systemem autonomicznym (np. siecią działającą w RIP lub BGP) to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ABR (Area Border Router)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ASBR (Autonomous System Boundary Router)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Backbone Router",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Designated Router (DR)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Router ASBR (Autonomous System Boundary Router) łączy system autonomiczny OSPF z zewnętrznym źródłem informacji (np. innym protokołem routingu RIP/BGP lub trasami statycznymi).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_174",
+    "year": "Treningowe (AI)",
+    "number": 174,
+    "text": "Jaki prefiks sieciowy (maska) jest zarezerwowany dla adresacji Link-Local w sieciach IPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ff00::/8",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "fe80::/10",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2001::/3",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "::1/128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adresy Link-Local w IPv6 są wyznaczone prefiksem fe80::/10 (pierwsze 10 bitów adresu ma postać binarną 1111111010).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_175",
+    "year": "Treningowe (AI)",
+    "number": 175,
+    "text": "Dla sieci 10.0.0.0/24 chcemy utworzyć 4 podsieci o równej wielkości. Jaka będzie nowa maska podsieci i ile hostów obsłuży każda podsieć?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Maska /26, 62 hosty na podsieć",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Maska /26, 64 hosty na podsieć",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Maska /27, 30 hostów na podsieć",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Maska /28, 14 hostów na podsieć",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Podział sieci /24 na 4 równe części wymaga pożyczenia 2 bitów (2^2 = 4). Nowa maska to /26. Każda podsieć ma 64 adresy, z czego odejmujemy 2 (adres sieci i broadcast), co daje 62 użyteczne adresy dla hostów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_176",
+    "year": "Treningowe (AI)",
+    "number": 176,
+    "text": "Który status portu w standardzie Spanning Tree (STP) oznacza, że port nie przesyła ramek danych i nie uczy się adresów MAC, ale odbiera ramki BPDU?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Forwarding",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Blocking / Discarding",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Learning",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Listening",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W stanie Blocking (lub Discarding w RSTP) port jest zablokowany dla normalnego ruchu i nie uczy się adresów MAC, by uniknąć pętli, ale stale nasłuchuje pakietów BPDU w celu monitorowania topologii.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_177",
+    "year": "Treningowe (AI)",
+    "number": 177,
+    "text": "Podczas enkapsulacji danych w stosie TCP/IP, nagłówek segmentu TCP jest bezpośrednio dodawany do danych pochodzących z:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Warstwy sieciowej (IP)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Warstwy aplikacji",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Warstwy dostępu do sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Warstwy prezentacji",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "TCP działa w warstwie transportowej. Pobiera strumień danych bezpośrednio z warstwy aplikacji, enkapsuluje je w segmenty TCP i przekazuje w dół do warstwy internetowej/sieciowej (IP).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_178",
+    "year": "Treningowe (AI)",
+    "number": 178,
+    "text": "Jaki rekord DNS jest absolutnie niezbędny do zdefiniowania parametrów czasowych strefy (np. czas odświeżania - Refresh, czas wygaśnięcia - Expire)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rekord NS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rekord SOA (Start of Authority)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Rekord A",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Rekord TXT",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Rekord SOA (Start of Authority) określa podstawowe właściwości strefy DNS, w tym główny serwer nazw, adres e-mail administratora, numer seryjny strefy oraz czasy odświeżania (Refresh), ponawiania (Retry) i wygaśnięcia (Expire).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_179",
+    "year": "Treningowe (AI)",
+    "number": 179,
+    "text": "Adres IPv6 'fe80::215:5dff:fe00:1122' należy do klasy adresowej:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Global Unicast",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Link-Local Unicast",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Unique Local",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Multicast",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adresy IPv6 zaczynające się od prefiksu fe80::/10 to adresy Link-Local (lokalne dla łącza), służące do bezkonfiguracyjnej komunikacji w obrębie jednego segmentu fizycznego.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_180",
+    "year": "Treningowe (AI)",
+    "number": 180,
+    "text": "W protokole routingu dynamicznego RIPv2, jak zapobiega się wysyłaniu błędnych aktualizacji tras z powrotem na interfejs, z którego zostały odebrane?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Split Horizon (podzielony horyzont)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Holddown Timers",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Route Poisoning",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Metryka nieskończoności",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Split Horizon (podzielony horyzont) to mechanizm przeciwdziałania pętlom routingu, który zabrania routerowi rozgłaszania trasy z powrotem przez ten sam interfejs, z którego otrzymał o niej informację.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_181",
+    "year": "Treningowe (AI)",
+    "number": 181,
+    "text": "Jaki algorytm matematyczny jest sercem protokołu OSPF i służy do wyznaczania najkrótszej trasy w bazie LSDB?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Algorytm Bellmana-Forda",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Algorytm Dijkstry (SPF - Shortest Path First)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Algorytm Kruskala",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Algorytm Forda-Fulkersona",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Protokół OSPF (Open Shortest Path First) wykorzystuje algorytm Dijkstry (nazywany również SPF) do obliczania drzewa najkrótszych ścieżek od routera do wszystkich znanych sieci docelowych w bazie danych stanu łącza.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_182",
+    "year": "Treningowe (AI)",
+    "number": 182,
+    "text": "Minimalna długość ramki Ethernet wynosi 64 bajty. Jaki element struktury ramki NIE jest wliczany do tego limitu?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Preambuła i znacznik SFD",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Adresy MAC nadawcy i odbiorcy",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Pole Typ/Długość",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Suma kontrolna CRC/FCS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Minimalny rozmiar ramki Ethernet (64 bajty) mierzy się od docelowego adresu MAC do sumy kontrolnej CRC (włącznie). Preambuła (7 bajtów) i Start of Frame Delimiter (1 bajt) leżą w warstwie fizycznej przed właściwą ramką i nie są wliczane do tych 64 bajtów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_183",
+    "year": "Treningowe (AI)",
+    "number": 183,
+    "text": "Jeżeli switch otrzyma ramkę Unicast, a docelowy adres MAC nie występuje w jego tablicy CAM, to switch:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Odrzuca ramkę jako błędną",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Wysyła ramkę na wszystkie porty oprócz portu źródłowego (tzw. flooding)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Odsyła ramkę do nadawcy z komunikatem o błędzie",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Przesyła ramkę wyłącznie do Root Bridge",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W przypadku nieznanego adresu docelowego typu Unicast (unknown unicast), przełącznik rozsyła ramkę na wszystkie aktywne porty (flooding) w danej domenie rozgłoszeniowej z wyjątkiem portu, na którym ramka została odebrana.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_184",
+    "year": "Treningowe (AI)",
+    "number": 184,
+    "text": "Maska podsieci o notacji CIDR /22 odpowiada tradycyjnemu zapisowi dziesiętnemu jako:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "255.255.252.0",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "255.255.254.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "255.255.248.0",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "255.255.240.0",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Prefiks /22 oznacza 22 bity ustawione na 1, co binarnie daje 11111111.11111111.11111100.00000000, czyli dziesiętnie 255.255.252.0.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_185",
+    "year": "Treningowe (AI)",
+    "number": 185,
+    "text": "Podczas zamykania połączenia TCP za pomocą flag FIN, ile łącznie kroków (wymian segmentów) jest standardowo wymaganych do pełnego zamknięcia sesji w obu kierunkach?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "3 kroki (Three-Way)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 kroki (Four-Way Handshake)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2 kroki",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "5 kroków",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Zamykanie połączenia TCP jest dwukierunkowe i wymaga 4 kroków: 1. Strona A wysyła FIN. 2. Strona B potwierdza ACK. 3. Strona B wysyła własny FIN. 4. Strona A potwierdza ACK.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_186",
+    "year": "Treningowe (AI)",
+    "number": 186,
+    "text": "Który plik w systemach Linux służy do statycznego mapowania nazw hostów na adresy IP (lokalny odpowiednik systemu DNS)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/etc/resolv.conf",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/etc/hosts",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "/etc/services",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "/etc/networks",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Plik '/etc/hosts' służy do lokalnego, statycznego odwzorowywania nazw domenowych na adresy IP i jest sprawdzany przez system zazwyczaj przed zapytaniem serwerów DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_187",
+    "year": "Treningowe (AI)",
+    "number": 187,
+    "text": "Który z poniższych adresów reprezentuje prawidłowy adres IPv6 pętli zwrotnej (loopback)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "fe80::1",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "::1",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "::",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ff02::1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adres '::1' w notacji IPv6 to adres pętli zwrotnej (loopback), odpowiednik adresu '127.0.0.1' w IPv4.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_188",
+    "year": "Treningowe (AI)",
+    "number": 188,
+    "text": "Routery działające w protokole OSPF wymieniają informacje o zmianach topologii sieci za pomocą pakietów:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "BPDU",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "LSA (Link State Advertisements)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "RIP Updates",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP Redirect",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "OSPF dystrybuuje informacje o topologii sieci poprzez pakiety LSA (Link State Advertisements) przenoszone w komunikatach LSU (Link State Update).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_189",
+    "year": "Treningowe (AI)",
+    "number": 189,
+    "text": "W standardzie IEEE 802.1Q tag dodawany do ramki Ethernet w celu identyfikacji VLAN-u ma rozmiar:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2 bajty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 bajty",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "6 bajtów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "12 bitów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Standard 802.1Q wstawia do ramki Ethernet 4-bajtowy tag (znacznik). Wewnątrz tego tagu znajduje się 12-bitowe pole VLAN ID (VID), pozwalające na adresowanie do 4096 unikalnych VLAN-ów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_190",
+    "year": "Treningowe (AI)",
+    "number": 190,
+    "text": "Który protokół warstwy aplikacji służy do automatycznego przydzielania adresów IP, maski i bramy domyślnej hostom w sieci?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "DHCP (Dynamic Host Configuration Protocol)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "ARP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Protokół DHCP automatycznie przydziela hostom parametry sieciowe, takie jak adres IP, maska podsieci, brama domyślna oraz adresy serwerów DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_191",
+    "year": "Treningowe (AI)",
+    "number": 191,
+    "text": "Jaka jest domyślna wartość odległości administracyjnej (Administrative Distance) dla protokołu routingu RIP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "110",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "120",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "90",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "1",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Odległość administracyjna (AD) dla RIP wynosi 120 (dla OSPF wynosi 110, dla tras bezpośrednich 0, a statycznych 1). AD określa wiarygodność protokołu.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_192",
+    "year": "Treningowe (AI)",
+    "number": 192,
+    "text": "W protokole TCP, flaga PSH (Push) jest używana w celu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Żądania natychmiastowego odesłania potwierdzenia ACK",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Nakazania stosowi TCP natychmiastowego wypchnięcia bufora i przekazania danych do aplikacji docelowej",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Zresetowania sesji ze względu na błąd",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Inicjalizacji połączenia",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Flaga PSH (Push) nakazuje stosowi TCP u odbiorcy natychmiastowe przekazanie odebranych danych do aplikacji warstwy wyższej bez oczekiwania na zapełnienie bufora.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_193",
+    "year": "Treningowe (AI)",
+    "number": 193,
+    "text": "W standardzie CSMA/CD, minimalny czas potrzebny na wykrycie kolizji w najdalszym punkcie segmentu sieci nazywamy:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": " czasem propagacji",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "okresem szczeliny (Slot Time)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "czasem wyciszenia (Interframe Gap)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "czasem powrotu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Slot Time (czas szczeliny czasowej) to czas potrzebny na przesłanie 512 bitów w sieci Ethernet. Stanowi on minimalny czas nadawania ramki gwarantujący wykrycie kolizji w najdalszym punkcie sieci.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_194",
+    "year": "Treningowe (AI)",
+    "number": 194,
+    "text": "Który z poniższych adresów IP jest adresem rozgłoszeniowym dla podsieci 192.168.1.64/26?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "192.168.1.127",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "192.168.1.63",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "192.168.1.255",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "192.168.1.128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dla sieci 192.168.1.64/26, maska to 255.255.255.192. Podsieć zawiera 64 adresy (od .64 do .127). Adres .64 to adres sieci, a .127 to adres rozgłoszeniowy (broadcast).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_195",
+    "year": "Treningowe (AI)",
+    "number": 195,
+    "text": "Jaki typ wiadomości ICMP wysyła narzędzie ping w celu sprawdzenia osiągalności zdalnego hosta?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Echo Reply (Typ 0)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Echo Request (Typ 8)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Destination Unreachable (Typ 3)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Time Exceeded (Typ 11)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Narzędzie ping wysyła komunikat ICMP Echo Request (Typ 8). Odbiorca, jeśli jest osiągalny, odpowiada komunikatem Echo Reply (Typ 0).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_196",
+    "year": "Treningowe (AI)",
+    "number": 196,
+    "text": "Protokół BOOTP (RFC 951) działa w oparciu o protokół transportowy:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "TCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "UDP (porty 67 i 68)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ICMP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "BOOTP (podobnie jak DHCP) działa w oparciu o bezpołączeniowy protokół UDP na porcie 67 (serwer) i 68 (klient).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_197",
+    "year": "Treningowe (AI)",
+    "number": 197,
+    "text": "Co oznacza termin 'metryka nieskończoności' w protokole routingu RIPv1/RIPv2 i jaka jest jej wartość?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Trasa ma 16 skoków i jest uważana za nieosiągalną",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Trasa ma 255 skoków i jest w trybie czuwania",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Czas życia trasy wygasł",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Trasa jest zapętlona",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "W RIP wartość 16 oznacza nieskończoność i służy do oznaczania sieci jako nieosiągalnej (Route Poisoning).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_198",
+    "year": "Treningowe (AI)",
+    "number": 198,
+    "text": "W protokole OSPF, router który łączy obszar OSPF z innym systemem autonomicznym (np. siecią działającą w RIP lub BGP) to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ABR (Area Border Router)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ASBR (Autonomous System Boundary Router)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Backbone Router",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Designated Router (DR)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Router ASBR (Autonomous System Boundary Router) łączy system autonomiczny OSPF z zewnętrznym źródłem informacji (np. innym protokołem routingu RIP/BGP lub trasami statycznymi).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_199",
+    "year": "Treningowe (AI)",
+    "number": 199,
+    "text": "Jaki prefiks sieciowy (maska) jest zarezerwowany dla adresacji Link-Local w sieciach IPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ff00::/8",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "fe80::/10",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "2001::/3",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "::1/128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Adresy Link-Local w IPv6 są wyznaczone prefiksem fe80::/10 (pierwsze 10 bitów adresu ma postać binarną 1111111010).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_200",
+    "year": "Treningowe (AI)",
+    "number": 200,
+    "text": "Dla sieci 10.0.0.0/24 chcemy utworzyć 4 podsieci o równej wielkości. Jaka będzie nowa maska podsieci i ile hostów obsłuży każda podsieć?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Maska /26, 62 hosty na podsieć",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Maska /26, 64 hosty na podsieć",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Maska /27, 30 hostów na podsieć",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Maska /28, 14 hostów na podsieć",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Podział sieci /24 na 4 równe części wymaga pożyczenia 2 bitów (2^2 = 4). Nowa maska to /26. Każda podsieć ma 64 adresy, z czego odejmujemy 2 (adres sieci i broadcast), co daje 62 użyteczne adresy dla hostów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_201",
+    "year": "Treningowe (AI)",
+    "number": 201,
+    "text": "Jaki port UDP jest wykorzystywany przez protokół TFTP (Trivial File Transfer Protocol) do nasłuchiwania żądań?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "port 21",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "port 23",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "port 53",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "port 69",
+        "isCorrect": true
+      }
+    ],
+    "answer": "d",
+    "explanation": "Protokół TFTP wykorzystuje dobrze znany port 69 protokołu UDP do odbierania żądań RRQ i WRQ.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_202",
+    "year": "Treningowe (AI)",
+    "number": 202,
+    "text": "W protokole TFTP przesłanie bloku danych o jakim rozmiarze sygnalizuje zakończenie transferu pliku?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Dokładnie 512 oktetów",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Mniejszym niż 512 oktetów",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "0 oktetów (zawsze)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Większym niż 1024 oktety",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Zgodnie z RFC 1350, wysłanie bloku danych krótszego niż 512 oktetów (w tym bloku o zerowej długości) jest dla odbiorcy jednoznacznym sygnałem o końcu pliku.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_203",
+    "year": "Treningowe (AI)",
+    "number": 203,
+    "text": "Co oznacza termin \"błąd ucznia czarnoksiężnika\" (Sorcerer's Apprentice Bug) w protokole TFTP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Przesłanie pliku z błędnym kodowaniem znaków",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Błąd retransmisji, w którym opóźnione potwierdzenie powoduje wysyłanie duplikatów bloków danych w nieskończoność przez obie strony",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Sytuację, gdy klient TFTP próbuje pisać do pliku przeznaczonego tylko do odczytu",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Błąd sumy kontrolnej w nagłówku pseudonagłówka UDP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Błąd ucznia czarnoksiężnika polega na tym, że proste limity czasu i retransmisje bez kontroli unikalności powodują, że opóźnione pakiety potwierdzeń (ACK) wyzwalają przesyłanie powielonych bloków danych, które krążą w sieci w nieskończonej pętli retransmisji.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_204",
+    "year": "Treningowe (AI)",
+    "number": 204,
+    "text": "Jaki tryb transferu w protokole TFTP służy do przesyłania plików tekstowych w standardzie ASCII (z odpowiednim mapowaniem znaków końca linii)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "octet",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "mail",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "netascii",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "binary",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Tryb 'netascii' służy do przesyłania danych tekstowych w standardzie ASCII, natomiast tryb 'octet' służy do surowego przesyłania danych binarnych (bajt po bajcie).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_205",
+    "year": "Treningowe (AI)",
+    "number": 205,
+    "text": "Nagłówek w pakiecie TFTP niosącym dane (DATA) ma rozmiar:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2 oktety",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "4 oktety",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "8 oktetów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "20 oktetów",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Nagłówek pakietu DATA w TFTP składa się z 4 oktetów: 2 oktety na kod operacji (Opcode = 3) i 2 oktety na numer bloku (Block #).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_206",
+    "year": "Treningowe (AI)",
+    "number": 206,
+    "text": "W protokole DHCP, klient przechodzi w stan odnawiania dzierżawy (RENEWING) po upływie jakiej części czasu dzierżawy (T1)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "25% (0.25T)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "50% (0.5T)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "87.5% (0.875T)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "100% (1.0T)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Zegar odnowienia T1 wynosi standardowo 50% czasu dzierżawy (0.5T). W tym momencie klient wysyła pakiet DHCPREQUEST bezpośrednio do serwera (unicast), który przyznał adres.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_207",
+    "year": "Treningowe (AI)",
+    "number": 207,
+    "text": "W protokole DHCP, po upływie jakiego czasu (zegar T2) klient wysyła zapytanie w trybie rozgłoszeniowym (broadcast) do jakiegokolwiek aktywnego serwera DHCP (stan REBINDING)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "50% (0.5T)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "75% (0.75T)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "87.5% (0.875T)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "95% (0.95T)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Zegar ponownego powiązania T2 wynosi standardowo 87.5% czasu dzierżawy (0.875T). Klient wysyła wtedy pakiet DHCPREQUEST jako broadcast do sieci.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_208",
+    "year": "Treningowe (AI)",
+    "number": 208,
+    "text": "W diagnostyce sieciowej przy użyciu polecenia 'arp', która opcja służy do usunięcia wpisu o określonym komputerze z tablicy ARP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "arp -s",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "arp -a",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "arp -d",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "arp -v",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Opcja 'arp -d' służy do usuwania wpisów z pamięci podręcznej ARP, podczas gdy 'arp -s' dodaje wpis statyczny, a 'arp -a' wyświetla całą tablicę.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_209",
+    "year": "Treningowe (AI)",
+    "number": 209,
+    "text": "W wyjściu polecenia 'arp' w systemie Linux, flagi oznaczają stan wpisu. Co oznacza flaga 'M'?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wpis jest kompletny (complete)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Wpis został wprowadzony ręcznie (manual)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Wpis podlega rozgłoszeniu (publish)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Wpis wygasł (expired)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Flaga M oznacza wpis wprowadzony ręcznie przez administratora (manual/static). C oznacza wpis kompletny (complete), a P - publikowalny (pub).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_210",
+    "year": "Treningowe (AI)",
+    "number": 210,
+    "text": "W usłudze DNS, jak nazywa się plik w systemie Linux/Unix definiujący adresy IP serwerów nazw oraz lokalną domenę?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "/etc/hosts",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "/etc/resolv.conf",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "/etc/named.conf",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "/etc/services",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Plik `/etc/resolv.conf` jest podstawowym plikiem konfiguracji resolvera DNS w systemach Unix/Linux, określającym m.in. serwery DNS i domenę wyszukiwania.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_211",
+    "year": "Treningowe (AI)",
+    "number": 211,
+    "text": "Ile maksymalnie adresów IP serwerów nazw (nameserver) można zdefiniować w pliku resolv.conf?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "1",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "2",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "3",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "6",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Standardowy resolver w systemach Unix obsługuje maksymalnie 3 wpisy 'nameserver'. Dalsze wpisy są ignorowane.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_212",
+    "year": "Treningowe (AI)",
+    "number": 212,
+    "text": "Jaka opcja w pliku resolv.conf określa listę wyszukiwania domen dla względnych nazw hostów (do 6 nazw)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "domain",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "nameserver",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "search",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "options debug",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Słowo kluczowe 'search' definiuje listę wyszukiwania domen. Umożliwia to uzupełnianie względnych nazw hostów (np. 'host' do 'host.pwsz.uczelnia.pl').",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_213",
+    "year": "Treningowe (AI)",
+    "number": 213,
+    "text": "Oprogramowanie realizujące usługę DNS dzieli się na serwer i resolver. Czym jest resolver?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Osobnym procesem działającym w tle systemu",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Biblioteką procedur systemowych dołączanych do oprogramowania szukającego adresów",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Głównym plikiem strefowym serwera DNS",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Narzędziem diagnostycznym typu dig/nslookup",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Resolver nie działa jako samodzielny proces. Jest to zestaw funkcji bibliotecznych (np. w glibc), z których korzystają aplikacje (np. przeglądarki) do odpytania DNS.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_214",
+    "year": "Treningowe (AI)",
+    "number": 214,
+    "text": "Jak nazywa się popularne oprogramowanie i demon serwera nazw DNS w systemach Unix/Linux?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "named (BIND)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "dhcpd",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "resolv.conf",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "arpwatch",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Serwer BIND (Berkeley Internet Name Domain) działa w systemie jako demon o nazwie `named`.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_215",
+    "year": "Treningowe (AI)",
+    "number": 215,
+    "text": "Który typ serwera DNS ładuje dane strefowe z lokalnego pliku dyskowego stworzonego przez administratora i jest jedynym serwerem autoryzowanym przyjmującym modyfikacje?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "wtórny (secondary/slave)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "pierwotny (primary/master)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "tymczasowy (caching-only)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "resolver",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Serwer pierwotny (master) przechowuje główną kopię strefy i wczytuje ją bezpośrednio z pliku konfiguracyjnego strefy. Zmiany tam wprowadzone są transferowane do serwerów wtórnych.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_216",
+    "year": "Treningowe (AI)",
+    "number": 216,
+    "text": "Jaki rekord zasobów (RR) w pliku strefowym DNS służy do mapowania adresu IP na nazwę hosta (wyszukiwanie wsteczne)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Rekord A",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rekord PTR",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Rekord CNAME",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Rekord MX",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Rekord PTR (Pointer) wskazuje nazwę hosta dla danego adresu IP w strefie odwróconej (in-addr.arpa).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_217",
+    "year": "Treningowe (AI)",
+    "number": 217,
+    "text": "W rekordzie SOA strefy DNS, parametr \"Refresh\" określa:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Czas życia strefy w pamięci podręcznej resolverów",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Czas, co jaki serwer wtórny sprawdza u serwera pierwotnego, czy wersja (Serial Number) pliku strefowego uległa zmianie",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Czas, po którym serwer wtórny porzuca strefę w przypadku braku kontaktu z masterem",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Częstotliwość ponawiania nieudanych prób odpytania serwera nazw",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Parametr Refresh (odświeżanie) określa czas w sekundach, co jaki serwer wtórny odpytuje serwer pierwotny o numer seryjny strefy (aby wykryć potrzebę transferu strefy).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_218",
+    "year": "Treningowe (AI)",
+    "number": 218,
+    "text": "Który z poniższych rekordów zasobów DNS jest rekordem startowym strefy i definiuje domyślne parametry czasu oraz serwer autorytatywny strefy?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "NS",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "CNAME",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "SOA",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "MX",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Rekord SOA (Start of Authority) wskazuje początek strefy i ustala m.in. główny serwer nazw oraz parametry transferu strefy.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_219",
+    "year": "Treningowe (AI)",
+    "number": 219,
+    "text": "W sieciach bezprzewodowych standardów IEEE 802.11, do czego służy wartość wektora alokacji sieci (NAV - Network Allocation Vector)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Do określania mocy sygnału anteny nadawczej",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Do wirtualnego wykrywania zajętości nośnej - stacja odczytuje z nagłówków innych ramek czas trwania ich transmisji i wstrzymuje nadawanie",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Do szyfrowania pakietów w standardzie WPA3",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Do przypisywania pasma częstotliwości 2.4 GHz i 5 GHz",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "NAV to licznik czasu utrzymywany przez stacje bezprzewodowe, reprezentujący czas, przez jaki medium będzie zajęte przez inne stacje. Jest to wirtualny mechanizm Carrier Sense.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_220",
+    "year": "Treningowe (AI)",
+    "number": 220,
+    "text": "W standardzie IEEE 802.11 przy nawiązywaniu połączenia stacje wymieniają ramki RTS (Request to Send) i CTS (Clear to Send). Która z nich jest dłuższa?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ramka RTS jest dłuższa niż ramka CTS",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Ramka CTS jest dłuższa niż ramka RTS",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Obie ramki mają identyczną długość",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Ich długości są zmienne losowo w zależności od obciążenia sieci",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Ramka RTS niesie informację o adresie odbiorcy oraz nadawcy, przez co jest dłuższa. CTS jest ramką potwierdzającą gotowość odbiorcy i jest krótsza.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_221",
+    "year": "Treningowe (AI)",
+    "number": 221,
+    "text": "W modelu referencyjnym ISO/OSI jednostka danych protokołu (PDU) w warstwie 2 (łącza danych) nosi nazwę:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Segment",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Pakiet",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Ramka (Frame)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Bit",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Jednostki danych PDU to: bity w warstwie 1 (fizycznej), ramki (frames) w warstwie 2 (łącza danych), pakiety (packets) w warstwie 3 (sieciowej) i segmenty w warstwie 4 (transportowej).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_222",
+    "year": "Treningowe (AI)",
+    "number": 222,
+    "text": "W modelu referencyjnym ISO/OSI jednostka danych protokołu (PDU) w warstwie 4 (transportowej) w przypadku korzystania z protokołu TCP to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ramka",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Pakiet",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Segment",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Datagram",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Dla połączeniowego protokołu TCP w warstwie transportowej jednostką PDU jest segment. Dla bezpołączeniowego protokołu UDP jednostką PDU jest datagram.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_223",
+    "year": "Treningowe (AI)",
+    "number": 223,
+    "text": "Co robi router lub host sieciowy, gdy wykryje błąd sumy kontrolnej nagłówka w odebranym datagramie IP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Odsyła żądanie retransmisji za pomocą protokołu ICMP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Ignoruje błąd i przesyła datagram dalej",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Porzuca (odrzuca) datagram bez wysyłania powiadomienia o błędzie",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Zapisuje błąd i naprawia go przy użyciu bitów parzystości",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "W przypadku błędu sumy kontrolnej nagłówka, dane adresowe w nagłówku są niewiarygodne. Odsyłanie komunikatu ICMP do potencjalnie błędnego adresu źródłowego mogłoby spowodować błędne trasowanie pakietu ICMP. Dlatego datagram jest po prostu odrzucany.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_224",
+    "year": "Treningowe (AI)",
+    "number": 224,
+    "text": "W celu uniknięcia przeciążenia sieci i pętli błędów, komunikaty o błędach protokołu ICMP nie są generowane w odpowiedzi na:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Segmenty TCP",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Datagramy UDP",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Datagramy niosące już inne komunikaty o błędach ICMP",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Pakiety o długości większej niż MTU",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "To ważna reguła protokołu ICMP: komunikat o błędzie ICMP nigdy nie jest wysyłany w odpowiedzi na inny komunikat o błędzie ICMP, aby zapobiec zapętleniu i lawinowemu generowaniu ruchu diagnostycznego.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_225",
+    "year": "Treningowe (AI)",
+    "number": 225,
+    "text": "Jaki typ komunikatu ICMP jest wysyłany do nadawcy, gdy router otrzyma pakiet z czasem życia (TTL) równym 1 i musi go przekazać dalej?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Typ 3 (Odbiorca nieosiągalny)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Typ 5 (Zmień trasowanie)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Typ 8 (Prośba o echo)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Typ 11 (Przekroczenie czasu życia / Time Exceeded)",
+        "isCorrect": true
+      }
+    ],
+    "answer": "d",
+    "explanation": "Gdy TTL osiąga 0 (lub wynosi 1 przy konieczności przekazania dalej), router odrzuca pakiet i wysyła komunikat ICMP Typ 11 (Time Exceeded). Wykorzystuje to narzędzie traceroute.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_226",
+    "year": "Treningowe (AI)",
+    "number": 226,
+    "text": "Jaki typ i kod komunikatu ICMP generuje system docelowy, gdy otrzyma pakiet UDP skierowany do portu, na którym żadna aplikacja nie nasłuchuje?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Typ 3, Kod 0 (Sieć nieosiągalna)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Typ 3, Kod 1 (Host nieosiągalny)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Typ 3, Kod 3 (Port nieosiągalny)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Typ 11, Kod 0 (Przekroczony limit chmielu)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Gdy port docelowy transportowy jest nieaktywny, host docelowy odrzuca pakiet i odsyła komunikat ICMP Typ 3 (Destination Unreachable) z kodem 3 (Port Unreachable).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_227",
+    "year": "Treningowe (AI)",
+    "number": 227,
+    "text": "Jak nazywa się centralne urządzenie (most/przełącznik) w hierarchii protokołu STP (Spanning Tree Protocol), od którego wyznaczane są ścieżki i koszty?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Backbone Switch",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Root Bridge (most główny)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Designated Bridge",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Primary Switch",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Na szczycie drzewa STP znajduje się główny przełącznik - Root Bridge (korzeń drzewa). Zarządza on topologią sieci i co pewien czas wysyła ramki konfiguracyjne BPDU.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_228",
+    "year": "Treningowe (AI)",
+    "number": 228,
+    "text": "Na jakiej podstawie przełączniki w sieci wybierają Root Bridge w protokole STP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wybierany jest most o najniższym Bridge ID (ID mostu), składającym się z priorytetu oraz adresu MAC",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Wybierany jest przełącznik posiadający najwięcej aktywnych portów",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Wybierany jest przełącznik o najwyższym adresie IP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Jest to wybór losowy przy każdym uruchomieniu sieci",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Bridge ID składa się z priorytetu (domyślnie 32768) i adresu MAC. Im niższa wartość Bridge ID, tym większa szansa na zostanie Root Bridge. Administrator może obniżyć priorytet wybranego switcha, by wymusić jego wybór.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_229",
+    "year": "Treningowe (AI)",
+    "number": 229,
+    "text": "Jak nazywają się specjalne ramki danych warstwy 2 wymieniane między przełącznikami w celu budowy i monitorowania topologii STP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ramki ARP Request",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Pakiety Hello",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Ramki BPDU (Bridge Protocol Data Unit)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Komunikaty ICMP Redirect",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Ramki BPDU (Bridge Protocol Data Unit) służą przełącznikom do wymiany informacji o priorytetach, kosztach tras i tożsamości mostka głównego.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_230",
+    "year": "Treningowe (AI)",
+    "number": 230,
+    "text": "Jaki specjalny, zarezerwowany adres grupowy MAC (multicast) jest używany do wysyłania ramek BPDU w protokole STP (IEEE 802.1D)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ff:ff:ff:ff:ff:ff",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "01:00:5e:00:00:01",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "01:80:c2:00:00:00",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "33:33:00:00:00:01",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Ramki BPDU są wysyłane na dedykowany adres MAC multicast: 01:80:c2:00:00:00.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_231",
+    "year": "Treningowe (AI)",
+    "number": 231,
+    "text": "W protokole STP, port przełącznika niebędącego mostem głównym, który ma najmniejszy łączny koszt ścieżki do mostu głównego, nazywa się:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Designated Port (port wyznaczony)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Root Port (port główny)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Backup Port (port zapasowy)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Alternate Port",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Root Port to port na przełączniku (innym niż Root Bridge), który zapewnia najkrótszą (najtańszą) drogę do Root Bridge. Każdy przełącznik może mieć tylko jeden Root Port.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_232",
+    "year": "Treningowe (AI)",
+    "number": 232,
+    "text": "W maszynie stanów portów STP, w którym stanie port zaczyna nasłuchiwać i zapisywać adresy źródłowe MAC do tablicy przełączania, ale wciąż nie przesyła ramek danych użytkownika?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Listening",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Learning",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Forwarding",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Blocking",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W stanie Learning (uczenie się) port przełącznika nie przesyła ramek danych, lecz przetwarza nagłówki ramek w celu zaktualizowania swojej tablicy adresów MAC. Zapobiega to zbędnemu rozgłaszaniu pakietów po przejściu do stanu Forwarding.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_233",
+    "year": "Treningowe (AI)",
+    "number": 233,
+    "text": "Która metoda przełączania ramek (switching method) minimalizuje opóźnienia, odczytując jedynie adres docelowy MAC ramki i natychmiast rozpoczynając jej nadawanie bez sprawdzania sumy kontrolnej CRC?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Store-and-forward",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Cut-through",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Fragment-free",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Adaptive switching",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Metoda Cut-through przesyła ramkę natychmiast po odczytaniu adresu MAC odbiorcy (pierwsze 6 bajtów). Daje to minimalne opóźnienie, lecz może powodować propagację błędnych ramek.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_234",
+    "year": "Treningowe (AI)",
+    "number": 234,
+    "text": "W protokole TCP, do czego służy flaga ECE (ECN-Echo) w nagłówku segmentu?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Do nawiązania szyfrowanego połączenia (Echo Encryption)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Do poinformowania nadawcy, że odbiorca otrzymał pakiet z oznaczeniem przeciążenia (Congestion Experienced) w nagłówku IP",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Do żądania echa diagnostycznego podobnego do ICMP",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Do potwierdzenia odebrania segmentu zerowego",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Flaga ECE (ECN-Echo) służy do przekazania nadawcy informacji o zaistnieniu przeciążenia w sieci, co pozwala nadawcy na zmniejszenie okna przeciążenia (Congestion Window) zanim dojdzie do gubienia pakietów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_235",
+    "year": "Treningowe (AI)",
+    "number": 235,
+    "text": "W nagłówku segmentu TCP pole \"Data Offset\" (przesunięcie danych) określa:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Pozycję pierwszego bajtu danych w pamięci bufora karty sieciowej",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Rozmiar danych przesyłanych w segmencie",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Długość nagłówka TCP wyrażoną w słowach 32-bitowych",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Przesunięcie fragmentu segmentu w przypadku fragmentacji IP",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Pole Data Offset wskazuje, gdzie zaczynają się dane, co odpowiada długości nagłówka. Wyrażone jest w słowach 32-bitowych (np. wartość 5 oznacza nagłówek o długości 20 bajtów).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_236",
+    "year": "Treningowe (AI)",
+    "number": 236,
+    "text": "Która flaga (control bit) w nagłówku TCP nakazuje systemowi odbiorcy natychmiastowe przekazanie danych z bufora odbiorczego do aplikacji (bez czekania na zapełnienie bufora)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "SYN",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "URG",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "PSH (Push)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "RST",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Flaga PSH (Push) wymusza opróżnienie buforów i natychmiastowe przekazanie danych do warstwy aplikacji.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_237",
+    "year": "Treningowe (AI)",
+    "number": 237,
+    "text": "W maszynie stanów TCP, stan ESTABLISHED oznacza, że:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Lokalny host nasłuchuje nadchodzących połączeń",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Wysyłane jest żądanie nawiązania połączenia",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Połączenie jest w pełni otwarte i nawiązane, możliwa jest transmisja danych",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Trwa łagodne zamykanie połączenia przez obie strony",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Stan ESTABLISHED to normalny stan stabilnego, otwartego połączenia TCP, w którym odbywa się wymiana segmentów z danymi.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_238",
+    "year": "Treningowe (AI)",
+    "number": 238,
+    "text": "W maszynie stanów TCP, który stan oznacza, że lokalne gniazdo wysłało segment FIN w celu zamknięcia połączenia i czeka na ostateczne potwierdzenie (ACK) oraz segment FIN od zdalnej aplikacji?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "LISTEN",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "FIN_WAIT_1",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "CLOSE_WAIT",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "LAST_ACK",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Po wysłaniu segmentu FIN w celu aktywnego zamknięcia połączenia, gniazdo przechodzi w stan FIN_WAIT_1 i oczekuje na potwierdzenie ze strony partnera.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_239",
+    "year": "Treningowe (AI)",
+    "number": 239,
+    "text": "Po co wprowadzono stan TIME_WAIT w protokole TCP, w którym gniazdo po zamknięciu czeka przez czas równy podwójnemu maksymalnemu czasowi życia pakietu (2MSL)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Aby pozwolić aplikacji na dokończenie przesyłania plików",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Aby upewnić się, że zdalna strona otrzymała potwierdzenie zamknięcia (ACK) oraz aby zapobiec pomieszaniu pakietów ze starego połączenia w nowym połączeniu na tej samej parze gniazd",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Aby oszczędzać energię karty sieciowej",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Aby system mógł wyczyścić pamięć podręczną DNS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Stan TIME_WAIT gwarantuje, że ewentualne spóźnione pakiety z poprzedniej sesji wygasną w sieci i nie zostaną błędnie odebrane jako dane nowego połączenia utworzonego na tych samych portach.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_240",
+    "year": "Treningowe (AI)",
+    "number": 240,
+    "text": "Czym w nomenklaturze sieci TCP/IP jest gniazdo (socket)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Fizycznym portem RJ45 w przełączniku sieciowym",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Adresem MAC karty sieciowej",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Parą składającą się z adresu IP oraz numeru portu protokołu",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Nazwą hosta skojarzoną z rekordem CNAME w DNS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Gniazdo (socket) to abstrakcyjny punkt końcowy komunikacji sieciowej, definiowany jednoznacznie przez parę: adres IP oraz numer portu (np. 192.168.1.10:80).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_241",
+    "year": "Treningowe (AI)",
+    "number": 241,
+    "text": "W protokołach routingu typu wektor odległości (np. RIP), na czym polega zasada podzielonego horyzontu (Split Horizon)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Na dzieleniu tablicy routingu na sieć lokalną i globalną",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Ruter nie wysyła informacji o trasie z powrotem przez ten sam interfejs, przez który tę informację otrzymał",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Na wyznaczaniu tras o identycznym koszcie za pomocą różnych interfejsów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Na natychmiastowym rozsyłaniu aktualizacji po wykryciu awarii łącza",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Split Horizon zapobiega pętlom routingu. Jeśli ruter R1 dowiaduje się o sieci X od rutera R2, to R1 nie powinien odsyłać informacji o sieci X z powrotem do R2, gdyż R2 już tę drogę zna.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_242",
+    "year": "Treningowe (AI)",
+    "number": 242,
+    "text": "Jaka jest wartość maksymalnej metryki (liczby skoków) w protokole RIPv2, która oznacza, że dana sieć docelowa jest nieosiągalna (nieskończoność)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "15",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "16",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "255",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "1024",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Maksymalna metryka RIPv2 to 15. Wartość 16 reprezentuje nieskończoność (sieć nieosiągalną) i służy do wycofywania tras (Route Poisoning).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_243",
+    "year": "Treningowe (AI)",
+    "number": 243,
+    "text": "Na jakim algorytmie grafowym bazuje protokół stanu łącza OSPF przy wyznaczaniu najkrótszych tras do podsieci docelowych?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Algorytm Bellmana-Forda",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Algorytm Dijkstry (SPF)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Algorytm Kruskala",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Algorytm Floyda-Warshalla",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "OSPF to protokół stanu łącza (link-state) i używa algorytmu Dijkstry (Shortest Path First) do wyznaczenia drzewa najkrótszych ścieżek z punktu widzenia danego rutera.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_244",
+    "year": "Treningowe (AI)",
+    "number": 244,
+    "text": "Jak nazywa się centralny obszar w hierarchii protokołu OSPF, do którego muszą być podłączone wszystkie pozostałe obszary (fizycznie lub logicznie)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Area 0 (obszar szkieletowy / backbone)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "Area 1 (obszar domyślny)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Stub Area (obszar ślepy)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "NSSA (Not-So-Stubby Area)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "Backbone Area (obszar szkieletowy) oznaczony jako Area 0 (lub 0.0.0.0) pośredniczy w wymianie informacji routingu między różnymi obszarami OSPF.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_245",
+    "year": "Treningowe (AI)",
+    "number": 245,
+    "text": "W protokole OSPF ruter, który posiada interfejsy należące do różnych obszarów (np. jeden w Area 0, a drugi w Area 5), to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ASBR (Autonomous System Boundary Router)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "ABR (Area Border Router)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Internal Router (ruter wewnętrzny)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Designated Router (DR)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "ABR (Area Border Router - router graniczny obszaru) łączy poszczególne obszary z obszarem szkieletowym Area 0 i odpowiada za agregację tras między nimi.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_246",
+    "year": "Treningowe (AI)",
+    "number": 246,
+    "text": "Czym charakteryzuje się baza danych stanu łącza (LSDB - Link State Database) w protokole OSPF?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Każdy ruter w obszarze ma inną bazę w zależności od liczby sąsiadów",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Jest identyczna dla wszystkich ruterów pracujących w obrębie tego samego obszaru OSPF",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Zawiera jedynie adresy IP ruterów bezpośrednio połączonych",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Jest przesyłana w całości co 30 sekund jako rozgłoszenie typu broadcast",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Ruter link-state wymieniają się informacjami o stanie łączy (LSA), dzięki czemu wszystkie rutery w danym obszarze budują dokładnie taką samą mapę topologii sieci (LSDB).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_247",
+    "year": "Treningowe (AI)",
+    "number": 247,
+    "text": "W sieciach wielodostępowych (np. Ethernet) protokół OSPF wybiera ruter wyznaczony (DR - Designated Router). Jaka jest jego rola?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Pośredniczy jako brama domyślna dla całego ruchu sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Odbiera i rozsyła aktualizacje stanu łączy (LSA) do wszystkich innych ruterów w segmencie, co zmniejsza liczbę relacji sąsiedzkich",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Odpowiada za przydzielanie adresów IP w segmencie",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Szyfruje wiadomości OSPF",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Dzięki DR rutery nie muszą wymieniać się informacjami 'każdy z każdym' (co dawałoby n*(n-1)/2 połączeń). Zamiast tego wymieniają je tylko z DR i BDR (Backup Designated Router).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_248",
+    "year": "Treningowe (AI)",
+    "number": 248,
+    "text": "Protokół routingu zewnętrznego BGP (Border Gateway Protocol) jest protokołem typu:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wektor odległości (Distance Vector)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Stan łącza (Link State)",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Wektor ścieżki (Path Vector)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Hybrydowy",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "BGP to protokół wektora ścieżki (Path Vector). W informacji o trasie przesyła całą ścieżkę systemów autonomicznych (AS_PATH), przez które pakiet musi przejść, co zapobiega pętlom w skali globalnego Internetu.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_249",
+    "year": "Treningowe (AI)",
+    "number": 249,
+    "text": "Który z poniższych protokołów routingu jest protokołem typu Exterior Gateway Protocol (EGP) i odpowiada za trasowanie pakietów między różnymi systemami autonomicznymi (AS) w Internecie?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "OSPF",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "BGP",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "RIPv2",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "IS-IS",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "BGP to de facto standard routingu między systemami autonomicznymi dostawców internetu (ISP) w skali globalnej. Pozostałe (OSPF, RIP, IS-IS) to protokoły typu IGP (Interior Gateway Protocol).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_250",
+    "year": "Treningowe (AI)",
+    "number": 250,
+    "text": "W nagłówku datagramu IPv4 flagi mają rozmiar 3 bitów. Co się stanie, gdy router otrzyma pakiet większy niż MTU interfejsu wyjściowego, jeśli flaga DF (Don't Fragment) jest ustawiona na 1?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Router zignoruje flagę DF i pofragmentuje pakiet",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Router odrzuci pakiet i wyśle do nadawcy komunikat ICMP o błędzie (Typ 3, Kod 4 - fragmentacja wymagana, ale ustawiona flaga DF)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Router zawiesi przesyłanie i poczeka na zwolnienie pasma",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Router prześle pakiet w całości, ignorując limit MTU",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Flaga DF (Don't Fragment) zabrania ruterom dzielenia pakietu. Jeśli pakiet nie mieści się w MTU łącza, jest porzucany, a nadawca otrzymuje komunikat ICMP Typ 3 Kod 4, co jest podstawą mechanizmu Path MTU Discovery.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_251",
+    "year": "Treningowe (AI)",
+    "number": 251,
+    "text": "W adresacji IPv6, adres pętli zwrotnej (loopback address) w notacji skróconej ma postać:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "127.0.0.1",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "fe80::1",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "::1/128",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "::/128",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Odpowiednikiem IPv4 loopback (127.0.0.1) w standardzie IPv6 jest adres `::1/128` (same zera i jedynka na końcu).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_252",
+    "year": "Treningowe (AI)",
+    "number": 252,
+    "text": "Jak nazywa się bezstanowy protokół autokonfiguracji w IPv6, pozwalający urządzeniom na automatyczne pobranie prefiksu sieci od routera i samodzielne wygenerowanie adresu IP bez serwera DHCPv6?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "SLAAC (Stateless Address Autoconfiguration)",
+        "isCorrect": true
+      },
+      {
+        "letter": "b",
+        "text": "NAT64",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "DHCPv6 Statefull",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "ARPv6",
+        "isCorrect": false
+      }
+    ],
+    "answer": "a",
+    "explanation": "SLAAC pozwala hostom IPv6 na konfigurację adresu poprzez odpytanie routera (Router Solicitation) i odebranie rozgłoszenia routera (Router Advertisement) z prefiksem sieci, a następnie dołączenie własnego identyfikatora interfejsu.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_253",
+    "year": "Treningowe (AI)",
+    "number": 253,
+    "text": "W formacie EUI-64 używanym w autokonfiguracji IPv6, 48-bitowy adres sprzętowy MAC karty sieciowej jest rozszerzany do 64-bitowego identyfikatora interfejsu poprzez wstawienie jakiej sekwencji bitów w środek adresu MAC?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "0000 szesnastkowo",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "FFFF szesnastkowo",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "FFFE szesnastkowo",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "EEEE szesnastkowo",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "W celu utworzenia EUI-64 z adresu MAC (np. 00:11:22:33:44:55), adres dzielony jest na dwie 24-bitowe części, a pomiędzy nie wstawia się wartość szesnastkową FFFE (co daje 0011:22FF:FE33:4455). Dodatkowo negowany jest 7. bit pierwszego bajtu (Universal/Local bit).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_254",
+    "year": "Treningowe (AI)",
+    "number": 254,
+    "text": "Jaki typ komunikatu ICMPv6 wysyła host w sieci w celu wykrycia obecności routerów w tym samym fizycznym segmencie (Router Solicitation)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Typ 128",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Typ 133",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Typ 134",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Typ 135",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Zapytanie o router (Router Solicitation) w ICMPv6 ma przydzielony Typ 133, natomiast odpowiedź routera (Router Advertisement) ma Typ 134.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_255",
+    "year": "Treningowe (AI)",
+    "number": 255,
+    "text": "W 4-warstwowym modelu referencyjnym TCP/IP, protokół ARP (Address Resolution Protocol) jest klasyfikowany jako działający w warstwie:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Fizycznej",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Dostępu do sieci (Network Access)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "Internetowej (Internet)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "Transportowej",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W modelu TCP/IP najniższą warstwą jest warstwa dostępu do sieci (łącząca warstwę 1 i 2 modelu OSI). Ponieważ ARP operuje bezpośrednio na ramkach Ethernetowych w celu powiązania ich z adresami IP, należy do warstwy dostępu do sieci.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_256",
+    "year": "Treningowe (AI)",
+    "number": 256,
+    "text": "Jak nazywa się technologia i rodzina protokołów umożliwiających transmisję danych cyfrowych bezpośrednio przez sieci energetyczne niskiego napięcia (230 V)?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "ISDN",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "PLC (Power Line Communication)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "DSL",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "SONET",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Technologia PLC (Power Line Communication) pozwala na wykorzystanie istniejących kabli zasilających prądu zmiennego do budowy sieci komputerowej.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_257",
+    "year": "Treningowe (AI)",
+    "number": 257,
+    "text": "Ile bajtów wynosi całkowity rozmiar samego nagłówka datagramu UDP?",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "4 bajty",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "8 bajtów",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "20 bajtów",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "32 bajty",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "Nagłówek UDP składa się z 4 pól po 2 bajty każde: port nadawcy, port odbiorcy, długość i suma kontrolna. Łącznie daje to dokładnie 8 bajtów.",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_258",
+    "year": "Treningowe (AI)",
+    "number": 258,
+    "text": "W architekturze bezpieczeństwa AAA, za rozliczanie i gromadzenie danych o aktywności użytkownika (np. przesyłane pakiety, czas połączenia) odpowiada litera:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Pierwsze A - Authentication",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Drugie A - Authorization",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Trzecie A - Accounting (rozliczalność)",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Żadne z powyższych",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Accounting (rozliczalność/audyt) polega na mierzeniu zasobów zużytych przez użytkownika podczas sesji (np. logowanie zdarzeń, transfer danych).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_259",
+    "year": "Treningowe (AI)",
+    "number": 259,
+    "text": "W standardzie bezpieczeństwa informacji CIA (Confidentiality, Integrity, Availability), naruszeniem integralności danych (Integrity) będzie:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Podsłuchanie hasła użytkownika w sieci",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "Zablokowanie dostępu do serwera za pomocą ataku DDoS",
+        "isCorrect": false
+      },
+      {
+        "letter": "c",
+        "text": "Nieautoryzowana zmiana zawartości bazy danych lub pliku",
+        "isCorrect": true
+      },
+      {
+        "letter": "d",
+        "text": "Awaria zasilania w serwerowni",
+        "isCorrect": false
+      }
+    ],
+    "answer": "c",
+    "explanation": "Integralność (Integrity) oznacza pewność, że dane nie zostały zmodyfikowane, uszkodzone lub skasowane w sposób nieuprawniony. Podsłuchanie narusza poufność (Confidentiality), a DDoS narusza dostępność (Availability).",
+    "subQuestions": []
+  },
+  {
+    "id": "trening_260",
+    "year": "Treningowe (AI)",
+    "number": 260,
+    "text": "W tradycyjnym adresowaniu klasowym, domyślna maska podsieci dla adresów należących do klasy B (np. zakres 128.0.0.0 do 191.255.255.255) to:",
+    "type": "choice",
+    "options": [
+      {
+        "letter": "a",
+        "text": "255.0.0.0 (/8)",
+        "isCorrect": false
+      },
+      {
+        "letter": "b",
+        "text": "255.255.0.0 (/16)",
+        "isCorrect": true
+      },
+      {
+        "letter": "c",
+        "text": "255.255.255.0 (/24)",
+        "isCorrect": false
+      },
+      {
+        "letter": "d",
+        "text": "255.255.255.240 (/28)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "b",
+    "explanation": "W klasie B pierwsze dwa oktety (16 bitów) reprezentują identyfikator sieci, stąd domyślna maska to 255.255.0.0 (/16).",
+    "subQuestions": []
   }
 ]

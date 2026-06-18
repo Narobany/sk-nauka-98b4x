@@ -12,7 +12,7 @@ function App() {
 
   const handleAuthenticate = (e) => {
     e.preventDefault();
-    if (passcodeInput.trim() === 'egzamin') {
+    if (passcodeInput.trim() === 'uposie') {
       setIsAuthenticated(true);
       localStorage.setItem('sk_auth', 'true');
       setPasscodeError('');
@@ -540,6 +540,10 @@ function App() {
   const [quizTimer, setQuizTimer] = useState(1800); // 30 mins countdown
   const [quizSize, setQuizSize] = useState(20); // default 20 questions
   const [quizFilterYear, setQuizFilterYear] = useState('all'); // 'all' | '24_25' | '23_24'
+  const [quizMode, setQuizMode] = useState('training'); // 'training' | 'exam'
+  const [checkedQuestions, setCheckedQuestions] = useState({}); // { qId: true }
+  const [trainingStats, setTrainingStats] = useState({ correct: 0, total: 0 });
+  const [currentQuizQuestionIndex, setCurrentQuizQuestionIndex] = useState(0);
   
   const timerIntervalRef = useRef(null);
 
@@ -554,7 +558,8 @@ function App() {
 
     // Shuffle pool and slice size
     const shuffled = pool.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, Math.min(quizSize, pool.length));
+    const limit = quizSize === 999 ? pool.length : Math.min(quizSize, pool.length);
+    const selected = shuffled.slice(0, limit);
 
     // Initialize user answers state structure
     const initialAnswers = {};
@@ -574,21 +579,28 @@ function App() {
     setUserAnswers(initialAnswers);
     setQuizActive(true);
     setQuizSubmitted(false);
-    setQuizTimer(1800); // 30 minutes
+    setCheckedQuestions({});
+    setTrainingStats({ correct: 0, total: 0 });
+    setCurrentQuizQuestionIndex(0);
 
-    // Start timer interval
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
-    timerIntervalRef.current = setInterval(() => {
-      setQuizTimer(prev => {
-        if (prev <= 1) {
-          clearInterval(timerIntervalRef.current);
-          // Auto submit
-          setQuizSubmitted(true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+    if (quizMode === 'exam') {
+      setQuizTimer(1800); // 30 minutes
+      // Start timer interval
+      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
+      timerIntervalRef.current = setInterval(() => {
+        setQuizTimer(prev => {
+          if (prev <= 1) {
+            clearInterval(timerIntervalRef.current);
+            // Auto submit
+            setQuizSubmitted(true);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    } else {
+      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
+    }
   };
 
   // Clear timer on unmount
@@ -606,14 +618,29 @@ function App() {
 
   const handleSelectChoiceOption = (qId, optionLetter) => {
     if (quizSubmitted) return;
-    setUserAnswers(prev => ({
-      ...prev,
-      [qId]: optionLetter
-    }));
+    if (quizMode === 'training') {
+      if (checkedQuestions[qId]) return;
+      setUserAnswers(prev => {
+        const next = { ...prev, [qId]: optionLetter };
+        const q = quizQuestions.find(x => x.id === qId);
+        const isCorrect = optionLetter === q?.answer;
+        setTrainingStats(stats => ({
+          correct: stats.correct + (isCorrect ? 1 : 0),
+          total: stats.total + 1
+        }));
+        setCheckedQuestions(checked => ({ ...checked, [qId]: true }));
+        return next;
+      });
+    } else {
+      setUserAnswers(prev => ({
+        ...prev,
+        [qId]: optionLetter
+      }));
+    }
   };
 
   const handleSelectYesNoOption = (qId, subLetter, answer) => {
-    if (quizSubmitted) return;
+    if (quizSubmitted || (quizMode === 'training' && checkedQuestions[qId])) return;
     setUserAnswers(prev => ({
       ...prev,
       [qId]: {
@@ -624,7 +651,7 @@ function App() {
   };
 
   const handleSelectMatchingOption = (qId, label, answer) => {
-    if (quizSubmitted) return;
+    if (quizSubmitted || (quizMode === 'training' && checkedQuestions[qId])) return;
     setUserAnswers(prev => ({
       ...prev,
       [qId]: {
@@ -635,10 +662,39 @@ function App() {
   };
 
   const handleOpenAnswerInput = (qId, value) => {
-    if (quizSubmitted) return;
+    if (quizSubmitted || (quizMode === 'training' && checkedQuestions[qId])) return;
     setUserAnswers(prev => ({
       ...prev,
       [qId]: value
+    }));
+  };
+
+  const handleCheckQuestion = (qId) => {
+    if (checkedQuestions[qId]) return;
+    const q = quizQuestions.find(x => x.id === qId);
+    if (!q) return;
+
+    const answer = userAnswers[qId];
+    let isCorrect = false;
+
+    if (q.type === 'yes_no') {
+      isCorrect = q.subQuestions.every(sub => answer?.[sub.letter] === sub.answer);
+    } else if (q.type === 'matching') {
+      isCorrect = q.subQuestions.every(sub => answer?.[sub.label] === sub.answer);
+    } else if (q.type === 'open') {
+      const userClean = (answer || '').trim().toLowerCase();
+      const correctClean = q.answer.trim().toLowerCase();
+      isCorrect = userClean && (correctClean.includes(userClean) || userClean.includes(correctClean) || checkOpenKeywordSimilarity(userClean, correctClean));
+    }
+
+    setTrainingStats(stats => ({
+      correct: stats.correct + (isCorrect ? 1 : 0),
+      total: stats.total + 1
+    }));
+
+    setCheckedQuestions(checked => ({
+      ...checked,
+      [qId]: true
     }));
   };
 
@@ -735,16 +791,24 @@ function App() {
       handleExitQuiz();
       return;
     }
-    const confirmExit = window.confirm("Czy na pewno chcesz przerwać i opuścić test? Twój postęp w tym teście zostanie utracony.");
+    const msg = quizMode === 'training'
+      ? "Czy na pewno chcesz przerwać i opuścić trening? Twój postęp w tym treningu zostanie utracony."
+      : "Czy na pewno chcesz przerwać i opuścić test? Twój postęp w tym teście zostanie utracony.";
+    const confirmExit = window.confirm(msg);
     if (confirmExit) {
       handleExitQuiz();
     }
   };
 
   const handleTabChange = (tabName) => {
-    if (quizActive && !quizSubmitted) {
-      const confirmExit = window.confirm("Czy na pewno chcesz opuścić test i powrócić do menu? Twój obecny postęp zostanie utracony.");
+    if (quizActive && !quizSubmitted && (quizMode === 'exam' || Object.keys(checkedQuestions).length < quizQuestions.length)) {
+      const msg = quizMode === 'training'
+        ? "Czy na pewno chcesz opuścić trening i powrócić do menu? Twój obecny postęp zostanie utracony."
+        : "Czy na pewno chcesz opuścić test i powrócić do menu? Twój obecny postęp zostanie utracony.";
+      const confirmExit = window.confirm(msg);
       if (!confirmExit) return;
+      handleExitQuiz();
+    } else if (quizActive) {
       handleExitQuiz();
     }
     setActiveTab(tabName);
@@ -774,7 +838,7 @@ function App() {
             <input
               type="password"
               className="lock-input"
-              placeholder="Kod dostępu (egzamin)"
+              placeholder="Kod dostępu"
               value={passcodeInput}
               onChange={(e) => setPasscodeInput(e.target.value)}
               autoFocus
@@ -1095,6 +1159,56 @@ function App() {
                 </p>
 
                 <div className="form-group">
+                  <label>Wybierz tryb rozwiązania:</label>
+                  <div className="quiz-mode-selector" style={{ display: 'flex', gap: '10px', marginTop: '8px', marginBottom: '16px' }}>
+                    <button
+                      type="button"
+                      className={`mode-select-btn ${quizMode === 'training' ? 'active' : ''}`}
+                      onClick={() => setQuizMode('training')}
+                      style={{
+                        flex: 1,
+                        padding: '12px 16px',
+                        borderRadius: '12px',
+                        border: quizMode === 'training' ? '1px solid var(--accent-cyan)' : '1px solid rgba(255,255,255,0.08)',
+                        background: quizMode === 'training' ? 'rgba(56, 189, 248, 0.1)' : 'rgba(255,255,255,0.02)',
+                        color: quizMode === 'training' ? 'var(--accent-cyan)' : '#d1d5db',
+                        cursor: 'pointer',
+                        fontWeight: '600',
+                        transition: 'all 0.2s ease',
+                        textAlign: 'left'
+                      }}
+                    >
+                      <div style={{ fontSize: '1rem', marginBottom: '4px' }}>🧠 Tryb Treningowy</div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: 'normal', color: 'var(--text-secondary)' }}>
+                        Natychmiastowe sprawdzanie, wyjaśnienia błędów, brak presji czasu.
+                      </div>
+                    </button>
+                    <button
+                      type="button"
+                      className={`mode-select-btn ${quizMode === 'exam' ? 'active' : ''}`}
+                      onClick={() => setQuizMode('exam')}
+                      style={{
+                        flex: 1,
+                        padding: '12px 16px',
+                        borderRadius: '12px',
+                        border: quizMode === 'exam' ? '1px solid var(--accent-pink)' : '1px solid rgba(255,255,255,0.08)',
+                        background: quizMode === 'exam' ? 'rgba(244, 63, 94, 0.1)' : 'rgba(255,255,255,0.02)',
+                        color: quizMode === 'exam' ? 'var(--accent-pink)' : '#d1d5db',
+                        cursor: 'pointer',
+                        fontWeight: '600',
+                        transition: 'all 0.2s ease',
+                        textAlign: 'left'
+                      }}
+                    >
+                      <div style={{ fontSize: '1rem', marginBottom: '4px' }}>⏱️ Tryb Egzaminacyjny</div>
+                      <div style={{ fontSize: '0.75rem', fontWeight: 'normal', color: 'var(--text-secondary)' }}>
+                        Symulacja prawdziwego egzaminu z zegarem 30 minut, ocena na końcu.
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="form-group">
                   <label>Wybierz rok akademicki pytań:</label>
                   <select
                     className="form-select"
@@ -1117,14 +1231,15 @@ function App() {
                     <option value="10">10 pytań</option>
                     <option value="20">20 pytań</option>
                     <option value="30">30 pytań</option>
-                    <option value="40">40 pytań</option>
-                    <option value="60">Wszystkie dostępne pytań</option>
+                    <option value="50">50 pytań</option>
+                    <option value="100">100 pytań</option>
+                    <option value="999">Wszystkie dostępne ({questionsData.length} pytań)</option>
                   </select>
                 </div>
 
                 <div style={{ marginTop: '30px' }}>
                   <button className="btn-primary" onClick={handleStartQuiz}>
-                    Rozpocznij test (30 minut)
+                    {quizMode === 'training' ? 'Rozpocznij trening (bez limitu czasu)' : 'Rozpocznij egzamin (30 minut)'}
                   </button>
                 </div>
               </div>
@@ -1135,198 +1250,386 @@ function App() {
               <div>
                 <div className="quiz-header">
                   <div>
-                    <h2 style={{ fontSize: '1.4rem', color: '#fff' }}>Twój Test</h2>
+                    <h2 style={{ fontSize: '1.4rem', color: '#fff' }}>
+                      {quizMode === 'training' ? '🧠 Tryb Treningowy' : '⏱️ Twój Test'}
+                    </h2>
                     <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                      Zawiera {quizQuestions.length} pytań z roku {quizFilterYear === 'all' ? '2023-2025' : quizFilterYear === '24_25' ? '2024/2025' : '2023/2024'}.
+                      Zawiera {quizQuestions.length} pytań.
                     </span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div className="timer">
-                      {formatQuizTimer(quizTimer)}
-                    </div>
+                    {quizMode === 'exam' ? (
+                      <div className="timer">
+                        {formatQuizTimer(quizTimer)}
+                      </div>
+                    ) : (
+                      <div className="timer" style={{ background: 'rgba(56, 189, 248, 0.1)', color: 'var(--accent-cyan)', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+                        Trening
+                      </div>
+                    )}
                     <button className="btn-icon" style={{ padding: '6px 14px', border: '1px solid rgba(239,68,68,0.2)', background: 'rgba(239,68,68,0.1)', color: '#ef4444' }} onClick={handleExitQuizConfirm}>
-                      Wyjdź z testu
+                      {quizMode === 'training' ? 'Wyjdź z treningu' : 'Wyjdź z testu'}
                     </button>
                   </div>
                 </div>
 
+                {/* Training Mode Pagination and Score banner */}
+                {quizMode === 'training' && (
+                  <>
+                    <div className="training-score-banner" style={{
+                      background: 'rgba(255,255,255,0.02)',
+                      border: '1px solid rgba(255,255,255,0.05)',
+                      padding: '16px 20px',
+                      borderRadius: '16px',
+                      marginBottom: '20px',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      flexWrap: 'wrap',
+                      gap: '12px'
+                    }}>
+                      <div>
+                        <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Postęp nauki:</span>
+                        <strong style={{ fontSize: '1.1rem', color: '#fff', marginLeft: '8px' }}>
+                          {trainingStats.total} / {quizQuestions.length} pytań
+                        </strong>
+                      </div>
+                      <div>
+                        <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Poprawne odpowiedzi:</span>
+                        <strong style={{ fontSize: '1.2rem', color: '#10b981', marginLeft: '8px' }}>
+                          {trainingStats.correct}
+                        </strong>
+                        <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginLeft: '4px' }}>
+                          ({trainingStats.total > 0 ? Math.round((trainingStats.correct / trainingStats.total) * 100) : 0}%)
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="quiz-pagination" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px', justifyContent: 'center' }}>
+                      {quizQuestions.map((q, idx) => {
+                        const isAnswered = checkedQuestions[q.id];
+                        let isCorrect = false;
+                        if (isAnswered) {
+                          const answer = userAnswers[q.id];
+                          if (q.type === 'choice') {
+                            isCorrect = answer === q.answer;
+                          } else if (q.type === 'yes_no') {
+                            isCorrect = q.subQuestions.every(sub => answer?.[sub.letter] === sub.answer);
+                          } else if (q.type === 'matching') {
+                            isCorrect = q.subQuestions.every(sub => answer?.[sub.label] === sub.answer);
+                          } else if (q.type === 'open') {
+                            const userClean = (answer || '').trim().toLowerCase();
+                            const correctClean = q.answer.trim().toLowerCase();
+                            isCorrect = userClean && (correctClean.includes(userClean) || userClean.includes(correctClean) || checkOpenKeywordSimilarity(userClean, correctClean));
+                          }
+                        }
+
+                        let bg = 'rgba(255,255,255,0.05)';
+                        let border = '1px solid rgba(255,255,255,0.08)';
+                        let color = '#d1d5db';
+
+                        if (isAnswered) {
+                          bg = isCorrect ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)';
+                          border = isCorrect ? '1px solid #10b981' : '1px solid #ef4444';
+                          color = isCorrect ? '#10b981' : '#ef4444';
+                        }
+
+                        if (idx === currentQuizQuestionIndex) {
+                          border = isAnswered ? (isCorrect ? '2px solid #10b981' : '2px solid #ef4444') : '2px solid var(--accent-cyan)';
+                          bg = idx === currentQuizQuestionIndex && !isAnswered ? 'rgba(56, 189, 248, 0.1)' : bg;
+                        }
+
+                        return (
+                          <button
+                            key={q.id}
+                            type="button"
+                            onClick={() => setCurrentQuizQuestionIndex(idx)}
+                            style={{
+                              width: '36px',
+                              height: '36px',
+                              borderRadius: '8px',
+                              background: bg,
+                              border: border,
+                              color: color,
+                              fontWeight: '600',
+                              cursor: 'pointer',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              transition: 'all 0.15s ease'
+                            }}
+                          >
+                            {idx + 1}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
+
                 {/* Questions render */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                  {quizQuestions.map((q, idx) => (
-                    <div key={q.id} className="question-card">
-                      <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '8px' }}>
-                        Pytanie {idx + 1}. {q.text}
-                      </h4>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                        Typ: {q.type === 'choice' ? 'Wybór jednokrotny' : q.type === 'yes_no' ? 'Prawda/Fałsz' : q.type === 'matching' ? 'Dopasowanie tabeli' : 'Otwarte obliczeniowe'} | Rok: {q.year}
-                      </span>
+                  {quizQuestions
+                    .map((q, idx) => ({ q, idx }))
+                    .filter(({ idx }) => quizMode === 'exam' || idx === currentQuizQuestionIndex)
+                    .map(({ q, idx }) => {
+                      const isQuestionChecked = checkedQuestions[q.id];
+                      const isRevealed = quizSubmitted || (quizMode === 'training' && isQuestionChecked);
 
-                      {/* Rendering by Question Type */}
-                      
-                      {/* 1. Choice */}
-                      {q.type === 'choice' && (
-                        <div className="options-list">
-                          {q.options.map((opt) => {
-                            const isSelected = userAnswers[q.id] === opt.letter;
-                            let optClass = '';
-                            if (isSelected) optClass = 'selected';
-                            if (quizSubmitted) {
-                              if (opt.isCorrect) optClass = 'correct';
-                              else if (isSelected && !opt.isCorrect) optClass = 'incorrect';
-                            }
+                      return (
+                        <div key={q.id} className="question-card">
+                          <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '8px' }}>
+                            Pytanie {idx + 1}. {q.text}
+                          </h4>
+                          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                            Typ: {q.type === 'choice' ? 'Wybór jednokrotny' : q.type === 'yes_no' ? 'Prawda/Fałsz' : q.type === 'matching' ? 'Dopasowanie tabeli' : 'Otwarte obliczeniowe'} | Rok: {q.year}
+                          </span>
 
-                            return (
-                              <div
-                                key={opt.letter}
-                                className={`option-item ${optClass}`}
-                                onClick={() => handleSelectChoiceOption(q.id, opt.letter)}
-                              >
-                                <span className="option-marker">{opt.letter}</span>
-                                <span>{opt.text}</span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-
-                      {/* 2. Yes/No Grid */}
-                      {q.type === 'yes_no' && (
-                        <table className="yes-no-grid">
-                          <thead>
-                            <tr>
-                              <th>Cecha / Pole</th>
-                              <th>Odpowiedź</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {q.subQuestions.map((sub) => {
-                              const currentSelection = userAnswers[q.id]?.[sub.letter];
-                              
-                              let takClass = '';
-                              let nieClass = '';
-                              if (currentSelection === 'tak') takClass = 'selected';
-                              if (currentSelection === 'nie') nieClass = 'selected';
-
-                              if (quizSubmitted) {
-                                if (sub.answer === 'tak') {
-                                  takClass = 'correct';
-                                  if (currentSelection === 'nie') nieClass = 'incorrect';
-                                } else {
-                                  nieClass = 'correct';
-                                  if (currentSelection === 'tak') takClass = 'incorrect';
+                          {/* Rendering by Question Type */}
+                          
+                          {/* 1. Choice */}
+                          {q.type === 'choice' && (
+                            <div className="options-list">
+                              {q.options.map((opt) => {
+                                const isSelected = userAnswers[q.id] === opt.letter;
+                                let optClass = '';
+                                if (isSelected) optClass = 'selected';
+                                if (isRevealed) {
+                                  if (opt.isCorrect) optClass = 'correct';
+                                  else if (isSelected && !opt.isCorrect) optClass = 'incorrect';
                                 }
-                              }
 
-                              return (
-                                <tr key={sub.letter}>
-                                  <td><strong>{sub.letter.toUpperCase()})</strong> {sub.text}</td>
-                                  <td>
-                                    <div className="yes-no-options">
-                                      <button
-                                        type="button"
-                                        className={`yes-no-btn ${takClass}`}
-                                        onClick={() => handleSelectYesNoOption(q.id, sub.letter, 'tak')}
-                                        disabled={quizSubmitted}
-                                      >
-                                        TAK
-                                      </button>
-                                      <button
-                                        type="button"
-                                        className={`yes-no-btn ${nieClass}`}
-                                        onClick={() => handleSelectYesNoOption(q.id, sub.letter, 'nie')}
-                                        disabled={quizSubmitted}
-                                      >
-                                        NIE
-                                      </button>
-                                    </div>
-                                  </td>
-                                </tr>
-                              );
-                            })}
-                          </tbody>
-                        </table>
-                      )}
-
-                      {/* 3. Matching Dropdowns */}
-                      {q.type === 'matching' && (
-                        <div style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                          {q.subQuestions.map((sub, sIdx) => {
-                            const curVal = userAnswers[q.id]?.[sub.label] || '';
-                            const isCorrect = curVal === sub.answer;
-                            const optionsList = getMatchingDropdownOptions(q);
-
-                            let borderStyle = '1px solid rgba(255,255,255,0.06)';
-                            let bgStyle = 'rgba(255,255,255,0.02)';
-                            if (quizSubmitted) {
-                              borderStyle = isCorrect ? '1px solid #10b981' : '1px solid #ef4444';
-                              bgStyle = isCorrect ? 'rgba(16, 185, 129, 0.05)' : 'rgba(239, 68, 68, 0.05)';
-                            }
-
-                            return (
-                              <div key={sIdx} className="matching-row" style={{ border: borderStyle, background: bgStyle, padding: '10px 16px', borderRadius: '10px' }}>
-                                <span style={{ fontSize: '0.95rem' }}>
-                                  <strong>{sub.letter ? sub.letter.toUpperCase() + ') ' : ''}{sub.label}</strong>
-                                </span>
-                                <div>
-                                  <select
-                                    className="matching-select"
-                                    value={curVal}
-                                    onChange={(e) => handleSelectMatchingOption(q.id, sub.label, e.target.value)}
-                                    disabled={quizSubmitted}
+                                return (
+                                  <div
+                                    key={opt.letter}
+                                    className={`option-item ${optClass} ${isRevealed ? 'locked' : ''}`}
+                                    onClick={() => handleSelectChoiceOption(q.id, opt.letter)}
                                   >
-                                    <option value="">-- Wybierz dopasowanie --</option>
-                                    {optionsList.map((opt, oIdx) => (
-                                      <option key={oIdx} value={opt}>{opt}</option>
-                                    ))}
-                                  </select>
-                                  {quizSubmitted && !isCorrect && (
-                                    <div style={{ fontSize: '0.75rem', color: '#10b981', marginTop: '4px', textAlign: 'right' }}>
-                                      Poprawnie: {sub.answer}
-                                    </div>
-                                  )}
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
+                                    <span className="option-marker">{opt.letter}</span>
+                                    <span>{opt.text}</span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )}
 
-                      {/* 4. Open */}
-                      {q.type === 'open' && (
-                        <div>
-                          <input
-                            type="text"
-                            className="open-answer-input"
-                            placeholder="Wpisz swoją odpowiedź / obliczenia..."
-                            value={userAnswers[q.id] || ''}
-                            onChange={(e) => handleOpenAnswerInput(q.id, e.target.value)}
-                            disabled={quizSubmitted}
-                          />
-                          {quizSubmitted && (
-                            <div className="correct-open-ans">
-                              <strong>Poprawne rozwiązanie z klucza:</strong> {q.answer}
+                          {/* 2. Yes/No Grid */}
+                          {q.type === 'yes_no' && (
+                            <table className="yes-no-grid">
+                              <thead>
+                                <tr>
+                                  <th>Cecha / Pole</th>
+                                  <th>Odpowiedź</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {q.subQuestions.map((sub) => {
+                                  const currentSelection = userAnswers[q.id]?.[sub.letter];
+                                  
+                                  let takClass = '';
+                                  let nieClass = '';
+                                  if (currentSelection === 'tak') takClass = 'selected';
+                                  if (currentSelection === 'nie') nieClass = 'selected';
+
+                                  if (isRevealed) {
+                                    if (sub.answer === 'tak') {
+                                      takClass = 'correct';
+                                      if (currentSelection === 'nie') nieClass = 'incorrect';
+                                    } else {
+                                      nieClass = 'correct';
+                                      if (currentSelection === 'tak') takClass = 'incorrect';
+                                    }
+                                  }
+
+                                  return (
+                                    <tr key={sub.letter}>
+                                      <td><strong>{sub.letter.toUpperCase()})</strong> {sub.text}</td>
+                                      <td>
+                                        <div className="yes-no-options">
+                                          <button
+                                            type="button"
+                                            className={`yes-no-btn ${takClass}`}
+                                            onClick={() => handleSelectYesNoOption(q.id, sub.letter, 'tak')}
+                                            disabled={isRevealed}
+                                          >
+                                            TAK
+                                          </button>
+                                          <button
+                                            type="button"
+                                            className={`yes-no-btn ${nieClass}`}
+                                            onClick={() => handleSelectYesNoOption(q.id, sub.letter, 'nie')}
+                                            disabled={isRevealed}
+                                          >
+                                            NIE
+                                          </button>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  );
+                                })}
+                              </tbody>
+                            </table>
+                          )}
+
+                          {/* 3. Matching Dropdowns */}
+                          {q.type === 'matching' && (
+                            <div style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                              {q.subQuestions.map((sub, sIdx) => {
+                                const curVal = userAnswers[q.id]?.[sub.label] || '';
+                                const isCorrect = curVal === sub.answer;
+                                const optionsList = getMatchingDropdownOptions(q);
+
+                                let borderStyle = '1px solid rgba(255,255,255,0.06)';
+                                let bgStyle = 'rgba(255,255,255,0.02)';
+                                if (isRevealed) {
+                                  borderStyle = isCorrect ? '1px solid #10b981' : '1px solid #ef4444';
+                                  bgStyle = isCorrect ? 'rgba(16, 185, 129, 0.05)' : 'rgba(239, 68, 68, 0.05)';
+                                }
+
+                                return (
+                                  <div key={sIdx} className="matching-row" style={{ border: borderStyle, background: bgStyle, padding: '10px 16px', borderRadius: '10px' }}>
+                                    <span style={{ fontSize: '0.95rem' }}>
+                                      <strong>{sub.letter ? sub.letter.toUpperCase() + ') ' : ''}{sub.label}</strong>
+                                    </span>
+                                    <div>
+                                      <select
+                                        className="matching-select"
+                                        value={curVal}
+                                        onChange={(e) => handleSelectMatchingOption(q.id, sub.label, e.target.value)}
+                                        disabled={isRevealed}
+                                      >
+                                        <option value="">-- Wybierz dopasowanie --</option>
+                                        {optionsList.map((opt, oIdx) => (
+                                          <option key={oIdx} value={opt}>{opt}</option>
+                                        ))}
+                                      </select>
+                                      {isRevealed && !isCorrect && (
+                                        <div style={{ fontSize: '0.75rem', color: '#10b981', marginTop: '4px', textAlign: 'right' }}>
+                                          Poprawnie: {sub.answer}
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )}
+
+                          {/* 4. Open */}
+                          {q.type === 'open' && (
+                            <div>
+                              <input
+                                type="text"
+                                className="open-answer-input"
+                                placeholder="Wpisz swoją odpowiedź / obliczenia..."
+                                value={userAnswers[q.id] || ''}
+                                onChange={(e) => handleOpenAnswerInput(q.id, e.target.value)}
+                                disabled={isRevealed}
+                              />
+                              {isRevealed && (
+                                <div className="correct-open-ans">
+                                  <strong>Poprawne rozwiązanie z klucza:</strong> {q.answer}
+                                </div>
+                              )}
+                            </div>
+                          )}
+
+                          {/* Check Button for Multi-input/Open Questions in Training Mode */}
+                          {quizMode === 'training' && !isQuestionChecked && q.type !== 'choice' && (
+                            <div style={{ marginTop: '16px' }}>
+                              <button
+                                type="button"
+                                className="btn-primary"
+                                style={{ padding: '8px 20px', fontSize: '0.9rem', width: 'auto' }}
+                                onClick={() => handleCheckQuestion(q.id)}
+                              >
+                                Sprawdź odpowiedź
+                              </button>
+                            </div>
+                          )}
+
+                          {/* Explanation Section */}
+                          {isRevealed && (
+                            <div className="mini-quiz-explanation" style={{ marginTop: '16px', background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                              <div style={{ color: '#d1d5db', lineHeight: '1.5', fontSize: '0.95rem' }}>
+                                <strong>Wyjaśnienie:</strong> {getExplanationForQuestion(q, userAnswers[q.id])}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Next Question Navigation for Training Mode */}
+                          {quizMode === 'training' && isQuestionChecked && currentQuizQuestionIndex < quizQuestions.length - 1 && (
+                            <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'flex-end' }}>
+                              <button
+                                type="button"
+                                className="btn-primary"
+                                style={{
+                                  padding: '10px 24px',
+                                  fontSize: '0.95rem',
+                                  width: 'auto',
+                                  background: 'linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-purple) 100%)'
+                                }}
+                                onClick={() => setCurrentQuizQuestionIndex(prev => prev + 1)}
+                              >
+                                Następne pytanie →
+                              </button>
+                            </div>
+                          )}
+
+                          {/* End Training Button for Training Mode */}
+                          {quizMode === 'training' && isQuestionChecked && currentQuizQuestionIndex === quizQuestions.length - 1 && (
+                            <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'flex-end' }}>
+                              <button
+                                type="button"
+                                className="btn-primary"
+                                style={{
+                                  padding: '10px 24px',
+                                  fontSize: '0.95rem',
+                                  width: 'auto',
+                                  background: 'linear-gradient(90deg, #10b981 0%, #059669 100%)'
+                                }}
+                                onClick={() => {
+                                  const pct = Math.round((trainingStats.correct / quizQuestions.length) * 100);
+                                  setTestStats(prev => ({
+                                    count: prev.count + 1,
+                                    totalScore: prev.totalScore + pct,
+                                    maxScore: Math.max(prev.maxScore, pct)
+                                  }));
+                                  handleExitQuiz();
+                                  alert(`Trening zakończony! Twój wynik: ${trainingStats.correct} / ${quizQuestions.length} (${pct}%)`);
+                                }}
+                              >
+                                Zakończ trening i zapisz wynik ✓
+                              </button>
                             </div>
                           )}
                         </div>
-                      )}
-                    </div>
-                  ))}
+                      );
+                    })}
                 </div>
 
                 {/* Quiz Bottom Buttons */}
                 <div style={{ display: 'flex', gap: '16px', marginTop: '40px', justifyContent: 'center' }}>
-                  {!quizSubmitted ? (
-                    <button className="btn-primary" style={{ width: '220px' }} onClick={handleCalculateScore}>
-                      Zakończ i oceń test
-                    </button>
+                  {quizMode === 'exam' ? (
+                    <>
+                      {!quizSubmitted ? (
+                        <button className="btn-primary" style={{ width: '220px' }} onClick={handleCalculateScore}>
+                          Zakończ i oceń test
+                        </button>
+                      ) : (
+                        <button className="btn-primary" style={{ width: '220px', background: 'linear-gradient(90deg, var(--accent-purple) 0%, var(--accent-pink) 100%)' }} onClick={handleExitQuiz}>
+                          Powrót do menu testów
+                        </button>
+                      )}
+                      <button className="btn-icon" onClick={handleExitQuizConfirm}>
+                        Anuluj test / Wyjdź
+                      </button>
+                    </>
                   ) : (
-                    <button className="btn-primary" style={{ width: '220px', background: 'linear-gradient(90deg, var(--accent-purple) 0%, var(--accent-pink) 100%)' }} onClick={handleExitQuiz}>
-                      Powrót do menu testów
+                    <button className="btn-icon" onClick={handleExitQuizConfirm}>
+                      Przerwij trening / Wyjdź
                     </button>
                   )}
-                  <button className="btn-icon" onClick={handleExitQuiz}>
-                    Anuluj test / Wyjdź
-                  </button>
                 </div>
               </div>
             )}
