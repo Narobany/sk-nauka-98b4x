@@ -1305,65 +1305,134 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="quiz-pagination" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px', justifyContent: 'center' }}>
-                      {quizQuestions.map((q, idx) => {
-                        const isAnswered = checkedQuestions[q.id];
-                        let isCorrect = false;
-                        if (isAnswered) {
-                          const answer = userAnswers[q.id];
-                          if (q.type === 'choice') {
-                            isCorrect = answer === q.answer;
-                          } else if (q.type === 'yes_no') {
-                            isCorrect = q.subQuestions.every(sub => answer?.[sub.letter] === sub.answer);
-                          } else if (q.type === 'matching') {
-                            isCorrect = q.subQuestions.every(sub => answer?.[sub.label] === sub.answer);
-                          } else if (q.type === 'open') {
-                            const userClean = (answer || '').trim().toLowerCase();
-                            const correctClean = q.answer.trim().toLowerCase();
-                            isCorrect = userClean && (correctClean.includes(userClean) || userClean.includes(correctClean) || checkOpenKeywordSimilarity(userClean, correctClean));
+                    {quizQuestions.length <= 20 ? (
+                      <div className="quiz-pagination" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px', justifyContent: 'center' }}>
+                        {quizQuestions.map((q, idx) => {
+                          const isAnswered = checkedQuestions[q.id];
+                          let isCorrect = false;
+                          if (isAnswered) {
+                            const answer = userAnswers[q.id];
+                            if (q.type === 'choice') {
+                              isCorrect = answer === q.answer;
+                            } else if (q.type === 'yes_no') {
+                              isCorrect = q.subQuestions.every(sub => answer?.[sub.letter] === sub.answer);
+                            } else if (q.type === 'matching') {
+                              isCorrect = q.subQuestions.every(sub => answer?.[sub.label] === sub.answer);
+                            } else if (q.type === 'open') {
+                              const userClean = (answer || '').trim().toLowerCase();
+                              const correctClean = q.answer.trim().toLowerCase();
+                              isCorrect = userClean && (correctClean.includes(userClean) || userClean.includes(correctClean) || checkOpenKeywordSimilarity(userClean, correctClean));
+                            }
                           }
-                        }
 
-                        let bg = 'rgba(255,255,255,0.05)';
-                        let border = '1px solid rgba(255,255,255,0.08)';
-                        let color = '#d1d5db';
+                          let bg = 'rgba(255,255,255,0.05)';
+                          let border = '1px solid rgba(255,255,255,0.08)';
+                          let color = '#d1d5db';
 
-                        if (isAnswered) {
-                          bg = isCorrect ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)';
-                          border = isCorrect ? '1px solid #10b981' : '1px solid #ef4444';
-                          color = isCorrect ? '#10b981' : '#ef4444';
-                        }
+                          if (isAnswered) {
+                            bg = isCorrect ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)';
+                            border = isCorrect ? '1px solid #10b981' : '1px solid #ef4444';
+                            color = isCorrect ? '#10b981' : '#ef4444';
+                          }
 
-                        if (idx === currentQuizQuestionIndex) {
-                          border = isAnswered ? (isCorrect ? '2px solid #10b981' : '2px solid #ef4444') : '2px solid var(--accent-cyan)';
-                          bg = idx === currentQuizQuestionIndex && !isAnswered ? 'rgba(56, 189, 248, 0.1)' : bg;
-                        }
+                          if (idx === currentQuizQuestionIndex) {
+                            border = isAnswered ? (isCorrect ? '2px solid #10b981' : '2px solid #ef4444') : '2px solid var(--accent-cyan)';
+                            bg = idx === currentQuizQuestionIndex && !isAnswered ? 'rgba(56, 189, 248, 0.1)' : bg;
+                          }
 
-                        return (
-                          <button
-                            key={q.id}
-                            type="button"
-                            onClick={() => setCurrentQuizQuestionIndex(idx)}
+                          return (
+                            <button
+                              key={q.id}
+                              type="button"
+                              onClick={() => setCurrentQuizQuestionIndex(idx)}
+                              style={{
+                                width: '36px',
+                                height: '36px',
+                                borderRadius: '8px',
+                                background: bg,
+                                border: border,
+                                color: color,
+                                fontWeight: '600',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                transition: 'all 0.15s ease'
+                              }}
+                            >
+                              {idx + 1}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="quiz-compact-pagination" style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '12px',
+                        marginBottom: '24px',
+                        flexWrap: 'wrap'
+                      }}>
+                        <button
+                          type="button"
+                          className="btn-icon"
+                          disabled={currentQuizQuestionIndex === 0}
+                          onClick={() => setCurrentQuizQuestionIndex(prev => prev - 1)}
+                          style={{ padding: '8px 16px', fontSize: '0.9rem' }}
+                        >
+                          ← Poprzednie
+                        </button>
+                        
+                        <div style={{
+                          background: 'rgba(255,255,255,0.03)',
+                          border: '1px solid rgba(255,255,255,0.06)',
+                          padding: '6px 14px',
+                          borderRadius: '10px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '10px'
+                        }}>
+                          <span style={{ fontSize: '0.95rem', color: '#fff' }}>
+                            Pytanie <strong>{currentQuizQuestionIndex + 1}</strong> z {quizQuestions.length}
+                          </span>
+                          <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+                          <select
+                            value={currentQuizQuestionIndex}
+                            onChange={(e) => setCurrentQuizQuestionIndex(parseInt(e.target.value, 10))}
                             style={{
-                              width: '36px',
-                              height: '36px',
-                              borderRadius: '8px',
-                              background: bg,
-                              border: border,
-                              color: color,
+                              background: 'transparent',
+                              border: 'none',
+                              color: 'var(--accent-cyan)',
+                              fontSize: '0.9rem',
                               fontWeight: '600',
                               cursor: 'pointer',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              transition: 'all 0.15s ease'
+                              outline: 'none'
                             }}
                           >
-                            {idx + 1}
-                          </button>
-                        );
-                      })}
-                    </div>
+                            {quizQuestions.map((q, idx) => {
+                              const isAns = checkedQuestions[q.id];
+                              const statusText = isAns ? ' (Zrobione)' : '';
+                              return (
+                                <option key={idx} value={idx} style={{ background: '#111827', color: '#fff' }}>
+                                  Skocz do pytania {idx + 1}{statusText}
+                                </option>
+                              );
+                            })}
+                          </select>
+                        </div>
+
+                        <button
+                          type="button"
+                          className="btn-icon"
+                          disabled={currentQuizQuestionIndex === quizQuestions.length - 1}
+                          onClick={() => setCurrentQuizQuestionIndex(prev => prev - 1)}
+                          style={{ padding: '8px 16px', fontSize: '0.9rem' }}
+                        >
+                          Następne →
+                        </button>
+                      </div>
+                    )}
                   </>
                 )}
 
