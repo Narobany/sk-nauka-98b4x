@@ -206,7 +206,7 @@ function App() {
       
       const matchedText = match[0];
       if (matchedText.startsWith('**') && matchedText.endsWith('**')) {
-        parts.push(<strong key={idx} style={{ color: 'var(--accent-cyan)', fontWeight: '600' }}>{matchedText.slice(2, -2)}</strong>);
+        parts.push(<strong key={idx} style={{ color: '#fff', fontWeight: '600' }}>{matchedText.slice(2, -2)}</strong>);
       } else if (matchedText.startsWith('`') && matchedText.endsWith('`')) {
         parts.push(<code key={idx} style={{ background: 'rgba(255,255,255,0.08)', padding: '2px 6px', borderRadius: '4px', fontFamily: 'var(--font-mono)', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>{matchedText.slice(1, -1)}</code>);
       } else {
@@ -236,25 +236,9 @@ function App() {
       return trimmed.startsWith('·') || trimmed.startsWith('•') || trimmed.startsWith('▪') || trimmed.startsWith('-') || trimmed.startsWith('*') || trimmed.startsWith('o ');
     };
 
-    const isTerminalLine = (line) => {
+    const isCommandLine = (line) => {
       const trimmed = line.trim();
-      if (trimmed.startsWith('$ ') || trimmed.startsWith('# ') || trimmed.startsWith('arp ') || trimmed.startsWith('$arp') || trimmed.startsWith('C:\\')) return true;
-      if (trimmed.includes('HWtype') && trimmed.includes('HWaddress')) return true;
-      if (trimmed.includes('Address') && trimmed.includes('HWaddress')) return true;
-      if (trimmed.includes('ESTABLISHED') || trimmed.includes('TIME_WAIT') || trimmed.includes('LISTEN') || trimmed.includes('CLOSE_WAIT') || trimmed.includes('FIN_WAIT_1')) return true;
-      if (trimmed.includes('at 08:00:20') || trimmed.includes('at 00:00:30')) return true;
-      if (trimmed.includes('Read request (RRQ)') || trimmed.includes('Write request (WRQ)')) return true;
-      if (trimmed.includes('echo 7/tcp') || trimmed.includes('ftp 21/tcp') || trimmed.includes('smtp 25/tcp')) return true;
-      if (trimmed.includes('icmp 1 ICMP') || trimmed.includes('tcp 6 TCP') || trimmed.includes('udp 17 UDP')) return true;
-      return false;
-    };
-
-    const isDefinitionLine = (line) => {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('Definicja') || trimmed.startsWith('Definicje')) return true;
-      if (trimmed.includes(' jest to ') || trimmed.includes(' są to ') || (trimmed.includes(' – ') && trimmed.length > 25 && !isTerminalLine(line) && !isBulletLine(line))) return true;
-      if (trimmed.startsWith('Zasada działania:') || trimmed.startsWith('Zasada pracy') || trimmed.startsWith('Własności ') || trimmed.startsWith('Cechy charakterystyczne')) return true;
-      return false;
+      return trimmed.startsWith('$ ') || trimmed.startsWith('# ') || trimmed.startsWith('C:\\') || trimmed.startsWith('arp -') || trimmed.startsWith('arpwatch') || trimmed.startsWith('tracert ') || trimmed.startsWith('traceroute ');
     };
 
     lines.forEach((line, idx) => {
@@ -274,7 +258,7 @@ function App() {
         return;
       }
 
-      if (isTerminalLine(cleanLine)) {
+      if (isCommandLine(cleanLine)) {
         if (currentBlock && currentBlock.type !== 'terminal') {
           blocks.push(currentBlock);
           currentBlock = null;
@@ -292,12 +276,6 @@ function App() {
           currentBlock = { type: 'list', items: [] };
         }
         currentBlock.items.push(cleanLine.replace(/^([·•▪\-*]|o\s)\s*/, ''));
-      } else if (isDefinitionLine(cleanLine)) {
-        if (currentBlock) {
-          blocks.push(currentBlock);
-          currentBlock = null;
-        }
-        blocks.push({ type: 'definition', content: cleanLine });
       } else {
         if (currentBlock && currentBlock.type !== 'paragraph') {
           blocks.push(currentBlock);
@@ -324,7 +302,7 @@ function App() {
     const renderBlock = (block, bIdx) => {
       if (block.type === 'header') {
         return (
-          <h4 key={bIdx} className="title-gradient" style={{ fontSize: '1.4rem', fontWeight: '600', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '8px', textAlign: 'left' }}>
+          <h4 key={bIdx} className="title-gradient" style={{ fontSize: '1.4rem', fontWeight: '600', marginBottom: '20px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px', textAlign: 'left' }}>
             {block.content}
           </h4>
         );
@@ -333,7 +311,7 @@ function App() {
       if (block.type === 'terminal') {
         const codeText = block.lines.join('\n');
         return (
-          <div className="terminal-window" key={bIdx}>
+          <div className="terminal-window" key={bIdx} style={{ margin: '20px 0' }}>
             <div className="terminal-header">
               <div className="terminal-dots">
                 <span className="terminal-dot red"></span>
@@ -345,40 +323,8 @@ function App() {
                 Kopiuj
               </button>
             </div>
-            <div className="terminal-body">
+            <div className="terminal-body" style={{ background: '#0a0b12', padding: '14px 18px', borderTop: 'none', color: '#38bdf8' }}>
               {renderHighlightedTextForNode(codeText, searchHighlight)}
-            </div>
-          </div>
-        );
-      }
-
-      if (block.type === 'definition') {
-        let title = "Pojęcie / Zasada";
-        let body = block.content;
-        const splitKeywords = [' jest to ', ' są to ', ' - ', ' – '];
-        for (let kw of splitKeywords) {
-          if (block.content.includes(kw)) {
-            const parts = block.content.split(kw);
-            title = parts[0].replace(/\*\*/g, '').trim();
-            body = parts.slice(1).join(kw).trim();
-            break;
-          }
-        }
-
-        let icon = "💡";
-        const lowerTitle = title.toLowerCase();
-        if (lowerTitle.includes('zasada') || lowerTitle.includes('algorytm')) icon = "⚙️";
-        if (lowerTitle.includes('cech')) icon = "📝";
-        if (lowerTitle.includes('uwag') || lowerTitle.includes('problem')) icon = "⚠️";
-        if (lowerTitle.includes('sieć') || lowerTitle.includes('lan') || lowerTitle.includes('wan') || lowerTitle.includes('ethernet')) icon = "🌐";
-        if (lowerTitle.includes('protokół') || lowerTitle.includes('standard')) icon = "📜";
-
-        return (
-          <div className="definition-card" key={bIdx}>
-            <div className="definition-icon">{icon}</div>
-            <div className="definition-content">
-              <h5>{title}</h5>
-              <p>{renderHighlightedTextForNode(body, searchHighlight)}</p>
             </div>
           </div>
         );
@@ -386,7 +332,7 @@ function App() {
 
       if (block.type === 'list') {
         return (
-          <ul key={bIdx} style={{ margin: '14px 0 14px 16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <ul key={bIdx} style={{ margin: '16px 0 16px 8px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {block.items.map((item, lIdx) => {
               const parsed = formatSlideLine(item);
               return (
@@ -402,11 +348,11 @@ function App() {
 
       if (block.type === 'paragraph') {
         return (
-          <div key={bIdx} style={{ margin: '12px 0' }}>
+          <div key={bIdx} style={{ margin: '14px 0' }}>
             {block.lines.map((line, pIdx) => {
               const parsed = formatSlideLine(line);
               return (
-                <p key={pIdx} style={{ margin: '8px 0', color: '#d1d5db', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'left' }}>
+                <p key={pIdx} style={{ margin: '10px 0', color: '#d1d5db', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'left' }}>
                   {renderHighlightedTextForNode(parsed.content, searchHighlight)}
                 </p>
               );
@@ -420,13 +366,6 @@ function App() {
 
     blocks.forEach((block, bIdx) => {
       elements.push(renderBlock(block, bIdx));
-      if (bIdx < blocks.length - 1 && block.type !== 'header') {
-        elements.push(
-          <div className="slide-card-divider" key={`div-${bIdx}`}>
-            <div className="slide-divider-dot"></div>
-          </div>
-        );
-      }
     });
 
     return <div className="slide-html-content" style={{ textAlign: 'left' }}>{elements}</div>;
